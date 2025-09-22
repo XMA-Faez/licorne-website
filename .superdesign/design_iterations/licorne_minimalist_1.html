@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Licorne - Your Trusted Partner for UAE Business Setup</title>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Flowbite -->
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.0.0/dist/flowbite.min.js"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="theme_minimalist.css">
+    
+    <style>
+        /* Custom animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        
+        .animate-fade-in-up {
+            animation: fadeInUp 0.6s ease-out;
+        }
+        
+        .animate-pulse-slow {
+            animation: pulse 3s ease-in-out infinite;
+        }
+        
+        /* Hover effects */
+        .hover-lift {
+            transition: all 0.3s ease;
+        }
+        
+        .hover-lift:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(13, 95, 79, 0.15);
+        }
+        
+        /* Geometric pattern background */
+        .hero-pattern {
+            background-image: 
+                linear-gradient(135deg, rgba(13, 95, 79, 0.03) 25%, transparent 25%),
+                linear-gradient(225deg, rgba(13, 95, 79, 0.03) 25%, transparent 25%),
+                linear-gradient(45deg, rgba(13, 95, 79, 0.03) 25%, transparent 25%),
+                linear-gradient(315deg, rgba(13, 95, 79, 0.03) 25%, transparent 25%);
+            background-size: 20px 20px;
+            background-position: 0 0, 10px 0, 10px -10px, 0px 10px;
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <span class="text-2xl font-bold text-[#0d5f4f]">LICORNE</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#services" class="text-gray-600 hover:text-[#0d5f4f] transition">Services</a>
+                    <a href="#process" class="text-gray-600 hover:text-[#0d5f4f] transition">Process</a>
+                    <a href="#about" class="text-gray-600 hover:text-[#0d5f4f] transition">About</a>
+                    <button class="btn btn-primary">Book Consultation</button>
+                </div>
+                <button class="md:hidden p-2">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative overflow-hidden bg-white hero-pattern">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32">
+            <div class="max-w-3xl mx-auto text-center">
+                <!-- Trust Indicators -->
+                <div class="flex flex-wrap justify-center gap-6 mb-8 animate-fade-in-up">
+                    <div class="flex items-center gap-2">
+                        <div class="flex">
+                            <i data-lucide="star" class="w-5 h-5 fill-[#0d5f4f] text-[#0d5f4f]"></i>
+                            <i data-lucide="star" class="w-5 h-5 fill-[#0d5f4f] text-[#0d5f4f]"></i>
+                            <i data-lucide="star" class="w-5 h-5 fill-[#0d5f4f] text-[#0d5f4f]"></i>
+                            <i data-lucide="star" class="w-5 h-5 fill-[#0d5f4f] text-[#0d5f4f]"></i>
+                            <i data-lucide="star" class="w-5 h-5 fill-[#0d5f4f] text-[#0d5f4f]"></i>
+                        </div>
+                        <span class="text-sm font-medium text-gray-600">500+ Businesses Set Up</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="shield-check" class="w-5 h-5 text-[#0d5f4f]"></i>
+                        <span class="text-sm font-medium text-gray-600">Licensed by DED</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="award" class="w-5 h-5 text-[#0d5f4f]"></i>
+                        <span class="text-sm font-medium text-gray-600">15 Years Experience</span>
+                    </div>
+                </div>
+
+                <!-- Main Heading -->
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 animate-fade-in-up" style="animation-delay: 0.1s;">
+                    YOUR TRUSTED PARTNER FOR<br/>
+                    <span class="text-[#0d5f4f]">UAE BUSINESS SETUP</span>
+                </h1>
+
+                <p class="text-xl text-gray-600 mb-10 animate-fade-in-up" style="animation-delay: 0.2s;">
+                    End-to-end corporate solutions with transparent pricing
+                </p>
+
+                <!-- CTA Buttons -->
+                <div class="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up" style="animation-delay: 0.3s;">
+                    <button class="btn btn-primary text-lg px-8 py-4 hover-lift">
+                        <i data-lucide="calendar" class="w-5 h-5"></i>
+                        Book Free Consultation
+                    </button>
+                    <button class="btn btn-secondary text-lg px-8 py-4 hover-lift">
+                        <i data-lucide="message-circle" class="w-5 h-5"></i>
+                        WhatsApp Us
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Why Choose Licorne?</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="card hover-lift text-center">
+                    <div class="w-16 h-16 mx-auto mb-4 bg-[#0d5f4f]/10 rounded-full flex items-center justify-center">
+                        <i data-lucide="zap" class="w-8 h-8 text-[#0d5f4f]"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Same Day Setup</h3>
+                    <p class="text-gray-600">Fastest processing in the UAE market</p>
+                </div>
+                <div class="card hover-lift text-center">
+                    <div class="w-16 h-16 mx-auto mb-4 bg-[#0d5f4f]/10 rounded-full flex items-center justify-center">
+                        <i data-lucide="trophy" class="w-8 h-8 text-[#0d5f4f]"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">100% Success Rate</h3>
+                    <p class="text-gray-600">Guaranteed approval or money back</p>
+                </div>
+                <div class="card hover-lift text-center">
+                    <div class="w-16 h-16 mx-auto mb-4 bg-[#0d5f4f]/10 rounded-full flex items-center justify-center">
+                        <i data-lucide="eye" class="w-8 h-8 text-[#0d5f4f]"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">No Hidden Fees</h3>
+                    <p class="text-gray-600">Transparent pricing from start to finish</p>
+                </div>
+                <div class="card hover-lift text-center">
+                    <div class="w-16 h-16 mx-auto mb-4 bg-[#0d5f4f]/10 rounded-full flex items-center justify-center">
+                        <i data-lucide="users" class="w-8 h-8 text-[#0d5f4f]"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Expert Team Support</h3>
+                    <p class="text-gray-600">Dedicated account manager for you</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Our Services</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="card hover-lift">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 bg-[#0d5f4f]/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <i data-lucide="building-2" class="w-6 h-6 text-[#0d5f4f]"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-2">Business Setup</h3>
+                            <p class="text-gray-600 mb-3">Company formation in UAE with complete legal support</p>
+                            <a href="#" class="text-[#0d5f4f] font-medium hover:underline">Learn more →</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card hover-lift">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 bg-[#0d5f4f]/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <i data-lucide="file-text" class="w-6 h-6 text-[#0d5f4f]"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-2">Notary Services</h3>
+                            <p class="text-gray-600 mb-3">Document attestation and legal certification</p>
+                            <a href="#" class="text-[#0d5f4f] font-medium hover:underline">Learn more →</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card hover-lift">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 bg-[#0d5f4f]/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <i data-lucide="plane" class="w-6 h-6 text-[#0d5f4f]"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-2">Visa Services</h3>
+                            <p class="text-gray-600 mb-3">Residence and work permits for you and your team</p>
+                            <a href="#" class="text-[#0d5f4f] font-medium hover:underline">Learn more →</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card hover-lift">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 bg-[#0d5f4f]/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <i data-lucide="folder-open" class="w-6 h-6 text-[#0d5f4f]"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-2">Documentation Services</h3>
+                            <p class="text-gray-600 mb-3">Complete paperwork management and filing</p>
+                            <a href="#" class="text-[#0d5f4f] font-medium hover:underline">Learn more →</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card hover-lift">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 bg-[#0d5f4f]/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <i data-lucide="stamp" class="w-6 h-6 text-[#0d5f4f]"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-2">Attestations</h3>
+                            <p class="text-gray-600 mb-3">Official document verification and authentication</p>
+                            <a href="#" class="text-[#0d5f4f] font-medium hover:underline">Learn more →</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card hover-lift">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 bg-[#0d5f4f]/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <i data-lucide="home" class="w-6 h-6 text-[#0d5f4f]"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-2">Conveyancing Services</h3>
+                            <p class="text-gray-600 mb-3">Property transfer and real estate documentation</p>
+                            <a href="#" class="text-[#0d5f4f] font-medium hover:underline">Learn more →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-8">
+                <button class="btn btn-primary">View All Services →</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="process" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">How It Works</h2>
+            <p class="text-xl text-gray-600 text-center mb-12">Your business setup journey in 4 simple steps</p>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="flex flex-col md:flex-row items-center justify-between relative">
+                    <!-- Connection Line (hidden on mobile) -->
+                    <div class="hidden md:block absolute top-12 left-0 right-0 h-0.5 bg-gray-300 z-0"></div>
+                    
+                    <!-- Step 1 -->
+                    <div class="relative z-10 text-center mb-8 md:mb-0">
+                        <div class="w-24 h-24 mx-auto mb-4 bg-white border-4 border-[#0d5f4f] rounded-full flex items-center justify-center">
+                            <span class="text-2xl font-bold text-[#0d5f4f]">1</span>
+                        </div>
+                        <h3 class="font-bold mb-2">Consult</h3>
+                        <p class="text-sm text-gray-600">Free consultation<br/>to understand needs</p>
+                    </div>
+                    
+                    <!-- Step 2 -->
+                    <div class="relative z-10 text-center mb-8 md:mb-0">
+                        <div class="w-24 h-24 mx-auto mb-4 bg-white border-4 border-[#0d5f4f] rounded-full flex items-center justify-center">
+                            <span class="text-2xl font-bold text-[#0d5f4f]">2</span>
+                        </div>
+                        <h3 class="font-bold mb-2">Submit</h3>
+                        <p class="text-sm text-gray-600">Prepare and submit<br/>all documents</p>
+                    </div>
+                    
+                    <!-- Step 3 -->
+                    <div class="relative z-10 text-center mb-8 md:mb-0">
+                        <div class="w-24 h-24 mx-auto mb-4 bg-white border-4 border-[#0d5f4f] rounded-full flex items-center justify-center">
+                            <span class="text-2xl font-bold text-[#0d5f4f]">3</span>
+                        </div>
+                        <h3 class="font-bold mb-2">Process</h3>
+                        <p class="text-sm text-gray-600">We handle all<br/>government procedures</p>
+                    </div>
+                    
+                    <!-- Step 4 -->
+                    <div class="relative z-10 text-center">
+                        <div class="w-24 h-24 mx-auto mb-4 bg-[#0d5f4f] border-4 border-[#0d5f4f] rounded-full flex items-center justify-center">
+                            <span class="text-2xl font-bold text-white">4</span>
+                        </div>
+                        <h3 class="font-bold mb-2">Launch</h3>
+                        <p class="text-sm text-gray-600">Receive license<br/>and start operating</p>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-12">
+                    <button class="btn btn-primary">See Detailed Process →</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partners Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl font-bold text-center mb-12">Trusted By</h2>
+            <div class="flex flex-wrap justify-center items-center gap-8 md:gap-12">
+                <div class="badge text-lg px-6 py-3">DED</div>
+                <div class="badge text-lg px-6 py-3">DMCC</div>
+                <div class="badge text-lg px-6 py-3">ADGM</div>
+                <div class="badge text-lg px-6 py-3">DIFC</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-[#0d5f4f]">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Ready to Start Your UAE Business?</h2>
+            <p class="text-xl text-white/90 mb-8">Get a free consultation worth AED 500 today</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button class="btn bg-white text-[#0d5f4f] hover:bg-gray-100 text-lg px-8 py-4">
+                    <i data-lucide="calendar" class="w-5 h-5"></i>
+                    Book Free Consultation
+                </button>
+                <button class="btn bg-white/10 text-white border-2 border-white hover:bg-white/20 text-lg px-8 py-4">
+                    <i data-lucide="phone" class="w-5 h-5"></i>
+                    Call Now
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 bg-gray-900 text-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4 text-[#0d5f4f]">LICORNE</h3>
+                    <p class="text-gray-400">Your trusted partner for business setup in UAE</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Services</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition">Business Setup</a></li>
+                        <li><a href="#" class="hover:text-white transition">Visa Services</a></li>
+                        <li><a href="#" class="hover:text-white transition">Notary Services</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Company</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition">About Us</a></li>
+                        <li><a href="#" class="hover:text-white transition">Contact</a></li>
+                        <li><a href="#" class="hover:text-white transition">Terms</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Contact</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="phone" class="w-4 h-4"></i>
+                            +971 XX XXX XXXX
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="mail" class="w-4 h-4"></i>
+                            info@licorne.ae
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="map-pin" class="w-4 h-4"></i>
+                            Dubai, UAE
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Licorne. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+        
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+        
+        // Add scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fade-in-up');
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.card').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>

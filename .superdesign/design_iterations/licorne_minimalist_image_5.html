@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Licorne Business Setup - Gallery Style Layout</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-green: #0d5f4f;
+            --light-green: #e8f5f2;
+            --dark-green: #0a4d40;
+            --text-dark: #1a1a1a;
+            --text-light: #666666;
+            --white: #ffffff;
+            --light-gray: #f8f9fa;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--white);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: var(--white);
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-green);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-green);
+        }
+
+        .cta-button {
+            background: var(--primary-green);
+            color: var(--white);
+            padding: 0.8rem 1.5rem;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: background 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background: var(--dark-green);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 120px 0 80px;
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, var(--light-green) 0%, var(--white) 100%);
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-content h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero-content .highlight {
+            color: var(--primary-green);
+        }
+
+        .hero-content p {
+            font-size: 1.3rem;
+            color: var(--text-light);
+            margin-bottom: 2.5rem;
+            line-height: 1.6;
+        }
+
+        /* Services Overview */
+        .services-overview {
+            padding: 80px 0;
+            background: var(--white);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2.5rem;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        .section-title p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .services-quick {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-quick {
+            background: var(--light-green);
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .service-quick:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-quick h3 {
+            font-family: 'IBM Plex Sans', sans-serif;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .service-quick p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* Team Section with Professional Headshots */
+        .team {
+            padding: 80px 0;
+            background: var(--light-gray);
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .team-member {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+        }
+
+        .team-member:hover {
+            transform: translateY(-5px);
+        }
+
+        .member-photo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            overflow: hidden;
+            border: 4px solid var(--light-green);
+        }
+
+        .member-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .team-member h4 {
+            font-family: 'IBM Plex Sans', sans-serif;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+
+        .member-role {
+            color: var(--primary-green);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .member-bio {
+            color: var(--text-light);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .member-credentials {
+            background: var(--light-green);
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            color: var(--primary-green);
+            font-weight: 600;
+            display: inline-block;
+        }
+
+        /* Office Gallery */
+        .office-gallery {
+            padding: 80px 0;
+            background: var(--white);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+
+        .gallery-item.large {
+            grid-column: span 2;
+            grid-row: span 2;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .gallery-item.large img {
+            height: 100%;
+            min-height: 400px;
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            color: var(--white);
+            padding: 2rem;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+
+        .gallery-overlay h4 {
+            font-family: 'IBM Plex Sans', sans-serif;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Client Testimonials with Photos */
+        .testimonials-gallery {
+            padding: 80px 0;
+            background: var(--light-gray);
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial-visual {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        .testimonial-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .client-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            margin-right: 1rem;
+            overflow: hidden;
+            border: 3px solid var(--light-green);
+        }
+
+        .client-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .client-info h5 {
+            font-family: 'IBM Plex Sans', sans-serif;
+            color: var(--text-dark);
+            margin-bottom: 0.2rem;
+        }
+
+        .client-company {
+            color: var(--primary-green);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .testimonial-content {
+            color: var(--text-light);
+            line-height: 1.6;
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+
+        .rating {
+            color: #ffc107;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .business-photo {
+            width: 100%;
+            height: 150px;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-top: 1rem;
+        }
+
+        .business-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Achievements & Certifications Display */
+        .achievements {
+            padding: 80px 0;
+            background: var(--white);
+        }
+
+        .achievement-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .achievement-card {
+            background: var(--light-green);
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .achievement-card:hover {
+            transform: translateY(-3px);
+        }
+
+        .achievement-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1rem;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 2px solid var(--primary-green);
+        }
+
+        .achievement-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            padding: 0.5rem;
+            background: var(--white);
+        }
+
+        .achievement-card h4 {
+            font-family: 'IBM Plex Sans', sans-serif;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .achievement-card p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* Success Stories Instagram-Style Grid */
+        .success-grid {
+            padding: 80px 0;
+            background: var(--light-gray);
+        }
+
+        .instagram-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+        }
+
+        .success-post {
+            background: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+        }
+
+        .success-post:hover {
+            transform: translateY(-5px);
+        }
+
+        .post-image {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .post-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .post-content {
+            padding: 1.5rem;
+        }
+
+        .post-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .post-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 0.8rem;
+            overflow: hidden;
+        }
+
+        .post-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .post-user {
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .post-caption {
+            color: var(--text-light);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .post-tags {
+            font-size: 0.8rem;
+            color: var(--primary-green);
+        }
+
+        .post-stats {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--light-gray);
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text-dark);
+            color: var(--white);
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            font-family: 'IBM Plex Sans', sans-serif;
+            margin-bottom: 1rem;
+            color: var(--white);
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: #cccccc;
+            text-decoration: none;
+            line-height: 1.8;
+        }
+
+        .footer-section a:hover {
+            color: var(--primary-green);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #333;
+            padding-top: 1rem;
+            text-align: center;
+            color: #999;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .gallery-item.large {
+                grid-column: span 1;
+                grid-row: span 1;
+            }
+
+            .gallery-item.large img {
+                height: 250px;
+                min-height: auto;
+            }
+
+            .team-grid,
+            .testimonial-grid,
+            .achievement-grid,
+            .instagram-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">Licorne</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#team">Team</a></li>
+                <li><a href="#office">Office</a></li>
+                <li><a href="#testimonials">Reviews</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <a href="#contact" class="cta-button">Get Started</a>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Meet the <span class="highlight">Experts Behind</span> Your Success</h1>
+                <p>Get to know our professional team, see our Dubai office, and discover why hundreds of entrepreneurs trust us with their business setup.</p>
+                <a href="#team" class="cta-button">Meet Our Team</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="services-overview">
+        <div class="container">
+            <div class="section-title">
+                <h2>What We Do</h2>
+                <p>Comprehensive business setup services delivered by experienced professionals</p>
+            </div>
+
+            <div class="services-quick">
+                <div class="service-quick">
+                    <div class="service-icon">🏢</div>
+                    <h3>Company Formation</h3>
+                    <p>Mainland, Free Zone & Offshore company setup with full legal compliance</p>
+                </div>
+                <div class="service-quick">
+                    <div class="service-icon">📋</div>
+                    <h3>Licensing</h3>
+                    <p>Business licenses for all commercial and professional activities</p>
+                </div>
+                <div class="service-quick">
+                    <div class="service-icon">🏦</div>
+                    <h3>Banking</h3>
+                    <p>Corporate bank account opening with UAE's leading banks</p>
+                </div>
+                <div class="service-quick">
+                    <div class="service-icon">✈️</div>
+                    <h3>Visas</h3>
+                    <p>Investor and employee visa processing and Emirates ID services</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="team" class="team">
+        <div class="container">
+            <div class="section-title">
+                <h2>Meet Our Expert Team</h2>
+                <p>Experienced professionals dedicated to making your business setup seamless and successful</p>
+            </div>
+
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-photo">
+                        <img src="https://i.pravatar.cc/200?img=1" alt="Sarah Al-Zahra">
+                    </div>
+                    <h4>Sarah Al-Zahra</h4>
+                    <div class="member-role">Managing Director</div>
+                    <p class="member-bio">15+ years in UAE business formation. Expert in mainland company setup and government relations with deep knowledge of local regulations.</p>
+                    <div class="member-credentials">MBA Finance, CPA</div>
+                </div>
+
+                <div class="team-member">
+                    <div class="member-photo">
+                        <img src="https://i.pravatar.cc/200?img=3" alt="Ahmed Rahman">
+                    </div>
+                    <h4>Ahmed Rahman</h4>
+                    <div class="member-role">Senior Business Consultant</div>
+                    <p class="member-bio">Specializes in free zone setups and international business structures. Fluent in Arabic, English, and French.</p>
+                    <div class="member-credentials">LLB, Business Law</div>
+                </div>
+
+                <div class="team-member">
+                    <div class="member-photo">
+                        <img src="https://i.pravatar.cc/200?img=5" alt="Maria Santos">
+                    </div>
+                    <h4>Maria Santos</h4>
+                    <div class="member-role">Banking Relations Manager</div>
+                    <p class="member-bio">Former banker with extensive relationships across UAE's financial sector. Ensures smooth corporate account opening.</p>
+                    <div class="member-credentials">Banking & Finance</div>
+                </div>
+
+                <div class="team-member">
+                    <div class="member-photo">
+                        <img src="https://i.pravatar.cc/200?img=7" alt="David Chen">
+                    </div>
+                    <h4>David Chen</h4>
+                    <div class="member-role">Legal Advisor</div>
+                    <p class="member-bio">Corporate lawyer specializing in UAE commercial law and compliance. Handles complex multi-jurisdiction setups.</p>
+                    <div class="member-credentials">LLM, UAE Bar</div>
+                </div>
+
+                <div class="team-member">
+                    <div class="member-photo">
+                        <img src="https://i.pravatar.cc/200?img=9" alt="Fatima Al-Rashid">
+                    </div>
+                    <h4>Fatima Al-Rashid</h4>
+                    <div class="member-role">Visa Services Manager</div>
+                    <p class="member-bio">Immigration specialist with in-depth knowledge of UAE visa processes and Emirates ID procedures for businesses.</p>
+                    <div class="member-credentials">Immigration Law</div>
+                </div>
+
+                <div class="team-member">
+                    <div class="member-photo">
+                        <img src="https://i.pravatar.cc/200?img=11" alt="James Wilson">
+                    </div>
+                    <h4>James Wilson</h4>
+                    <div class="member-role">Client Relations Director</div>
+                    <p class="member-bio">Ensures exceptional client experience throughout the setup process. Manages international client relationships.</p>
+                    <div class="member-credentials">Business Management</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="office" class="office-gallery">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Dubai Office</h2>
+                <p>Modern workspace in the heart of Business Bay, equipped for professional consultations</p>
+            </div>
+
+            <div class="gallery-grid">
+                <div class="gallery-item large">
+                    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=600&fit=crop&crop=entropy&cs=tinysrgb" alt="Dubai Office Building">
+                    <div class="gallery-overlay">
+                        <h4>Our Dubai Office Building</h4>
+                        <p>Premium location in Business Bay with stunning city views</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=600&h=250&fit=crop&crop=entropy&cs=tinysrgb" alt="Reception Area">
+                    <div class="gallery-overlay">
+                        <h4>Welcome Reception</h4>
+                        <p>Professional reception area for client meetings</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=250&fit=crop&crop=entropy&cs=tinysrgb" alt="Conference Room">
+                    <div class="gallery-overlay">
+                        <h4>Conference Room</h4>
+                        <p>State-of-the-art meeting facilities</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1551836022-deb4988cc6c0?w=600&h=250&fit=crop&crop=entropy&cs=tinysrgb" alt="Open Office">
+                    <div class="gallery-overlay">
+                        <h4>Open Workspace</h4>
+                        <p>Collaborative environment for our team</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&h=250&fit=crop&crop=entropy&cs=tinysrgb" alt="Private Office">
+                    <div class="gallery-overlay">
+                        <h4>Private Consultation</h4>
+                        <p>Confidential meeting spaces for sensitive discussions</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials" class="testimonials-gallery">
+        <div class="container">
+            <div class="section-title">
+                <h2>Client Success Gallery</h2>
+                <p>Real clients, real businesses, real success stories with photos from their journey</p>
+            </div>
+
+            <div class="testimonial-grid">
+                <div class="testimonial-visual">
+                    <div class="testimonial-header">
+                        <div class="client-avatar">
+                            <img src="https://i.pravatar.cc/120?img=1" alt="Sarah Johnson">
+                        </div>
+                        <div class="client-info">
+                            <h5>Sarah Johnson</h5>
+                            <div class="client-company">TechFlow Solutions</div>
+                        </div>
+                    </div>
+                    <div class="rating">★★★★★</div>
+                    <p class="testimonial-content">"Licorne made our tech startup launch incredibly smooth. Their team understood our needs and delivered beyond expectations. The entire process was transparent and professional."</p>
+                    <div class="business-photo">
+                        <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=600&h=150&fit=crop&crop=entropy&cs=tinysrgb" alt="TechFlow Office">
+                    </div>
+                </div>
+
+                <div class="testimonial-visual">
+                    <div class="testimonial-header">
+                        <div class="client-avatar">
+                            <img src="https://i.pravatar.cc/120?img=3" alt="Ahmed Al-Rashid">
+                        </div>
+                        <div class="client-info">
+                            <h5>Ahmed Al-Rashid</h5>
+                            <div class="client-company">Emirates Trading</div>
+                        </div>
+                    </div>
+                    <div class="rating">★★★★★</div>
+                    <p class="testimonial-content">"Outstanding service for our international trading company setup. The team's expertise in free zone regulations saved us significant time and ensured full compliance from day one."</p>
+                    <div class="business-photo">
+                        <img src="https://images.unsplash.com/photo-1551836022-deb4988cc6c0?w=600&h=150&fit=crop&crop=entropy&cs=tinysrgb" alt="Trading Office">
+                    </div>
+                </div>
+
+                <div class="testimonial-visual">
+                    <div class="testimonial-header">
+                        <div class="client-avatar">
+                            <img src="https://i.pravatar.cc/120?img=5" alt="Maria Rodriguez">
+                        </div>
+                        <div class="client-info">
+                            <h5>Maria Rodriguez</h5>
+                            <div class="client-company">Global Consulting</div>
+                        </div>
+                    </div>
+                    <div class="rating">★★★★★</div>
+                    <p class="testimonial-content">"Professional, efficient, and reliable. The banking support was exceptional - we had our corporate accounts open within a week. Highly recommend their services!"</p>
+                    <div class="business-photo">
+                        <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&h=150&fit=crop&crop=entropy&cs=tinysrgb" alt="Consulting Office">
+                    </div>
+                </div>
+
+                <div class="testimonial-visual">
+                    <div class="testimonial-header">
+                        <div class="client-avatar">
+                            <img src="https://i.pravatar.cc/120?img=7" alt="David Park">
+                        </div>
+                        <div class="client-info">
+                            <h5>David Park</h5>
+                            <div class="client-company">Innovation Hub</div>
+                        </div>
+                    </div>
+                    <div class="rating">★★★★★</div>
+                    <p class="testimonial-content">"From initial consultation to business launch, every step was handled with professionalism. The visa processing was seamless and our team was operational ahead of schedule."</p>
+                    <div class="business-photo">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=150&fit=crop&crop=entropy&cs=tinysrgb" alt="Innovation Office">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="achievements">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Achievements & Certifications</h2>
+                <p>Recognized expertise and official certifications that ensure quality service delivery</p>
+            </div>
+
+            <div class="achievement-grid">
+                <div class="achievement-card">
+                    <div class="achievement-icon">
+                        <img src="https://placehold.co/80x80/0d5f4f/ffffff?text=ISO" alt="ISO Certification">
+                    </div>
+                    <h4>ISO 9001:2015</h4>
+                    <p>Quality Management System Certification</p>
+                </div>
+
+                <div class="achievement-card">
+                    <div class="achievement-icon">
+                        <img src="https://placehold.co/80x80/0d5f4f/ffffff?text=DED" alt="DED Approved">
+                    </div>
+                    <h4>DED Approved</h4>
+                    <p>Authorized Business Setup Consultant</p>
+                </div>
+
+                <div class="achievement-card">
+                    <div class="achievement-icon">
+                        <img src="https://placehold.co/80x80/0d5f4f/ffffff?text=DMCC" alt="DMCC Partner">
+                    </div>
+                    <h4>DMCC Partner</h4>
+                    <p>Official DMCC Service Partner</p>
+                </div>
+
+                <div class="achievement-card">
+                    <div class="achievement-icon">
+                        <img src="https://placehold.co/80x80/0d5f4f/ffffff?text=DIFC" alt="DIFC Gateway">
+                    </div>
+                    <h4>DIFC Gateway</h4>
+                    <p>DIFC Registered Service Provider</p>
+                </div>
+
+                <div class="achievement-card">
+                    <div class="achievement-icon">
+                        <img src="https://placehold.co/80x80/0d5f4f/ffffff?text=2000+" alt="Companies Formed">
+                    </div>
+                    <h4>2000+ Companies</h4>
+                    <p>Successfully Established</p>
+                </div>
+
+                <div class="achievement-card">
+                    <div class="achievement-icon">
+                        <img src="https://placehold.co/80x80/0d5f4f/ffffff?text=15Y" alt="15 Years Experience">
+                    </div>
+                    <h4>15 Years</h4>
+                    <p>Industry Experience</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="success-grid">
+        <div class="container">
+            <div class="section-title">
+                <h2>Success Stories Feed</h2>
+                <p>Instagram-style showcase of our clients' business journeys and achievements</p>
+            </div>
+
+            <div class="instagram-grid">
+                <div class="success-post">
+                    <div class="post-image">
+                        <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=600&h=200&fit=crop&crop=entropy&cs=tinysrgb" alt="Tech Startup Launch">
+                    </div>
+                    <div class="post-content">
+                        <div class="post-header">
+                            <div class="post-avatar">
+                                <img src="https://i.pravatar.cc/80?img=1" alt="TechFlow">
+                            </div>
+                            <div class="post-user">techflow_dubai</div>
+                        </div>
+                        <p class="post-caption">Just launched our Dubai operations! Thanks to @licorneuae for making the impossible possible. 🚀 #DubaiTech #StartupLife</p>
+                        <p class="post-tags">#BusinessSetup #Dubai #Technology #Startup</p>
+                        <div class="post-stats">
+                            <span>💜 234 likes</span>
+                            <span>💬 12 comments</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="success-post">
+                    <div class="post-image">
+                        <img src="https://images.unsplash.com/photo-1551836022-deb4988cc6c0?w=600&h=200&fit=crop&crop=entropy&cs=tinysrgb" alt="Trading Company">
+                    </div>
+                    <div class="post-content">
+                        <div class="post-header">
+                            <div class="post-avatar">
+                                <img src="https://i.pravatar.cc/80?img=3" alt="Emirates Trading">
+                            </div>
+                            <div class="post-user">emiratestrading</div>
+                        </div>
+                        <p class="post-caption">Our new DMCC office is ready! From setup to launch in just 25 days. Grateful for the @licorneuae team! 🏢 #Trading #DMCC</p>
+                        <p class="post-tags">#FreeZone #Trading #BusinessSuccess #UAE</p>
+                        <div class="post-stats">
+                            <span>💜 189 likes</span>
+                            <span>💬 8 comments</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="success-post">
+                    <div class="post-image">
+                        <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&h=200&fit=crop&crop=entropy&cs=tinysrgb" alt="Consulting Firm">
+                    </div>
+                    <div class="post-content">
+                        <div class="post-header">
+                            <div class="post-avatar">
+                                <img src="https://i.pravatar.cc/80?img=5" alt="Global Consulting">
+                            </div>
+                            <div class="post-user">globalconsult_me</div>
+                        </div>
+                        <p class="post-caption">Celebrating our first year in Dubai! 50+ clients and growing strong. Thank you @licorneuae for the perfect start! 🎉 #Consulting</p>
+                        <p class="post-tags">#Consulting #BusinessGrowth #Dubai #Success</p>
+                        <div class="post-stats">
+                            <span>💜 312 likes</span>
+                            <span>💬 21 comments</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="success-post">
+                    <div class="post-image">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=200&fit=crop&crop=entropy&cs=tinysrgb" alt="E-commerce Business">
+                    </div>
+                    <div class="post-content">
+                        <div class="post-header">
+                            <div class="post-avatar">
+                                <img src="https://i.pravatar.cc/80?img=7" alt="Innovation Hub">
+                            </div>
+                            <div class="post-user">innovationhub_ae</div>
+                        </div>
+                        <p class="post-caption">From idea to incorporation in 30 days! Our e-commerce platform is now live across GCC. @licorneuae made it seamless! 🛒 #Ecommerce</p>
+                        <p class="post-tags">#Ecommerce #Innovation #GCC #OnlineBusiness</p>
+                        <div class="post-stats">
+                            <span>💜 267 likes</span>
+                            <span>💬 15 comments</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="success-post">
+                    <div class="post-image">
+                        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&h=200&fit=crop&crop=entropy&cs=tinysrgb" alt="Real Estate Company">
+                    </div>
+                    <div class="post-content">
+                        <div class="post-header">
+                            <div class="post-avatar">
+                                <img src="https://i.pravatar.cc/80?img=9" alt="Metro Properties">
+                            </div>
+                            <div class="post-user">metro_properties</div>
+                        </div>
+                        <p class="post-caption">New real estate brokerage officially launched! Thank you @licorneuae for handling all the RERA requirements perfectly! 🏠 #RealEstate</p>
+                        <p class="post-tags">#RealEstate #RERA #Property #Dubai</p>
+                        <div class="post-stats">
+                            <span>💜 195 likes</span>
+                            <span>💬 9 comments</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="success-post">
+                    <div class="post-image">
+                        <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=600&h=200&fit=crop&crop=entropy&cs=tinysrgb" alt="Healthcare Services">
+                    </div>
+                    <div class="post-content">
+                        <div class="post-header">
+                            <div class="post-avatar">
+                                <img src="https://i.pravatar.cc/80?img=11" alt="Health Plus">
+                            </div>
+                            <div class="post-user">healthplus_uae</div>
+                        </div>
+                        <p class="post-caption">Our healthcare services company is now operational! Special thanks to @licorneuae for navigating the DHA requirements! 🏥 #Healthcare</p>
+                        <p class="post-tags">#Healthcare #DHA #Medical #Wellness</p>
+                        <div class="post-stats">
+                            <span>💜 154 likes</span>
+                            <span>💬 6 comments</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Licorne Business Setup</h4>
+                    <p>Your trusted partner for business formation in the UAE. Meet our team, visit our office, and join our success stories.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Visit Our Office</h4>
+                    <p>Business Bay, Dubai, UAE</p>
+                    <p>Monday - Friday: 9AM - 6PM</p>
+                    <p>Saturday: 9AM - 2PM</p>
+                    <p>Sunday: Closed</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p>📍 Business Bay, Dubai, UAE</p>
+                    <p>📞 +971 4 XXX XXXX</p>
+                    <p>✉️ info@licorne.ae</p>
+                    <p>🌐 www.licorne.ae</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <p><a href="#">Instagram</a></p>
+                    <p><a href="#">LinkedIn</a></p>
+                    <p><a href="#">Facebook</a></p>
+                    <p><a href="#">Twitter</a></p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Licorne Business Setup. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

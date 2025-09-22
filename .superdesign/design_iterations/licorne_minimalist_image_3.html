@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Licorne Business Setup - Card-Based Layout</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-green: #0d5f4f;
+            --light-green: #e8f5f2;
+            --dark-green: #0a4d40;
+            --text-dark: #1a1a1a;
+            --text-light: #666666;
+            --white: #ffffff;
+            --light-gray: #f8f9fa;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--white);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: var(--white);
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-green);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-green);
+        }
+
+        .cta-button {
+            background: var(--primary-green);
+            color: var(--white);
+            padding: 0.8rem 1.5rem;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: background 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background: var(--dark-green);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 120px 0 80px;
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, var(--light-green) 0%, var(--white) 100%);
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-content h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero-content .highlight {
+            color: var(--primary-green);
+        }
+
+        .hero-content p {
+            font-size: 1.3rem;
+            color: var(--text-light);
+            margin-bottom: 2.5rem;
+            line-height: 1.6;
+        }
+
+        /* Services Section - Card Grid */
+        .services {
+            padding: 80px 0;
+            background: var(--white);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2.5rem;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        .section-title p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .service-card-image {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .service-card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover .service-card-image img {
+            transform: scale(1.05);
+        }
+
+        .service-card-content {
+            padding: 2rem;
+        }
+
+        .service-card h3 {
+            font-family: 'IBM Plex Sans', sans-serif;
+            font-size: 1.5rem;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .service-features {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-features li {
+            padding: 0.3rem 0;
+            color: var(--text-light);
+            position: relative;
+            padding-left: 1.5rem;
+            font-size: 0.9rem;
+        }
+
+        .service-features li::before {
+            content: '✓';
+            color: var(--primary-green);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        .service-price {
+            background: var(--light-green);
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .service-price .price {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-green);
+        }
+
+        .service-price .period {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* Process Section - Icon Cards */
+        .process {
+            padding: 80px 0;
+            background: var(--light-gray);
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .process-step {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+        }
+
+        .process-step:hover {
+            transform: translateY(-3px);
+        }
+
+        .process-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--light-green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2rem;
+        }
+
+        .process-step h4 {
+            font-family: 'IBM Plex Sans', sans-serif;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .process-step p {
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            padding: 80px 0;
+            background: var(--white);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: var(--light-green);
+            padding: 2rem;
+            border-radius: 12px;
+            position: relative;
+        }
+
+        .testimonial-content {
+            margin-bottom: 2rem;
+        }
+
+        .testimonial-content p {
+            color: var(--text-dark);
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-rating {
+            color: var(--primary-green);
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .author-image {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+        .author-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .author-info h5 {
+            color: var(--text-dark);
+            font-weight: 600;
+            margin-bottom: 0.2rem;
+        }
+
+        .author-info span {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* Case Studies Section */
+        .case-studies {
+            padding: 80px 0;
+            background: var(--light-gray);
+        }
+
+        .case-studies-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .case-study-card {
+            background: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .case-study-image {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .case-study-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .case-study-content {
+            padding: 2rem;
+        }
+
+        .case-study-tag {
+            background: var(--primary-green);
+            color: var(--white);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        .case-study-content h4 {
+            font-family: 'IBM Plex Sans', sans-serif;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .case-study-content p {
+            color: var(--text-light);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .case-study-results {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .result-metric {
+            text-align: center;
+            flex: 1;
+        }
+
+        .result-number {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-green);
+            display: block;
+        }
+
+        .result-label {
+            font-size: 0.8rem;
+            color: var(--text-light);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text-dark);
+            color: var(--white);
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            font-family: 'IBM Plex Sans', sans-serif;
+            margin-bottom: 1rem;
+            color: var(--white);
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: #cccccc;
+            text-decoration: none;
+            line-height: 1.8;
+        }
+
+        .footer-section a:hover {
+            color: var(--primary-green);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #333;
+            padding-top: 1rem;
+            text-align: center;
+            color: #999;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .services-grid,
+            .process-grid,
+            .testimonials-grid,
+            .case-studies-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">Licorne</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#process">Process</a></li>
+                <li><a href="#testimonials">Reviews</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <a href="#contact" class="cta-button">Get Started</a>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Your <span class="highlight">Business Journey</span> Starts Here</h1>
+                <p>Professional business setup services in Dubai and across the UAE. We make company formation simple, fast, and hassle-free.</p>
+                <a href="#services" class="cta-button">Explore Services</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Choose Your Business Setup</h2>
+                <p>Tailored solutions for different business needs and investment levels</p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-card-image">
+                        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&h=200&fit=crop&crop=entropy&cs=tinysrgb" alt="Mainland Company Setup">
+                    </div>
+                    <div class="service-card-content">
+                        <h3>Mainland Company</h3>
+                        <p>Full market access with the flexibility to conduct business anywhere in the UAE and internationally.</p>
+                        <ul class="service-features">
+                            <li>100% foreign ownership</li>
+                            <li>No geographical restrictions</li>
+                            <li>Local and international trading</li>
+                            <li>Government contracts eligible</li>
+                        </ul>
+                        <div class="service-price">
+                            <div class="price">From AED 15,000</div>
+                            <div class="period">All-inclusive setup</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-card-image">
+                        <img src="https://images.unsplash.com/photo-1551836022-deb4988cc6c0?w=600&h=200&fit=crop&crop=entropy&cs=tinysrgb" alt="Free Zone Setup">
+                    </div>
+                    <div class="service-card-content">
+                        <h3>Free Zone Company</h3>
+                        <p>Tax-free business environment with 100% foreign ownership and repatriation of profits.</p>
+                        <ul class="service-features">
+                            <li>0% corporate tax</li>
+                            <li>100% profit repatriation</li>
+                            <li>No personal income tax</li>
+                            <li>Streamlined processes</li>
+                        </ul>
+                        <div class="service-price">
+                            <div class="price">From AED 12,000</div>
+                            <div class="period">Complete package</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-card-image">
+                        <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&h=200&fit=crop&crop=entropy&cs=tinysrgb" alt="Offshore Company">
+                    </div>
+                    <div class="service-card-content">
+                        <h3>Offshore Company</h3>
+                        <p>International business structure for holding, investment, and asset protection purposes.</p>
+                        <ul class="service-features">
+                            <li>Asset protection</li>
+                            <li>International investments</li>
+                            <li>Confidentiality benefits</li>
+                            <li>Minimal reporting</li>
+                        </ul>
+                        <div class="service-price">
+                            <div class="price">From AED 8,000</div>
+                            <div class="period">Basic formation</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-card-image">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=200&fit=crop&crop=entropy&cs=tinysrgb" alt="Professional Services">
+                    </div>
+                    <div class="service-card-content">
+                        <h3>Professional License</h3>
+                        <p>Specialized licenses for consultants, freelancers, and professional service providers.</p>
+                        <ul class="service-features">
+                            <li>Individual or company setup</li>
+                            <li>Professional activities</li>
+                            <li>Flexible visa options</li>
+                            <li>Quick approval process</li>
+                        </ul>
+                        <div class="service-price">
+                            <div class="price">From AED 10,000</div>
+                            <div class="period">Professional setup</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="process" class="process">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Proven Process</h2>
+                <p>Step-by-step guidance from consultation to business launch</p>
+            </div>
+
+            <div class="process-grid">
+                <div class="process-step">
+                    <div class="process-icon">💬</div>
+                    <h4>Free Consultation</h4>
+                    <p>Discuss your business goals and receive expert recommendations on the best setup structure.</p>
+                </div>
+
+                <div class="process-step">
+                    <div class="process-icon">📋</div>
+                    <h4>Documentation</h4>
+                    <p>We handle all paperwork, applications, and legal documentation required for your business.</p>
+                </div>
+
+                <div class="process-step">
+                    <div class="process-icon">✅</div>
+                    <h4>Approvals & Licensing</h4>
+                    <p>Secure all necessary government approvals and business licenses through official channels.</p>
+                </div>
+
+                <div class="process-step">
+                    <div class="process-icon">🚀</div>
+                    <h4>Business Launch</h4>
+                    <p>Complete setup with bank account opening, visa processing, and ongoing business support.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>Client Success Stories</h2>
+                <p>Hear from entrepreneurs who trusted us with their business setup</p>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="testimonial-rating">★★★★★</div>
+                        <p>"Licorne made our mainland company setup incredibly smooth. Their expertise in UAE regulations saved us months of potential delays."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-image">
+                            <img src="https://i.pravatar.cc/100?img=1" alt="Sarah Johnson">
+                        </div>
+                        <div class="author-info">
+                            <h5>Sarah Johnson</h5>
+                            <span>CEO, TechFlow Solutions</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="testimonial-rating">★★★★★</div>
+                        <p>"Professional, efficient, and transparent. The team guided us through every step of our free zone setup with clear communication."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-image">
+                            <img src="https://i.pravatar.cc/100?img=3" alt="Ahmed Al-Rashid">
+                        </div>
+                        <div class="author-info">
+                            <h5>Ahmed Al-Rashid</h5>
+                            <span>Founder, Emirates Trading</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="testimonial-rating">★★★★★</div>
+                        <p>"Outstanding service from start to finish. They handled everything while I focused on my business operations. Highly recommended!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-image">
+                            <img src="https://i.pravatar.cc/100?img=5" alt="Maria Rodriguez">
+                        </div>
+                        <div class="author-info">
+                            <h5>Maria Rodriguez</h5>
+                            <span>Owner, Global Consulting</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="case-studies">
+        <div class="container">
+            <div class="section-title">
+                <h2>Featured Case Studies</h2>
+                <p>Real success stories from businesses we've helped establish</p>
+            </div>
+
+            <div class="case-studies-grid">
+                <div class="case-study-card">
+                    <div class="case-study-image">
+                        <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=600&h=200&fit=crop&crop=entropy&cs=tinysrgb" alt="Tech Startup">
+                    </div>
+                    <div class="case-study-content">
+                        <span class="case-study-tag">Tech Startup</span>
+                        <h4>FinTech Company Launch</h4>
+                        <p>Helped a European fintech startup establish their MENA headquarters in DIFC, navigating complex regulatory requirements.</p>
+                        <div class="case-study-results">
+                            <div class="result-metric">
+                                <span class="result-number">45</span>
+                                <span class="result-label">Days to Setup</span>
+                            </div>
+                            <div class="result-metric">
+                                <span class="result-number">$2M</span>
+                                <span class="result-label">Initial Investment</span>
+                            </div>
+                            <div class="result-metric">
+                                <span class="result-number">15</span>
+                                <span class="result-label">Employees</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="case-study-card">
+                    <div class="case-study-image">
+                        <img src="https://images.unsplash.com/photo-1551836022-deb4988cc6c0?w=600&h=200&fit=crop&crop=entropy&cs=tinysrgb" alt="Trading Business">
+                    </div>
+                    <div class="case-study-content">
+                        <span class="case-study-tag">Trading</span>
+                        <h4>International Trading Hub</h4>
+                        <p>Established a multi-million dollar trading company with operations across GCC countries and seamless logistics setup.</p>
+                        <div class="case-study-results">
+                            <div class="result-metric">
+                                <span class="result-number">30</span>
+                                <span class="result-label">Days Setup</span>
+                            </div>
+                            <div class="result-metric">
+                                <span class="result-number">$5M</span>
+                                <span class="result-label">Year 1 Revenue</span>
+                            </div>
+                            <div class="result-metric">
+                                <span class="result-number">3</span>
+                                <span class="result-label">Countries</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="case-study-card">
+                    <div class="case-study-image">
+                        <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&h=200&fit=crop&crop=entropy&cs=tinysrgb" alt="Professional Services">
+                    </div>
+                    <div class="case-study-content">
+                        <span class="case-study-tag">Consulting</span>
+                        <h4>Management Consultancy</h4>
+                        <p>Set up a boutique consulting firm specializing in digital transformation for SMEs across the Middle East region.</p>
+                        <div class="case-study-results">
+                            <div class="result-metric">
+                                <span class="result-number">20</span>
+                                <span class="result-label">Days Setup</span>
+                            </div>
+                            <div class="result-metric">
+                                <span class="result-number">25+</span>
+                                <span class="result-label">Clients</span>
+                            </div>
+                            <div class="result-metric">
+                                <span class="result-number">300%</span>
+                                <span class="result-label">Growth Y1</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Licorne Business Setup</h4>
+                    <p>Your trusted partner for business formation in the UAE. Expert guidance, seamless process, successful outcomes.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <p><a href="#services">Mainland Company Formation</a></p>
+                    <p><a href="#services">Free Zone Setup</a></p>
+                    <p><a href="#services">Offshore Formation</a></p>
+                    <p><a href="#services">Professional Licensing</a></p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p>📍 Business Bay, Dubai, UAE</p>
+                    <p>📞 +971 4 XXX XXXX</p>
+                    <p>✉️ info@licorne.ae</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <p><a href="#testimonials">Client Reviews</a></p>
+                    <p><a href="#process">Our Process</a></p>
+                    <p><a href="#contact">Contact</a></p>
+                    <p><a href="#">Resources</a></p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Licorne Business Setup. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

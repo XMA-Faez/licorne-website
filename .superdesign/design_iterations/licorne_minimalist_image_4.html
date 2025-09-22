@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Licorne Business Setup - Process Timeline Layout</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-green: #0d5f4f;
+            --light-green: #e8f5f2;
+            --dark-green: #0a4d40;
+            --text-dark: #1a1a1a;
+            --text-light: #666666;
+            --white: #ffffff;
+            --light-gray: #f8f9fa;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--white);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: var(--white);
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-green);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-green);
+        }
+
+        .cta-button {
+            background: var(--primary-green);
+            color: var(--white);
+            padding: 0.8rem 1.5rem;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: background 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background: var(--dark-green);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 120px 0 80px;
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, var(--light-green) 0%, var(--white) 100%);
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-content h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero-content .highlight {
+            color: var(--primary-green);
+        }
+
+        .hero-content p {
+            font-size: 1.3rem;
+            color: var(--text-light);
+            margin-bottom: 2.5rem;
+            line-height: 1.6;
+        }
+
+        /* Visual Process Timeline */
+        .process-timeline {
+            padding: 80px 0;
+            background: var(--white);
+            position: relative;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2.5rem;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        .section-title p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .timeline-container {
+            position: relative;
+            padding: 2rem 0;
+        }
+
+        .timeline-line {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: var(--light-green);
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 4rem;
+            position: relative;
+        }
+
+        .timeline-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .timeline-content {
+            flex: 1;
+            padding: 0 2rem;
+        }
+
+        .timeline-image {
+            flex: 1;
+            text-align: center;
+        }
+
+        .timeline-image img {
+            width: 100%;
+            max-width: 400px;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+
+        .timeline-step {
+            background: var(--primary-green);
+            color: var(--white);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+        }
+
+        .timeline-content h3 {
+            font-family: 'IBM Plex Sans', sans-serif;
+            font-size: 1.8rem;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        .timeline-content p {
+            color: var(--text-light);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .timeline-duration {
+            background: var(--light-green);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            color: var(--primary-green);
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: inline-block;
+        }
+
+        /* Before/After Section */
+        .before-after {
+            padding: 80px 0;
+            background: var(--light-gray);
+        }
+
+        .comparison-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .comparison-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            text-align: center;
+        }
+
+        .comparison-card.before {
+            border-top: 4px solid #dc3545;
+        }
+
+        .comparison-card.after {
+            border-top: 4px solid var(--primary-green);
+        }
+
+        .comparison-image {
+            width: 100%;
+            height: 200px;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+        }
+
+        .comparison-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .comparison-card h4 {
+            font-family: 'IBM Plex Sans', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .comparison-card.before h4 {
+            color: #dc3545;
+        }
+
+        .comparison-card.after h4 {
+            color: var(--primary-green);
+        }
+
+        .comparison-features {
+            list-style: none;
+            text-align: left;
+        }
+
+        .comparison-features li {
+            padding: 0.5rem 0;
+            color: var(--text-light);
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .before .comparison-features li::before {
+            content: '✗';
+            color: #dc3545;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        .after .comparison-features li::before {
+            content: '✓';
+            color: var(--primary-green);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        /* Client Success Stories */
+        .success-stories {
+            padding: 80px 0;
+            background: var(--white);
+        }
+
+        .stories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .story-card {
+            background: var(--light-green);
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .client-photo {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin: 0 auto 1rem;
+            overflow: hidden;
+            border: 4px solid var(--primary-green);
+        }
+
+        .client-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .story-card h4 {
+            font-family: 'IBM Plex Sans', sans-serif;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .story-card .company {
+            color: var(--primary-green);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .story-card p {
+            color: var(--text-light);
+            font-style: italic;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .success-metrics {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(13, 95, 79, 0.2);
+        }
+
+        .metric {
+            text-align: center;
+        }
+
+        .metric-value {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-green);
+            display: block;
+        }
+
+        .metric-label {
+            font-size: 0.8rem;
+            color: var(--text-light);
+        }
+
+        /* Interactive Milestones */
+        .milestones {
+            padding: 80px 0;
+            background: var(--light-gray);
+        }
+
+        .milestone-timeline {
+            position: relative;
+            padding: 2rem 0;
+        }
+
+        .milestone-track {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 50%;
+            height: 4px;
+            background: var(--light-green);
+            transform: translateY(-50%);
+        }
+
+        .milestone-items {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+        }
+
+        .milestone-item {
+            text-align: center;
+            flex: 1;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .milestone-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .milestone-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--primary-green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            color: var(--white);
+            font-size: 1.5rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .milestone-content h5 {
+            font-family: 'IBM Plex Sans', sans-serif;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .milestone-content p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        .milestone-image {
+            width: 100px;
+            height: 100px;
+            border-radius: 8px;
+            margin: 1rem auto;
+            overflow: hidden;
+        }
+
+        .milestone-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text-dark);
+            color: var(--white);
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            font-family: 'IBM Plex Sans', sans-serif;
+            margin-bottom: 1rem;
+            color: var(--white);
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: #cccccc;
+            text-decoration: none;
+            line-height: 1.8;
+        }
+
+        .footer-section a:hover {
+            color: var(--primary-green);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #333;
+            padding-top: 1rem;
+            text-align: center;
+            color: #999;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .timeline-line {
+                left: 30px;
+            }
+
+            .timeline-item,
+            .timeline-item:nth-child(even) {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .timeline-step {
+                left: 30px;
+            }
+
+            .timeline-content {
+                padding: 2rem 0 0 60px;
+            }
+
+            .comparison-container {
+                grid-template-columns: 1fr;
+            }
+
+            .milestone-items {
+                flex-direction: column;
+                gap: 2rem;
+            }
+
+            .milestone-track {
+                display: none;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">Licorne</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#process">Process</a></li>
+                <li><a href="#comparison">Benefits</a></li>
+                <li><a href="#stories">Success</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <a href="#contact" class="cta-button">Get Started</a>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>From <span class="highlight">Idea to Reality</span> in 30 Days</h1>
+                <p>Follow our proven step-by-step process to establish your business in Dubai. Visual timeline shows exactly what happens when.</p>
+                <a href="#process" class="cta-button">See Our Process</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="process" class="process-timeline">
+        <div class="container">
+            <div class="section-title">
+                <h2>Your Business Setup Journey</h2>
+                <p>A clear, visual timeline of how we transform your business idea into a fully operational UAE company</p>
+            </div>
+
+            <div class="timeline-container">
+                <div class="timeline-line"></div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-step">1</div>
+                    <div class="timeline-content">
+                        <h3>Initial Consultation & Strategy</h3>
+                        <p>We analyze your business model, discuss your goals, and recommend the optimal company structure. Our experts review market opportunities and regulatory requirements specific to your industry.</p>
+                        <div class="timeline-duration">Duration: 1-2 days</div>
+                    </div>
+                    <div class="timeline-image">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=250&fit=crop&crop=entropy&cs=tinysrgb" alt="Business Consultation">
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-step">2</div>
+                    <div class="timeline-content">
+                        <h3>Documentation Preparation</h3>
+                        <p>Our legal team prepares all required documents including memorandum of association, business plan, and licensing applications. We ensure everything meets UAE regulatory standards.</p>
+                        <div class="timeline-duration">Duration: 3-5 days</div>
+                    </div>
+                    <div class="timeline-image">
+                        <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&h=250&fit=crop&crop=entropy&cs=tinysrgb" alt="Document Preparation">
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-step">3</div>
+                    <div class="timeline-content">
+                        <h3>Government Approvals</h3>
+                        <p>We submit applications to relevant authorities, track approval status, and handle any additional requirements. Our government relations team ensures smooth processing.</p>
+                        <div class="timeline-duration">Duration: 7-15 days</div>
+                    </div>
+                    <div class="timeline-image">
+                        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&h=250&fit=crop&crop=entropy&cs=tinysrgb" alt="Government Approvals">
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-step">4</div>
+                    <div class="timeline-content">
+                        <h3>License Issuance & Banking</h3>
+                        <p>Receive your trade license and establish corporate banking relationships. We facilitate introductions to major UAE banks and assist with account opening procedures.</p>
+                        <div class="timeline-duration">Duration: 5-7 days</div>
+                    </div>
+                    <div class="timeline-image">
+                        <img src="https://images.unsplash.com/photo-1551836022-deb4988cc6c0?w=600&h=250&fit=crop&crop=entropy&cs=tinysrgb" alt="Banking Setup">
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-step">5</div>
+                    <div class="timeline-content">
+                        <h3>Visa Processing & Launch</h3>
+                        <p>Process investor and employee visas, complete Emirates ID registration, and provide ongoing compliance support. Your business is now fully operational.</p>
+                        <div class="timeline-duration">Duration: 7-10 days</div>
+                    </div>
+                    <div class="timeline-image">
+                        <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=600&h=250&fit=crop&crop=entropy&cs=tinysrgb" alt="Business Launch">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="comparison" class="before-after">
+        <div class="container">
+            <div class="section-title">
+                <h2>Business Setup: Before vs After</h2>
+                <p>See the transformation from initial challenges to fully operational business</p>
+            </div>
+
+            <div class="comparison-container">
+                <div class="comparison-card before">
+                    <div class="comparison-image">
+                        <img src="https://images.unsplash.com/photo-1551836022-deb4988cc6c0?w=600&h=200&fit=crop&crop=entropy&cs=tinysrgb&auto=format&ixlib=rb-1.2.1&q=80" alt="Business Challenges">
+                    </div>
+                    <h4>Before Setup</h4>
+                    <ul class="comparison-features">
+                        <li>Complex regulatory maze</li>
+                        <li>Unclear documentation requirements</li>
+                        <li>Time-consuming approval process</li>
+                        <li>Banking relationship challenges</li>
+                        <li>Visa processing delays</li>
+                        <li>Compliance uncertainties</li>
+                    </ul>
+                </div>
+
+                <div class="comparison-card after">
+                    <div class="comparison-image">
+                        <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=600&h=200&fit=crop&crop=entropy&cs=tinysrgb&auto=format&ixlib=rb-1.2.1&q=80" alt="Business Success">
+                    </div>
+                    <h4>After Setup</h4>
+                    <ul class="comparison-features">
+                        <li>Fully licensed and compliant</li>
+                        <li>All documentation complete</li>
+                        <li>Streamlined approval process</li>
+                        <li>Established banking relationships</li>
+                        <li>Visa processing handled</li>
+                        <li>Ongoing compliance support</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="stories" class="success-stories">
+        <div class="container">
+            <div class="section-title">
+                <h2>Client Success Stories</h2>
+                <p>Real entrepreneurs sharing their business setup journey with Licorne</p>
+            </div>
+
+            <div class="stories-grid">
+                <div class="story-card">
+                    <div class="client-photo">
+                        <img src="https://i.pravatar.cc/150?img=1" alt="Sarah Chen">
+                    </div>
+                    <h4>Sarah Chen</h4>
+                    <div class="company">TechFlow Solutions</div>
+                    <p>"Licorne transformed our 6-month business setup nightmare into a 30-day success story. Their expertise saved us time and money."</p>
+                    <div class="success-metrics">
+                        <div class="metric">
+                            <span class="metric-value">30</span>
+                            <span class="metric-label">Days Setup</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">$2M</span>
+                            <span class="metric-label">Year 1 Revenue</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="story-card">
+                    <div class="client-photo">
+                        <img src="https://i.pravatar.cc/150?img=3" alt="Ahmed Al-Rashid">
+                    </div>
+                    <h4>Ahmed Al-Rashid</h4>
+                    <div class="company">Emirates Trading Co.</div>
+                    <p>"Professional service from day one. They handled everything while I focused on building my client base. Excellent results!"</p>
+                    <div class="success-metrics">
+                        <div class="metric">
+                            <span class="metric-value">25</span>
+                            <span class="metric-label">Days Setup</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">15</span>
+                            <span class="metric-label">Employees</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="story-card">
+                    <div class="client-photo">
+                        <img src="https://i.pravatar.cc/150?img=5" alt="Maria Rodriguez">
+                    </div>
+                    <h4>Maria Rodriguez</h4>
+                    <div class="company">Global Consulting</div>
+                    <p>"The visual timeline kept me informed at every step. No surprises, just professional execution. Highly recommend their services."</p>
+                    <div class="success-metrics">
+                        <div class="metric">
+                            <span class="metric-value">28</span>
+                            <span class="metric-label">Days Setup</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">50+</span>
+                            <span class="metric-label">Clients</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="milestones">
+        <div class="container">
+            <div class="section-title">
+                <h2>Interactive Process Milestones</h2>
+                <p>Click on each milestone to see detailed progress at every stage</p>
+            </div>
+
+            <div class="milestone-timeline">
+                <div class="milestone-track"></div>
+                <div class="milestone-items">
+                    <div class="milestone-item">
+                        <div class="milestone-icon">💡</div>
+                        <div class="milestone-image">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=entropy&cs=tinysrgb" alt="Consultation">
+                        </div>
+                        <div class="milestone-content">
+                            <h5>Consultation</h5>
+                            <p>Expert advice on business structure</p>
+                        </div>
+                    </div>
+
+                    <div class="milestone-item">
+                        <div class="milestone-icon">📋</div>
+                        <div class="milestone-image">
+                            <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=100&h=100&fit=crop&crop=entropy&cs=tinysrgb" alt="Documentation">
+                        </div>
+                        <div class="milestone-content">
+                            <h5>Documentation</h5>
+                            <p>Complete legal paperwork preparation</p>
+                        </div>
+                    </div>
+
+                    <div class="milestone-item">
+                        <div class="milestone-icon">✅</div>
+                        <div class="milestone-image">
+                            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=100&h=100&fit=crop&crop=entropy&cs=tinysrgb" alt="Approvals">
+                        </div>
+                        <div class="milestone-content">
+                            <h5>Approvals</h5>
+                            <p>Government licensing and permits</p>
+                        </div>
+                    </div>
+
+                    <div class="milestone-item">
+                        <div class="milestone-icon">🏦</div>
+                        <div class="milestone-image">
+                            <img src="https://images.unsplash.com/photo-1551836022-deb4988cc6c0?w=100&h=100&fit=crop&crop=entropy&cs=tinysrgb" alt="Banking">
+                        </div>
+                        <div class="milestone-content">
+                            <h5>Banking</h5>
+                            <p>Corporate account setup</p>
+                        </div>
+                    </div>
+
+                    <div class="milestone-item">
+                        <div class="milestone-icon">🚀</div>
+                        <div class="milestone-image">
+                            <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=100&h=100&fit=crop&crop=entropy&cs=tinysrgb" alt="Launch">
+                        </div>
+                        <div class="milestone-content">
+                            <h5>Launch</h5>
+                            <p>Business ready to operate</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Licorne Business Setup</h4>
+                    <p>Your trusted partner for business formation in the UAE. Expert guidance, seamless process, successful outcomes.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <p><a href="#process">Business Formation</a></p>
+                    <p><a href="#process">Licensing Support</a></p>
+                    <p><a href="#process">Banking Assistance</a></p>
+                    <p><a href="#process">Visa Processing</a></p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p>📍 Business Bay, Dubai, UAE</p>
+                    <p>📞 +971 4 XXX XXXX</p>
+                    <p>✉️ info@licorne.ae</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <p><a href="#stories">Success Stories</a></p>
+                    <p><a href="#process">Our Process</a></p>
+                    <p><a href="#contact">Contact</a></p>
+                    <p><a href="#">Resources</a></p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Licorne Business Setup. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

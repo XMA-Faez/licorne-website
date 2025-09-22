@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Licorne - Your Trusted Partner for UAE Business Setup</title>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Flowbite -->
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.0.0/dist/flowbite.min.js"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    
+    <style>
+        /* Custom animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        
+        .animate-fade-in-up {
+            animation: fadeInUp 0.6s ease-out;
+        }
+        
+        .animate-pulse-slow {
+            animation: pulse 3s ease-in-out infinite;
+        }
+        
+        /* Hover effects */
+        .hover-lift {
+            transition: all 0.3s ease;
+        }
+        
+        .hover-lift:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(13, 95, 79, 0.15);
+        }
+        
+        /* Image overlay gradient */
+        .hero-overlay {
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(13, 95, 79, 0.6) 100%);
+        }
+        
+        .image-overlay {
+            background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.7) 100%);
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <span class="text-2xl font-bold text-[#0d5f4f]">LICORNE</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#services" class="text-gray-600 hover:text-[#0d5f4f] transition">Services</a>
+                    <a href="#process" class="text-gray-600 hover:text-[#0d5f4f] transition">Process</a>
+                    <a href="#about" class="text-gray-600 hover:text-[#0d5f4f] transition">About</a>
+                    <button class="btn btn-primary bg-[#0d5f4f] text-white px-6 py-2 rounded-lg hover:bg-[#0a4d3f] transition">Book Consultation</button>
+                </div>
+                <button class="md:hidden p-2">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section with Background Image -->
+    <section class="relative h-screen flex items-center justify-center overflow-hidden">
+        <!-- Background Image -->
+        <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=1920&h=1080&fit=crop" 
+             alt="Dubai skyline" 
+             class="absolute inset-0 w-full h-full object-cover">
+        
+        <!-- Overlay -->
+        <div class="absolute inset-0 hero-overlay"></div>
+        
+        <!-- Content -->
+        <div class="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="max-w-3xl mx-auto">
+                <!-- Trust Indicators -->
+                <div class="flex flex-wrap justify-center gap-6 mb-8 animate-fade-in-up">
+                    <div class="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full">
+                        <div class="flex">
+                            <i data-lucide="star" class="w-5 h-5 fill-yellow-400 text-yellow-400"></i>
+                            <i data-lucide="star" class="w-5 h-5 fill-yellow-400 text-yellow-400"></i>
+                            <i data-lucide="star" class="w-5 h-5 fill-yellow-400 text-yellow-400"></i>
+                            <i data-lucide="star" class="w-5 h-5 fill-yellow-400 text-yellow-400"></i>
+                            <i data-lucide="star" class="w-5 h-5 fill-yellow-400 text-yellow-400"></i>
+                        </div>
+                        <span class="text-sm font-medium text-white">500+ Businesses Set Up</span>
+                    </div>
+                    <div class="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full">
+                        <i data-lucide="shield-check" class="w-5 h-5 text-white"></i>
+                        <span class="text-sm font-medium text-white">Licensed by DED</span>
+                    </div>
+                    <div class="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full">
+                        <i data-lucide="award" class="w-5 h-5 text-white"></i>
+                        <span class="text-sm font-medium text-white">15 Years Experience</span>
+                    </div>
+                </div>
+
+                <!-- Main Heading -->
+                <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 animate-fade-in-up" style="animation-delay: 0.1s;">
+                    YOUR TRUSTED PARTNER FOR<br/>
+                    <span class="text-[#4ade80]">UAE BUSINESS SETUP</span>
+                </h1>
+
+                <p class="text-xl text-white/90 mb-10 animate-fade-in-up" style="animation-delay: 0.2s;">
+                    End-to-end corporate solutions with transparent pricing
+                </p>
+
+                <!-- CTA Buttons -->
+                <div class="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up" style="animation-delay: 0.3s;">
+                    <button class="bg-[#0d5f4f] text-white text-lg px-8 py-4 rounded-lg hover:bg-[#0a4d3f] transition transform hover:scale-105">
+                        <i data-lucide="calendar" class="w-5 h-5 inline mr-2"></i>
+                        Book Free Consultation
+                    </button>
+                    <button class="bg-white/10 backdrop-blur-sm text-white border-2 border-white text-lg px-8 py-4 rounded-lg hover:bg-white/20 transition">
+                        <i data-lucide="message-circle" class="w-5 h-5 inline mr-2"></i>
+                        WhatsApp Us
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <i data-lucide="chevron-down" class="w-8 h-8 text-white"></i>
+        </div>
+    </section>
+
+    <!-- Why Choose Section with Images -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Why Choose Licorne?</h2>
+            
+            <!-- Image Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+                <div class="relative h-96 rounded-2xl overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1556761175-4b46a572b786?w=800&h=600&fit=crop" 
+                         alt="Team meeting" 
+                         class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                    <div class="absolute bottom-6 left-6 text-white">
+                        <h3 class="text-2xl font-bold mb-2">Professional Excellence</h3>
+                        <p>Dedicated team of experts at your service</p>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="bg-white p-6 rounded-xl shadow-lg hover-lift">
+                        <div class="w-16 h-16 mb-4 bg-[#0d5f4f]/10 rounded-full flex items-center justify-center">
+                            <i data-lucide="zap" class="w-8 h-8 text-[#0d5f4f]"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Same Day Setup</h3>
+                        <p class="text-gray-600">Fastest processing in UAE</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-lg hover-lift">
+                        <div class="w-16 h-16 mb-4 bg-[#0d5f4f]/10 rounded-full flex items-center justify-center">
+                            <i data-lucide="trophy" class="w-8 h-8 text-[#0d5f4f]"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">100% Success</h3>
+                        <p class="text-gray-600">Guaranteed approval</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-lg hover-lift">
+                        <div class="w-16 h-16 mb-4 bg-[#0d5f4f]/10 rounded-full flex items-center justify-center">
+                            <i data-lucide="eye" class="w-8 h-8 text-[#0d5f4f]"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">No Hidden Fees</h3>
+                        <p class="text-gray-600">Transparent pricing</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-lg hover-lift">
+                        <div class="w-16 h-16 mb-4 bg-[#0d5f4f]/10 rounded-full flex items-center justify-center">
+                            <i data-lucide="users" class="w-8 h-8 text-[#0d5f4f]"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Expert Support</h3>
+                        <p class="text-gray-600">Dedicated managers</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section with Images -->
+    <section id="services" class="py-20 bg-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Our Services</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service Card with Image -->
+                <div class="group relative overflow-hidden rounded-xl shadow-lg hover-lift">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&h=400&fit=crop" 
+                             alt="Business Setup" 
+                             class="w-full h-full object-cover group-hover:scale-110 transition duration-300">
+                    </div>
+                    <div class="absolute inset-0 image-overlay opacity-0 group-hover:opacity-100 transition"></div>
+                    <div class="p-6 bg-white">
+                        <h3 class="text-xl font-bold mb-2">Business Setup</h3>
+                        <p class="text-gray-600 mb-3">Company formation in UAE with complete legal support</p>
+                        <a href="#" class="text-[#0d5f4f] font-medium hover:underline">Learn more →</a>
+                    </div>
+                </div>
+
+                <div class="group relative overflow-hidden rounded-xl shadow-lg hover-lift">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=600&h=400&fit=crop" 
+                             alt="Notary Services" 
+                             class="w-full h-full object-cover group-hover:scale-110 transition duration-300">
+                    </div>
+                    <div class="absolute inset-0 image-overlay opacity-0 group-hover:opacity-100 transition"></div>
+                    <div class="p-6 bg-white">
+                        <h3 class="text-xl font-bold mb-2">Notary Services</h3>
+                        <p class="text-gray-600 mb-3">Document attestation and legal certification</p>
+                        <a href="#" class="text-[#0d5f4f] font-medium hover:underline">Learn more →</a>
+                    </div>
+                </div>
+
+                <div class="group relative overflow-hidden rounded-xl shadow-lg hover-lift">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=600&h=400&fit=crop" 
+                             alt="Visa Services" 
+                             class="w-full h-full object-cover group-hover:scale-110 transition duration-300">
+                    </div>
+                    <div class="absolute inset-0 image-overlay opacity-0 group-hover:opacity-100 transition"></div>
+                    <div class="p-6 bg-white">
+                        <h3 class="text-xl font-bold mb-2">Visa Services</h3>
+                        <p class="text-gray-600 mb-3">Residence and work permits for you and your team</p>
+                        <a href="#" class="text-[#0d5f4f] font-medium hover:underline">Learn more →</a>
+                    </div>
+                </div>
+
+                <div class="group relative overflow-hidden rounded-xl shadow-lg hover-lift">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1568992688065-536aad8a12f6?w=600&h=400&fit=crop" 
+                             alt="Documentation" 
+                             class="w-full h-full object-cover group-hover:scale-110 transition duration-300">
+                    </div>
+                    <div class="absolute inset-0 image-overlay opacity-0 group-hover:opacity-100 transition"></div>
+                    <div class="p-6 bg-white">
+                        <h3 class="text-xl font-bold mb-2">Documentation Services</h3>
+                        <p class="text-gray-600 mb-3">Complete paperwork management and filing</p>
+                        <a href="#" class="text-[#0d5f4f] font-medium hover:underline">Learn more →</a>
+                    </div>
+                </div>
+
+                <div class="group relative overflow-hidden rounded-xl shadow-lg hover-lift">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1553028826-ccdfc006b078?w=600&h=400&fit=crop" 
+                             alt="Attestations" 
+                             class="w-full h-full object-cover group-hover:scale-110 transition duration-300">
+                    </div>
+                    <div class="absolute inset-0 image-overlay opacity-0 group-hover:opacity-100 transition"></div>
+                    <div class="p-6 bg-white">
+                        <h3 class="text-xl font-bold mb-2">Attestations</h3>
+                        <p class="text-gray-600 mb-3">Official document verification and authentication</p>
+                        <a href="#" class="text-[#0d5f4f] font-medium hover:underline">Learn more →</a>
+                    </div>
+                </div>
+
+                <div class="group relative overflow-hidden rounded-xl shadow-lg hover-lift">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&h=400&fit=crop" 
+                             alt="Conveyancing" 
+                             class="w-full h-full object-cover group-hover:scale-110 transition duration-300">
+                    </div>
+                    <div class="absolute inset-0 image-overlay opacity-0 group-hover:opacity-100 transition"></div>
+                    <div class="p-6 bg-white">
+                        <h3 class="text-xl font-bold mb-2">Conveyancing Services</h3>
+                        <p class="text-gray-600 mb-3">Property transfer and real estate documentation</p>
+                        <a href="#" class="text-[#0d5f4f] font-medium hover:underline">Learn more →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Stories Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Success Stories</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=400&h=300&fit=crop" 
+                         alt="Success Story 1" 
+                         class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Tech Startup Launch</h3>
+                        <p class="text-gray-600 mb-4">From idea to operational in just 3 days. Complete setup with visa processing for 10 team members.</p>
+                        <div class="flex items-center gap-2">
+                            <img src="https://i.pravatar.cc/40?img=1" alt="Client" class="w-10 h-10 rounded-full">
+                            <div>
+                                <p class="font-semibold">Ahmed Al-Rashid</p>
+                                <p class="text-sm text-gray-500">CEO, TechVentures</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=400&h=300&fit=crop" 
+                         alt="Success Story 2" 
+                         class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Consulting Firm Expansion</h3>
+                        <p class="text-gray-600 mb-4">Seamless international expansion with full regulatory compliance and office setup.</p>
+                        <div class="flex items-center gap-2">
+                            <img src="https://i.pravatar.cc/40?img=2" alt="Client" class="w-10 h-10 rounded-full">
+                            <div>
+                                <p class="font-semibold">Sarah Johnson</p>
+                                <p class="text-sm text-gray-500">Partner, Global Consult</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=300&fit=crop" 
+                         alt="Success Story 3" 
+                         class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">E-commerce Success</h3>
+                        <p class="text-gray-600 mb-4">Complete business setup with trade license, warehousing, and logistics support.</p>
+                        <div class="flex items-center gap-2">
+                            <img src="https://i.pravatar.cc/40?img=3" alt="Client" class="w-10 h-10 rounded-full">
+                            <div>
+                                <p class="font-semibold">Michael Chen</p>
+                                <p class="text-sm text-gray-500">Founder, ShopDirect</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section with Visual Timeline -->
+    <section id="process" class="py-20 bg-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">How It Works</h2>
+            <p class="text-xl text-gray-600 text-center mb-12">Your business setup journey in 4 simple steps</p>
+            
+            <div class="max-w-5xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                    <!-- Step 1 -->
+                    <div class="text-center">
+                        <div class="relative mb-6">
+                            <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=300&h=300&fit=crop" 
+                                 alt="Consultation" 
+                                 class="w-32 h-32 mx-auto rounded-full object-cover">
+                            <div class="absolute -bottom-2 -right-2 w-12 h-12 bg-[#0d5f4f] rounded-full flex items-center justify-center text-white font-bold">
+                                1
+                            </div>
+                        </div>
+                        <h3 class="font-bold mb-2">Consult</h3>
+                        <p class="text-sm text-gray-600">Free consultation to understand your needs</p>
+                    </div>
+                    
+                    <!-- Step 2 -->
+                    <div class="text-center">
+                        <div class="relative mb-6">
+                            <img src="https://images.unsplash.com/photo-1565688534245-05d6b5be184a?w=300&h=300&fit=crop" 
+                                 alt="Documentation" 
+                                 class="w-32 h-32 mx-auto rounded-full object-cover">
+                            <div class="absolute -bottom-2 -right-2 w-12 h-12 bg-[#0d5f4f] rounded-full flex items-center justify-center text-white font-bold">
+                                2
+                            </div>
+                        </div>
+                        <h3 class="font-bold mb-2">Submit</h3>
+                        <p class="text-sm text-gray-600">Prepare and submit all documents</p>
+                    </div>
+                    
+                    <!-- Step 3 -->
+                    <div class="text-center">
+                        <div class="relative mb-6">
+                            <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=300&h=300&fit=crop" 
+                                 alt="Processing" 
+                                 class="w-32 h-32 mx-auto rounded-full object-cover">
+                            <div class="absolute -bottom-2 -right-2 w-12 h-12 bg-[#0d5f4f] rounded-full flex items-center justify-center text-white font-bold">
+                                3
+                            </div>
+                        </div>
+                        <h3 class="font-bold mb-2">Process</h3>
+                        <p class="text-sm text-gray-600">We handle all government procedures</p>
+                    </div>
+                    
+                    <!-- Step 4 -->
+                    <div class="text-center">
+                        <div class="relative mb-6">
+                            <img src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=300&h=300&fit=crop" 
+                                 alt="Launch" 
+                                 class="w-32 h-32 mx-auto rounded-full object-cover">
+                            <div class="absolute -bottom-2 -right-2 w-12 h-12 bg-[#4ade80] rounded-full flex items-center justify-center text-white font-bold">
+                                ✓
+                            </div>
+                        </div>
+                        <h3 class="font-bold mb-2">Launch</h3>
+                        <p class="text-sm text-gray-600">Receive license and start operating</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Office Gallery -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Our Office & Team</h2>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=400&h=300&fit=crop" 
+                     alt="Office 1" 
+                     class="rounded-lg w-full h-48 object-cover hover:scale-105 transition cursor-pointer">
+                <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=400&h=300&fit=crop" 
+                     alt="Office 2" 
+                     class="rounded-lg w-full h-48 object-cover hover:scale-105 transition cursor-pointer">
+                <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=400&h=300&fit=crop" 
+                     alt="Office 3" 
+                     class="rounded-lg w-full h-48 object-cover hover:scale-105 transition cursor-pointer">
+                <img src="https://images.unsplash.com/photo-1497366412874-3415097a27e7?w=400&h=300&fit=crop" 
+                     alt="Office 4" 
+                     class="rounded-lg w-full h-48 object-cover hover:scale-105 transition cursor-pointer">
+            </div>
+        </div>
+    </section>
+
+    <!-- Partners Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl font-bold text-center mb-12">Trusted By</h2>
+            <div class="flex flex-wrap justify-center items-center gap-8 md:gap-12">
+                <img src="https://via.placeholder.com/120x60/f3f4f6/0d5f4f?text=DED" alt="DED" class="h-12">
+                <img src="https://via.placeholder.com/120x60/f3f4f6/0d5f4f?text=DMCC" alt="DMCC" class="h-12">
+                <img src="https://via.placeholder.com/120x60/f3f4f6/0d5f4f?text=ADGM" alt="ADGM" class="h-12">
+                <img src="https://via.placeholder.com/120x60/f3f4f6/0d5f4f?text=DIFC" alt="DIFC" class="h-12">
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section with Background -->
+    <section class="relative py-20">
+        <img src="https://images.unsplash.com/photo-1518005068251-37900150dfca?w=1920&h=600&fit=crop" 
+             alt="Dubai Business" 
+             class="absolute inset-0 w-full h-full object-cover">
+        <div class="absolute inset-0 bg-[#0d5f4f]/90"></div>
+        
+        <div class="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Ready to Start Your UAE Business?</h2>
+            <p class="text-xl text-white/90 mb-8">Get a free consultation worth AED 500 today</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button class="bg-white text-[#0d5f4f] hover:bg-gray-100 text-lg px-8 py-4 rounded-lg transition">
+                    <i data-lucide="calendar" class="w-5 h-5 inline mr-2"></i>
+                    Book Free Consultation
+                </button>
+                <button class="bg-white/10 backdrop-blur-sm text-white border-2 border-white hover:bg-white/20 text-lg px-8 py-4 rounded-lg transition">
+                    <i data-lucide="phone" class="w-5 h-5 inline mr-2"></i>
+                    Call Now
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 bg-gray-900 text-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4 text-[#0d5f4f]">LICORNE</h3>
+                    <p class="text-gray-400">Your trusted partner for business setup in UAE</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Services</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition">Business Setup</a></li>
+                        <li><a href="#" class="hover:text-white transition">Visa Services</a></li>
+                        <li><a href="#" class="hover:text-white transition">Notary Services</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Company</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition">About Us</a></li>
+                        <li><a href="#" class="hover:text-white transition">Contact</a></li>
+                        <li><a href="#" class="hover:text-white transition">Terms</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Contact</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="phone" class="w-4 h-4"></i>
+                            +971 XX XXX XXXX
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="mail" class="w-4 h-4"></i>
+                            info@licorne.ae
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="map-pin" class="w-4 h-4"></i>
+                            Dubai, UAE
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Licorne. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+        
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+        
+        // Add scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fade-in-up');
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.card').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>

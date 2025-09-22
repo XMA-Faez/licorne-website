@@ -1,0 +1,1 @@
+- When you are usign Instrument_Serif dont' bold it. When you are using span make sure you use font-serif class on it if it is in a title.

@@ -46,12 +46,6 @@ export function Footer() {
               Team
             </Link>
             <Link
-              href="/blog"
-              className="hover:text-secondary transition-colors"
-            >
-              Blog
-            </Link>
-            <Link
               href="/contact"
               className="hover:text-secondary transition-colors"
             >

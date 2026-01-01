@@ -15,7 +15,6 @@ const BRAND_CONFIG = {
 // Navigation items
 const MAIN_NAVIGATION = [
   { label: "Home", href: "/" },
-  { label: "Pricing", href: "#" },
 ];
 
 const SECONDARY_NAVIGATION = [

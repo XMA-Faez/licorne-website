@@ -28,28 +28,22 @@ export function Footer() {
               Home
             </Link>
             <Link
-              href="/about"
-              className="hover:text-secondary transition-colors"
-            >
-              About
-            </Link>
-            <Link
               href="/services"
               className="hover:text-secondary transition-colors"
             >
               Services
             </Link>
             <Link
-              href="/team"
+              href="/about"
               className="hover:text-secondary transition-colors"
             >
-              Team
+              About Us
             </Link>
             <Link
               href="/contact"
               className="hover:text-secondary transition-colors"
             >
-              Contact
+              Contact Us
             </Link>
           </div>
         </div>

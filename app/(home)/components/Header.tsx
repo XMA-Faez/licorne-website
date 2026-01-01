@@ -19,7 +19,7 @@ const MAIN_NAVIGATION = [
 
 const SECONDARY_NAVIGATION = [
   { label: "Contact Us", href: "#" },
-  { label: "About Us", href: "#" },
+  { label: "About Us", href: "/about" },
 ];
 
 const SERVICES_DROPDOWN = [

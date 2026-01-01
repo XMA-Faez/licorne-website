@@ -2,14 +2,26 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/Button";
 
 const navLinks = [
-  { href: "#services", label: "Services" },
   { href: "#process", label: "Process" },
   { href: "#about", label: "About" },
+];
+
+const servicesDropdown = [
+  {
+    label: "Business Legal Consultation",
+    href: "/services/business-legal-consultation",
+  },
+  { label: "Dispute Resolution", href: "/services/dispute-resolution" },
+  { label: "Licensing and Contracts", href: "/services/licensing-and-contracts" },
+  {
+    label: "Intellectual Property Protection",
+    href: "/services/intellectual-property-protection",
+  },
 ];
 
 export function Navigation() {
@@ -45,6 +57,36 @@ export function Navigation() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
+            <div className="relative group">
+              <Link
+                href="/services"
+                className={`text-lg font-medium inline-flex items-center gap-2 ${
+                  isScrolled ? "text-accent-950 hover:text-primary" : "text-accent-50 hover:text-primary"
+                } transition-colors`}
+              >
+                Services
+                <ChevronDown className="w-4 h-4" />
+              </Link>
+              <div className="absolute left-0 top-full pt-3 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-200">
+                <div className="min-w-[260px] bg-white shadow-xl border border-secondary/20 rounded-sm overflow-hidden">
+                  {servicesDropdown.map((service) => (
+                    <Link
+                      key={service.label}
+                      href={service.href}
+                      className="block px-4 py-3 text-sm text-primary hover:bg-secondary hover:text-white transition-colors"
+                    >
+                      {service.label}
+                    </Link>
+                  ))}
+                  <Link
+                    href="/services"
+                    className="block px-4 py-3 text-sm text-secondary border-t border-secondary/20 hover:bg-secondary hover:text-white transition-colors"
+                  >
+                    View all services
+                  </Link>
+                </div>
+              </div>
+            </div>
             {navLinks.map((link, index) => (
               <motion.div
                 key={link.href}
@@ -54,7 +96,11 @@ export function Navigation() {
               >
                 <Link
                   href={link.href}
-                  className={`text-lg font-medium ${isScrolled ? "text-accent-950 hover:text-primary" : "text-accent-50 hover:text-primary"} transition-colors`}
+                  className={`text-lg font-medium ${
+                    isScrolled
+                      ? "text-accent-950 hover:text-primary"
+                      : "text-accent-50 hover:text-primary"
+                  } transition-colors`}
                 >
                   {link.label}
                 </Link>
@@ -112,6 +158,28 @@ export function Navigation() {
             transition={{ duration: 0.3 }}
           >
             <div className="px-4 py-4 space-y-2">
+              <div className="border-b border-border pb-2">
+                <p className="text-xs font-semibold uppercase tracking-wider text-secondary mb-2">
+                  Services
+                </p>
+                {servicesDropdown.map((service) => (
+                  <Link
+                    key={service.label}
+                    href={service.href}
+                    className="block py-2 text-secondary hover:text-primary transition-colors"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {service.label}
+                  </Link>
+                ))}
+                <Link
+                  href="/services"
+                  className="block py-2 text-secondary hover:text-primary transition-colors"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  View all services
+                </Link>
+              </div>
               {navLinks.map((link, index) => (
                 <motion.div
                   key={link.href}

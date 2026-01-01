@@ -8,6 +8,7 @@ const services = [
     description:
       "Offering expert legal guidance in corporate regulations and investment matters, helping businesses achieve compliance, mitigate risks, protect assets, and foster sustainable growth for lasting success.",
     image: "/Licorne Logo.jpeg",
+    href: "/services/business-legal-consultation",
   },
   {
     number: "Two",
@@ -15,6 +16,7 @@ const services = [
     description:
       "Offering expert legal guidance in corporate regulations and investment matters, helping businesses achieve compliance, mitigate risks, protect assets, and foster sustainable growth for lasting success.",
     image: "/Licorne Logo.jpeg",
+    href: "/services/dispute-resolution",
   },
   {
     number: "Three",
@@ -22,6 +24,7 @@ const services = [
     description:
       "Offering expert legal guidance in corporate regulations and investment matters, helping businesses achieve compliance, mitigate risks, protect assets, and foster sustainable growth for lasting success.",
     image: "/Licorne Logo.jpeg",
+    href: "/services/licensing-and-contracts",
   },
   {
     number: "Four",
@@ -29,6 +32,7 @@ const services = [
     description:
       "Offering expert legal guidance in corporate regulations and investment matters, helping businesses achieve compliance, mitigate risks, protect assets, and foster sustainable growth for lasting success.",
     image: "/Licorne Logo.jpeg",
+    href: "/services/intellectual-property-protection",
   },
 ];
 
@@ -78,7 +82,7 @@ export function ServicesSection() {
                   </p>
                 </div>
                 <Link
-                  href="#"
+                  href={service.href}
                   className="inline-flex items-center text-secondary ml-auto hover:text-primary transition-colors font-medium group"
                 >
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />

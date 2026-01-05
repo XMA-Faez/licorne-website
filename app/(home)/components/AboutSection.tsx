@@ -2,29 +2,28 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowRight } from 'lucide-react';
 
-// Configuration constants
 const ABOUT_CONFIG = {
-  tag: "About us",
-  title: "Your Trusted Partner for Reliable ",
-  titleSpan: "Legal Solutions",
-  description: "As a law firm with a solid reputation, we are committed to providing reliable and solution-oriented legal services. Focused on our clients' needs, we ensure that every solution is crafted to safeguard both business and personal interests.",
+  tag: "About Licorne",
+  title: "We Make Dubai ",
+  titleSpan: "Accessible",
+  description: "Setting up a business in Dubai shouldn't feel like navigating a maze. Licorne streamlines every step — from choosing the right structure to securing your visas and opening your bank account. We've guided hundreds of entrepreneurs through the process, turning what seems complex into something remarkably simple.",
   button: {
-    text: "Learn More",
+    text: "Get Started",
     href: "/contact"
   },
   image: {
     src: "https://cdn.prod.website-files.com/67aec585824eadef2eebc54f/67aeed40002c626c25144224_image-1.png",
-    alt: "Legal office",
+    alt: "Dubai business district",
     width: 940,
     height: 626
   }
 };
 
 const STATS = [
-  { value: "15+", label: "Year Experience" },
-  { value: "86k", label: "Client Worldwide" },
-  { value: "28", label: "Awards & Honor" },
-  { value: "98%", label: "Happy Client" }
+  { value: "500+", label: "Companies Formed" },
+  { value: "40+", label: "Free Zones Covered" },
+  { value: "98%", label: "First-Time Approvals" },
+  { value: "72h", label: "Average Setup Time" }
 ];
 
 export function AboutSection() {

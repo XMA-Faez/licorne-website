@@ -1,56 +1,131 @@
-import Link from 'next/link';
-import Image from 'next/image';
+import Link from "next/link";
+import Image from "next/image";
 import LicorneLogo from "@/public/Licorne Logo-bg-removed.jpeg";
+
+const FOOTER_SERVICES = {
+  "Company Formation": [
+    { label: "Mainland Company Setup", href: "/services/mainland-company-setup" },
+    { label: "Free Zone Company Setup", href: "/services/free-zone-company-setup" },
+    { label: "Trade License Services", href: "/services/trade-license" },
+  ],
+  "Visas & Immigration": [
+    { label: "Visa & Immigration", href: "/services/visa-immigration" },
+    { label: "Golden Visa UAE", href: "/services/golden-visa" },
+  ],
+  "Business Services": [
+    { label: "PRO & Government Services", href: "/services/pro-government-services" },
+    { label: "Bank Account Opening", href: "/services/bank-account-opening" },
+    { label: "Office Solutions", href: "/services/office-solutions" },
+    { label: "Accounting & VAT", href: "/services/accounting-vat" },
+    { label: "Company Liquidation", href: "/services/company-liquidation" },
+  ],
+};
+
+const FOOTER_RESOURCES = [
+  { label: "Free Zone Comparison", href: "/free-zones" },
+  { label: "Cost Guide", href: "/cost-guide" },
+  { label: "Business Activities", href: "/business-activities" },
+  { label: "How It Works", href: "/how-it-works" },
+];
+
+const FOOTER_COMPANY = [
+  { label: "About Us", href: "/about" },
+  { label: "Contact Us", href: "/contact" },
+  { label: "FAQ", href: "/faq" },
+  { label: "All Services", href: "/services" },
+];
+
+function FooterLinkGroup({
+  title,
+  links,
+}: {
+  title: string;
+  links: { label: string; href: string }[];
+}) {
+  return (
+    <div>
+      <h3 className="text-white font-semibold mb-4">{title}</h3>
+      <ul className="space-y-2">
+        {links.map((link) => (
+          <li key={link.href}>
+            <Link
+              href={link.href}
+              className="text-white/70 hover:text-secondary transition-colors text-sm"
+            >
+              {link.label}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
 
 export function Footer() {
   return (
-    <footer className="py-16 bg-primary">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="flex flex-col lg:flex-row justify-between items-center">
-          <div className="flex items-center space-x-2 mb-6 lg:mb-0">
-            <div className="h-12 relative">
-              <Image
-                src={LicorneLogo}
-                alt="Licorne Logo"
-                height={48}
-                className="h-full w-auto object-contain"
-                style={{
-                  filter: "brightness(0) invert(1)",
-                }}
-              />
-            </div>
-          </div>
-          <div className="flex flex-wrap justify-center gap-x-8 gap-y-2 text-text-muted">
-            <Link
-              href="/"
-              className="hover:text-secondary transition-colors"
-            >
-              Home
+    <footer className="bg-primary">
+      <div className="max-w-7xl mx-auto px-6 py-16">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 lg:gap-6">
+          <div className="col-span-2 md:col-span-3 lg:col-span-2">
+            <Link href="/" className="inline-block mb-6">
+              <div className="h-12 relative">
+                <Image
+                  src={LicorneLogo}
+                  alt="Licorne Logo"
+                  height={48}
+                  className="h-full w-auto object-contain"
+                  style={{
+                    filter: "brightness(0) invert(1)",
+                  }}
+                />
+              </div>
             </Link>
-            <Link
-              href="/services"
-              className="hover:text-secondary transition-colors"
-            >
-              Services
-            </Link>
-            <Link
-              href="/about"
-              className="hover:text-secondary transition-colors"
-            >
-              About Us
-            </Link>
+            <p className="text-white/70 text-sm leading-relaxed max-w-sm mb-6">
+              Dubai&apos;s trusted business setup partner. We help entrepreneurs
+              and companies establish and operate in the UAE with clarity,
+              efficiency, and confidence.
+            </p>
             <Link
               href="/contact"
-              className="hover:text-secondary transition-colors"
+              className="inline-block px-5 py-2.5 bg-secondary text-white hover:bg-white hover:text-primary transition-colors text-sm font-medium rounded-sm"
             >
-              Contact Us
+              Free Consultation
             </Link>
           </div>
+
+          <FooterLinkGroup title="Company Formation" links={FOOTER_SERVICES["Company Formation"]} />
+
+          <div>
+            <FooterLinkGroup
+              title="Visas"
+              links={FOOTER_SERVICES["Visas & Immigration"]}
+            />
+            <div className="mt-8">
+              <FooterLinkGroup title="Resources" links={FOOTER_RESOURCES} />
+            </div>
+          </div>
+
+          <FooterLinkGroup title="Business Services" links={FOOTER_SERVICES["Business Services"]} />
+
+          <FooterLinkGroup title="Company" links={FOOTER_COMPANY} />
         </div>
-        <div className="mt-12 pt-8 border-t border-base-800 text-center text-text-muted">
-          <p>
-            &copy; {new Date().getFullYear()} Licorne. All rights reserved.
-          </p>
+      </div>
+
+      <div className="border-t border-white/10">
+        <div className="max-w-7xl mx-auto px-6 py-6">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <p className="text-white/50 text-sm">
+              &copy; {new Date().getFullYear()} Licorne. All rights reserved.
+            </p>
+            <div className="flex gap-6 text-white/50 text-sm">
+              <Link href="/contact" className="hover:text-secondary transition-colors">
+                Privacy Policy
+              </Link>
+              <Link href="/contact" className="hover:text-secondary transition-colors">
+                Terms of Service
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
     </footer>

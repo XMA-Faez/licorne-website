@@ -19,24 +19,24 @@ export function CTASection() {
 
           <div className="relative z-10">
             <span className="text-secondary font-semibold text-sm uppercase tracking-wider">
-              Get started today
+              Ready to start?
             </span>
             <h2 className="text-4xl lg:text-6xl font-bold text-white mt-3 mb-10 max-w-3xl mx-auto leading-tight">
-              Let Licorne Be Your Trusted Legal Partner
+              Your Dubai Business Starts Here
             </h2>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/contact"
                 className="group px-8 py-4 bg-white text-primary hover:bg-secondary hover:text-white transition-all duration-300 inline-flex items-center justify-center font-medium rounded-sm"
               >
-                Book Consultant
+                Book a Consultation
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
               <Link
                 href="#services"
                 className="px-8 py-4 bg-transparent text-white border-2 border-white hover:bg-white hover:text-primary transition-all duration-300 inline-flex items-center justify-center font-medium rounded-sm"
               >
-                Our Services
+                View Services
               </Link>
             </div>
           </div>

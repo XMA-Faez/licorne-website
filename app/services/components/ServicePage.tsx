@@ -83,9 +83,9 @@ export function ServicePage({
           />
           <div className="absolute inset-0 bg-gradient-to-tr from-accent-950/70 via-primary/60 to-black/40"></div>
         </div>
-        <div className="max-w-7xl mx-auto px-6 pt-32 pb-20 relative z-10">
+        <div className="max-w-7xl mx-auto px-6 pt-32 pb-20 relative z-10 text-center">
           <div className="max-w-3xl">
-            <span className="text-secondary font-semibold text-sm uppercase tracking-wider">
+            <span className="text-white font-semibold text-sm uppercase tracking-wider">
               Service
             </span>
             <h1 className="text-4xl lg:text-6xl font-bold text-accent-50 mt-4 leading-tight">
@@ -94,7 +94,7 @@ export function ServicePage({
             <p className="text-lg lg:text-xl text-accent-50/80 mt-6 leading-relaxed">
               {hero.description}
             </p>
-            <div className="mt-10 flex flex-col sm:flex-row gap-4">
+            <div className="mt-10 flex flex-col sm:flex-row justify-center gap-4">
               <Link
                 href={cta.primaryHref}
                 className="group px-8 py-4 bg-secondary text-accent-50 hover:bg-primary transition-all duration-300 inline-flex items-center justify-center font-medium rounded-sm"

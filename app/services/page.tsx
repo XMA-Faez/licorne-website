@@ -5,34 +5,70 @@ import { ServiceCta } from "@/app/services/components/ServiceCta";
 
 const services = [
   {
-    title: "Business Legal Consultation",
+    title: "Mainland Company Setup",
     description:
-      "Strategic guidance on corporate regulations, governance, and investment matters.",
-    href: "/services/business-legal-consultation",
+      "Establish your LLC in Dubai mainland with full UAE market access. We handle sponsor arrangements, licensing, and government approvals.",
+    href: "/services/mainland-company-setup",
   },
   {
-    title: "Dispute Resolution",
+    title: "Free Zone Company Setup",
     description:
-      "Practical legal strategies for negotiations, settlements, and dispute management.",
-    href: "/services/dispute-resolution",
+      "100% foreign ownership, tax advantages, and simplified regulations. We help you choose from 40+ free zones and manage the entire process.",
+    href: "/services/free-zone-company-setup",
   },
   {
-    title: "Licensing and Contracts",
+    title: "Visa & Immigration",
     description:
-      "Clear, enforceable agreements and licensing support tailored to your business.",
-    href: "/services/licensing-and-contracts",
+      "Investor visas, employment visas, family sponsorship, and Golden Visas. Complete immigration support from entry permit to Emirates ID.",
+    href: "/services/visa-immigration",
   },
   {
-    title: "Intellectual Property Protection",
+    title: "PRO & Government Services",
     description:
-      "Safeguarding your brand, innovations, and creative assets with the right filings.",
-    href: "/services/intellectual-property-protection",
+      "License renewals, document attestation, visa processing, and government liaison. We handle the paperwork that keeps your business compliant.",
+    href: "/services/pro-government-services",
+  },
+  {
+    title: "Bank Account Opening",
+    description:
+      "Corporate bank account setup with expert guidance. We prepare documentation, introduce you to banks, and support until activation.",
+    href: "/services/bank-account-opening",
+  },
+  {
+    title: "Golden Visa UAE",
+    description:
+      "Secure your 10-year residency in the UAE. We handle the entire Golden Visa application process for investors, entrepreneurs, and specialists.",
+    href: "/services/golden-visa",
+  },
+  {
+    title: "Trade License Services",
+    description:
+      "New licenses, renewals, amendments, and activity changes. Keep your business license current and compliant without interruption.",
+    href: "/services/trade-license",
+  },
+  {
+    title: "Office Solutions",
+    description:
+      "Virtual offices, flexi desks, and serviced offices. Get the business address and workspace you need across prime Dubai locations.",
+    href: "/services/office-solutions",
+  },
+  {
+    title: "Accounting & VAT",
+    description:
+      "VAT registration, bookkeeping, financial reporting, and tax compliance. Keep your numbers accurate and your business compliant.",
+    href: "/services/accounting-vat",
+  },
+  {
+    title: "Company Liquidation",
+    description:
+      "Close your UAE business properly and completely. License cancellation, visa terminations, and clean exit documentation.",
+    href: "/services/company-liquidation",
   },
 ];
 
 export const metadata = {
-  title: "Services | Licorne",
-  description: "Explore Licorne legal services and specialized practice areas.",
+  title: "Business Setup Services Dubai | Licorne",
+  description: "Complete business setup services in Dubai. Mainland and free zone company formation, visa services, PRO support, and corporate banking assistance.",
 };
 
 export default function ServicesPage() {
@@ -54,11 +90,10 @@ export default function ServicesPage() {
               Services
             </span>
             <h1 className="text-4xl lg:text-6xl font-bold text-accent-50 mt-4 leading-tight">
-              Dedicated legal expertise across key practice areas
+              Everything you need to launch and operate in Dubai
             </h1>
             <p className="text-lg lg:text-xl text-accent-50/80 mt-6 leading-relaxed">
-              Explore our focused services and choose the guidance that aligns
-              with your business goals.
+              From company formation to visas, banking, and ongoing compliance — we handle the complexity so you can focus on building your business.
             </p>
           </div>
         </div>
@@ -68,10 +103,10 @@ export default function ServicesPage() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <span className="text-secondary font-semibold text-sm uppercase tracking-wider">
-              Practice Areas
+              Our Services
             </span>
             <h2 className="text-4xl lg:text-5xl font-bold text-primary mt-3 max-w-3xl mx-auto leading-tight">
-              Choose a service to view detailed guidance
+              Choose a service to learn more
             </h2>
           </div>
           <div className="grid md:grid-cols-2 gap-6">

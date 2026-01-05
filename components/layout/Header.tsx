@@ -129,7 +129,7 @@ function ListItem({
           <div className="text-sm font-medium text-primary leading-none mb-1">
             {title}
           </div>
-          <p className="text-xs text-text-secondary leading-snug line-clamp-2">
+          <p className="text-xs text-base-500 leading-snug line-clamp-2">
             {children}
           </p>
         </Link>

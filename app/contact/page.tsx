@@ -1,23 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Inter, Instrument_Serif } from "next/font/google";
 import "@/app/(home)/noble-law.css";
 import HeroImage from "@/public/hero-background.png";
-import { Header } from "@/app/(home)/components/Header";
-import { Footer } from "@/app/(home)/components/Footer";
-
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-  display: "swap",
-});
-
-const instrumentSerif = Instrument_Serif({
-  weight: "400",
-  subsets: ["latin"],
-  variable: "--font-instrument-serif",
-  display: "swap",
-});
 
 export const metadata = {
   title: "Contact Us | Licorne",
@@ -26,10 +10,7 @@ export const metadata = {
 
 export default function ContactPage() {
   return (
-    <div
-      className={`${inter.variable} ${instrumentSerif.variable} min-h-screen bg-background`}
-    >
-      <Header />
+    <>
       <section className="relative min-h-[50vh] flex items-center overflow-hidden">
         <div className="absolute inset-0">
           <Image
@@ -178,8 +159,6 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
-
-      <Footer />
-    </div>
+    </>
   );
 }

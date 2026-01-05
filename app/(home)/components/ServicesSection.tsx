@@ -4,35 +4,43 @@ import { ArrowRight } from "lucide-react";
 const services = [
   {
     number: "One",
-    title: "Business Legal Consultation",
+    title: "Mainland Company Setup",
     description:
-      "Offering expert legal guidance in corporate regulations and investment matters, helping businesses achieve compliance, mitigate risks, protect assets, and foster sustainable growth for lasting success.",
+      "Establish your LLC in Dubai mainland with full access to the local market. We handle sponsor arrangements, trade license selection, and all government approvals — you just sign.",
     image: "/Licorne Logo.jpeg",
-    href: "/services/business-legal-consultation",
+    href: "/services/mainland-company-setup",
   },
   {
     number: "Two",
-    title: "Dispute Resolution",
+    title: "Free Zone Company Setup",
     description:
-      "Offering expert legal guidance in corporate regulations and investment matters, helping businesses achieve compliance, mitigate risks, protect assets, and foster sustainable growth for lasting success.",
+      "100% foreign ownership, tax advantages, and simplified regulations. We help you choose the right free zone for your industry and manage the entire registration process.",
     image: "/Licorne Logo.jpeg",
-    href: "/services/dispute-resolution",
+    href: "/services/free-zone-company-setup",
   },
   {
     number: "Three",
-    title: "Licensing and Contracts",
+    title: "Visa & Immigration",
     description:
-      "Offering expert legal guidance in corporate regulations and investment matters, helping businesses achieve compliance, mitigate risks, protect assets, and foster sustainable growth for lasting success.",
+      "Residence visas, investor visas, and work permits for you and your team. We navigate the immigration process so your people can start working without delays.",
     image: "/Licorne Logo.jpeg",
-    href: "/services/licensing-and-contracts",
+    href: "/services/visa-immigration",
   },
   {
     number: "Four",
-    title: "Intellectual Property Protection",
+    title: "PRO & Government Services",
     description:
-      "Offering expert legal guidance in corporate regulations and investment matters, helping businesses achieve compliance, mitigate risks, protect assets, and foster sustainable growth for lasting success.",
+      "Document attestation, Emirates ID, medical tests, license renewals — the ongoing paperwork that keeps your business compliant. We handle it all.",
     image: "/Licorne Logo.jpeg",
-    href: "/services/intellectual-property-protection",
+    href: "/services/pro-government-services",
+  },
+  {
+    number: "Five",
+    title: "Bank Account Opening",
+    description:
+      "The trickiest part of Dubai setup — made manageable. We prepare documentation, connect you with the right banks, and guide you through compliance for successful account opening.",
+    image: "/Licorne Logo.jpeg",
+    href: "/services/bank-account-opening",
   },
 ];
 
@@ -52,10 +60,10 @@ export function ServicesSection() {
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
           <span className="text-secondary font-semibold text-sm uppercase tracking-wider">
-            Our Service
+            Our Services
           </span>
           <h2 className="text-4xl lg:text-5xl font-bold text-primary mt-3 max-w-3xl mx-auto leading-tight">
-            Expertly Tailored Legal Solutions for Your Every Need
+            Everything You Need to Launch in Dubai
           </h2>
         </div>
 

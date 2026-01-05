@@ -5,29 +5,29 @@ import { Plus, Minus } from "lucide-react";
 
 const faqs = [
   {
-    question: "What services does Licorne offer?",
+    question: "What's the difference between mainland and free zone?",
     answer:
-      "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
+      "Mainland companies can trade directly with the UAE market and require a local sponsor (we arrange this). Free zone companies offer 100% foreign ownership but are limited to operating within the zone or internationally. We'll help you choose based on your business model.",
   },
   {
-    question: "How can I schedule a consultation with Licorne?",
+    question: "How long does company setup take?",
     answer:
-      "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
+      "Most free zone setups take 3-5 business days. Mainland setups typically take 1-2 weeks depending on the activity type and approvals required. We'll give you a realistic timeline during your consultation.",
   },
   {
-    question: "What industries does Licorne specialize in?",
+    question: "Do I need to be in Dubai to start the process?",
     answer:
-      "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
+      "No. We can begin remotely — most documentation can be handled digitally. You'll need to visit Dubai for your Emirates ID and to finalize certain steps, but we'll coordinate the timing to minimize your trips.",
   },
   {
-    question: "Why should I choose Licorne?",
+    question: "What are the costs involved?",
     answer:
-      "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
+      "Costs vary based on company type, free zone selection, visa requirements, and office space needs. We provide a detailed quote after understanding your requirements — no hidden fees, everything itemized.",
   },
   {
-    question: "How much do your legal services cost?",
+    question: "Can you help with bank account opening?",
     answer:
-      "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
+      "Yes. Bank account opening is one of the trickiest parts of Dubai setup. We prepare your documentation, recommend banks suited to your business type, and accompany you to appointments when needed.",
   },
 ];
 

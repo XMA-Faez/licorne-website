@@ -13,7 +13,7 @@ export function CTASection() {
         fill
         className="object-cover"
       />
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/90 via-primary/80 to-accent-600/60" />
+      <div className="absolute inset-0 bg-gradient-to-br from-secondary/90 via-secondary/80 to-accent-600/60" />
       <div className="absolute inset-0 bg-dots-pattern opacity-20" />
 
       <motion.div
@@ -48,7 +48,7 @@ export function CTASection() {
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
           <motion.button
-            className="bg-white text-primary hover:bg-white/90 text-lg px-10 py-5 rounded-xl transition-all duration-200 font-bold shadow-lg hover:shadow-xl transform hover:scale-105"
+            className="bg-white text-secondary hover:bg-white/90 text-lg px-10 py-5 rounded-xl transition-all duration-200 font-bold shadow-lg hover:shadow-xl transform hover:scale-105"
             whileTap={{ scale: 0.95 }}
             whileHover={{ y: -2 }}
           >

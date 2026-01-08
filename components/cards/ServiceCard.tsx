@@ -40,15 +40,15 @@ export function ServiceCard({
           className="object-cover transition-transform duration-500 group-hover:scale-110"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+        <div className="absolute inset-0 bg-gradient-to-br from-secondary/20 to-accent-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
       </div>
 
       <div className="p-6">
         <h3 className="text-xl font-bold mb-2 text-text">{title}</h3>
-        <p className="text-secondary mb-3">{description}</p>
+        <p className="text-primary mb-3">{description}</p>
         <Link
           href={href}
-          className="text-primary-text font-medium hover:underline inline-flex items-center gap-1 transition-all duration-200 hover:gap-2"
+          className="text-secondary-text font-medium hover:underline inline-flex items-center gap-1 transition-all duration-200 hover:gap-2"
         >
           Learn more
           <span className="transition-transform">→</span>

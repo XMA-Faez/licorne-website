@@ -14,7 +14,7 @@ const backgroundClasses = {
   default: "bg-background",
   subtle: "bg-gradient-diagonal",
   surface: "bg-surface",
-  premium: "bg-primary",
+  premium: "bg-secondary",
   luxury: "bg-warm-gradient",
   depth: "bg-gradient-radial",
   pattern: "bg-background bg-dots-pattern",

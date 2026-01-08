@@ -50,7 +50,7 @@ function FooterLinkGroup({
           <li key={link.href}>
             <Link
               href={link.href}
-              className="text-white/70 hover:text-secondary transition-colors text-sm"
+              className="text-white/70 hover:text-primary transition-colors text-sm"
             >
               {link.label}
             </Link>
@@ -63,7 +63,7 @@ function FooterLinkGroup({
 
 export function Footer() {
   return (
-    <footer className="bg-primary">
+    <footer className="bg-secondary">
       <div className="max-w-7xl mx-auto px-6 py-16">
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 lg:gap-6">
           <div className="col-span-2 md:col-span-3 lg:col-span-2">
@@ -87,7 +87,7 @@ export function Footer() {
             </p>
             <Link
               href="/contact"
-              className="inline-block px-5 py-2.5 bg-secondary text-white hover:bg-white hover:text-primary transition-colors text-sm font-medium rounded-sm"
+              className="inline-block px-5 py-2.5 bg-primary text-white hover:bg-white hover:text-secondary transition-colors text-sm font-medium rounded-sm"
             >
               Free Consultation
             </Link>
@@ -118,10 +118,10 @@ export function Footer() {
               &copy; {new Date().getFullYear()} Licorne. All rights reserved.
             </p>
             <div className="flex gap-6 text-white/50 text-sm">
-              <Link href="/contact" className="hover:text-secondary transition-colors">
+              <Link href="/contact" className="hover:text-primary transition-colors">
                 Privacy Policy
               </Link>
-              <Link href="/contact" className="hover:text-secondary transition-colors">
+              <Link href="/contact" className="hover:text-primary transition-colors">
                 Terms of Service
               </Link>
             </div>

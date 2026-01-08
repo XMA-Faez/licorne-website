@@ -34,12 +34,12 @@ export function PartnersSection() {
 
       {/* Government Partners */}
       <div className="mb-16">
-        <h3 className="text-xl font-semibold text-center mb-8 text-secondary">Licensed & Approved By</h3>
+        <h3 className="text-xl font-semibold text-center mb-8 text-primary">Licensed & Approved By</h3>
         <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
           {partners.map((partner, index) => (
             <motion.div
               key={index}
-              className="h-16 w-40 card-premium rounded-lg flex items-center justify-center text-primary font-bold text-lg shadow-premium"
+              className="h-16 w-40 card-premium rounded-lg flex items-center justify-center text-secondary font-bold text-lg shadow-premium"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -65,11 +65,11 @@ export function PartnersSection() {
             whileHover={{ y: -5 }}
           >
             <div className="text-4xl mb-4">{cert.icon}</div>
-            <div className="inline-block px-3 py-1 bg-primary text-white text-sm font-semibold rounded-full mb-3">
+            <div className="inline-block px-3 py-1 bg-secondary text-white text-sm font-semibold rounded-full mb-3">
               {cert.badge}
             </div>
             <h4 className="text-xl font-bold mb-2">{cert.title}</h4>
-            <p className="text-secondary">{cert.description}</p>
+            <p className="text-primary">{cert.description}</p>
           </motion.div>
         ))}
       </div>

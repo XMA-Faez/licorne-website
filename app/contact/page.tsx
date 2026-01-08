@@ -19,11 +19,11 @@ export default function ContactPage() {
             className="absolute inset-0 w-full h-full object-cover object-center"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-tr from-accent-950/70 via-primary/60 to-black/40"></div>
+          <div className="absolute inset-0 bg-gradient-to-tr from-accent-950/70 via-secondary/60 to-black/40"></div>
         </div>
         <div className="max-w-7xl mx-auto px-6 pt-32 pb-20 relative z-10">
           <div className="max-w-3xl">
-            <span className="text-secondary font-semibold text-sm uppercase tracking-wider">
+            <span className="text-primary font-semibold text-sm uppercase tracking-wider">
               Contact
             </span>
             <h1 className="text-4xl lg:text-6xl font-bold text-accent-50 mt-4 leading-tight">
@@ -41,10 +41,10 @@ export default function ContactPage() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-16 items-start">
             <div>
-              <span className="font-semibold text-sm uppercase tracking-wider border-b border-secondary w-fit p-2 mb-6 block text-secondary">
+              <span className="font-semibold text-sm uppercase tracking-wider border-b border-primary w-fit p-2 mb-6 block text-primary">
                 Get in touch
               </span>
-              <h2 className="text-4xl lg:text-5xl mt-3 mb-6 leading-tight text-primary">
+              <h2 className="text-4xl lg:text-5xl mt-3 mb-6 leading-tight text-secondary">
                 Ready to discuss your legal needs
               </h2>
               <p className="text-lg leading-relaxed text-text-secondary mb-10">
@@ -53,40 +53,40 @@ export default function ContactPage() {
               </p>
               <div className="space-y-6 text-text-secondary">
                 <div>
-                  <p className="text-sm uppercase tracking-wider text-secondary mb-2">
+                  <p className="text-sm uppercase tracking-wider text-primary mb-2">
                     Email
                   </p>
                   <Link
                     href="mailto:hello@licorne.ae"
-                    className="text-lg text-primary hover:text-secondary transition-colors"
+                    className="text-lg text-secondary hover:text-primary transition-colors"
                   >
                     hello@licorne.ae
                   </Link>
                 </div>
                 <div>
-                  <p className="text-sm uppercase tracking-wider text-secondary mb-2">
+                  <p className="text-sm uppercase tracking-wider text-primary mb-2">
                     Phone
                   </p>
                   <Link
                     href="tel:+971000000000"
-                    className="text-lg text-primary hover:text-secondary transition-colors"
+                    className="text-lg text-secondary hover:text-primary transition-colors"
                   >
                     +971 00 000 0000
                   </Link>
                 </div>
                 <div>
-                  <p className="text-sm uppercase tracking-wider text-secondary mb-2">
+                  <p className="text-sm uppercase tracking-wider text-primary mb-2">
                     Office
                   </p>
-                  <p className="text-lg text-primary">
+                  <p className="text-lg text-secondary">
                     Dubai, United Arab Emirates
                   </p>
                 </div>
               </div>
             </div>
 
-            <div className="bg-white shadow-2xl border border-secondary/10 rounded-sm p-8 lg:p-10">
-              <h3 className="text-2xl text-primary mb-6">
+            <div className="bg-white shadow-2xl border border-primary/10 rounded-sm p-8 lg:p-10">
+              <h3 className="text-2xl text-secondary mb-6">
                 Send us a message
               </h3>
               <form className="space-y-6">
@@ -98,7 +98,7 @@ export default function ContactPage() {
                     type="text"
                     name="name"
                     placeholder="Your full name"
-                    className="w-full border border-secondary/20 rounded-sm px-4 py-3 focus:outline-none focus:ring-2 focus:ring-secondary"
+                    className="w-full border border-primary/20 rounded-sm px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary"
                   />
                 </div>
                 <div>
@@ -109,7 +109,7 @@ export default function ContactPage() {
                     type="email"
                     name="email"
                     placeholder="you@company.com"
-                    className="w-full border border-secondary/20 rounded-sm px-4 py-3 focus:outline-none focus:ring-2 focus:ring-secondary"
+                    className="w-full border border-primary/20 rounded-sm px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary"
                   />
                 </div>
                 <div>
@@ -120,7 +120,7 @@ export default function ContactPage() {
                     type="tel"
                     name="phone"
                     placeholder="+971"
-                    className="w-full border border-secondary/20 rounded-sm px-4 py-3 focus:outline-none focus:ring-2 focus:ring-secondary"
+                    className="w-full border border-primary/20 rounded-sm px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary"
                   />
                 </div>
                 <div>
@@ -129,7 +129,7 @@ export default function ContactPage() {
                   </label>
                   <select
                     name="service"
-                    className="w-full border border-secondary/20 rounded-sm px-4 py-3 focus:outline-none focus:ring-2 focus:ring-secondary bg-white"
+                    className="w-full border border-primary/20 rounded-sm px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary bg-white"
                   >
                     <option>Business Legal Consultation</option>
                     <option>Dispute Resolution</option>
@@ -145,12 +145,12 @@ export default function ContactPage() {
                     name="message"
                     rows={5}
                     placeholder="Tell us about your request"
-                    className="w-full border border-secondary/20 rounded-sm px-4 py-3 focus:outline-none focus:ring-2 focus:ring-secondary"
+                    className="w-full border border-primary/20 rounded-sm px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary"
                   ></textarea>
                 </div>
                 <button
                   type="submit"
-                  className="w-full px-6 py-4 bg-secondary text-white font-medium rounded-sm hover:bg-primary transition-colors"
+                  className="w-full px-6 py-4 bg-primary text-white font-medium rounded-sm hover:bg-secondary transition-colors"
                 >
                   Send message
                 </button>

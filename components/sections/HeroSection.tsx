@@ -39,7 +39,7 @@ export function HeroSection() {
       </motion.div>
 
       {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-black/60 to-primary/40" />
+      <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-black/60 to-secondary/40" />
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -110,7 +110,7 @@ export function HeroSection() {
             transition={{ duration: 0.8, delay: 0.8 }}
           >
             <motion.button
-              className="bg-primary text-inverse text-lg px-8 py-4 rounded-lg hover:bg-primary-hover transition-all duration-200 transform hover:scale-105"
+              className="bg-secondary text-inverse text-lg px-8 py-4 rounded-lg hover:bg-secondary-hover transition-all duration-200 transform hover:scale-105"
               whileTap={{ scale: 0.98 }}
             >
               <Calendar className="w-5 h-5 inline mr-2" />

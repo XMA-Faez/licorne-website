@@ -68,7 +68,7 @@ export function CardDescription({
   ...props 
 }: HTMLAttributes<HTMLParagraphElement>) {
   return (
-    <p className={`text-sm text-secondary mt-1 ${className}`} {...props}>
+    <p className={`text-sm text-primary mt-1 ${className}`} {...props}>
       {children}
     </p>
   );

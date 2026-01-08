@@ -44,7 +44,7 @@ export function ProcessStep({
             fill
             className="object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300" />
+          <div className="absolute inset-0 bg-gradient-to-t from-secondary/20 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300" />
         </motion.div>
         <motion.div
           className={`absolute -bottom-2 -right-2 w-12 h-12 rounded-full flex items-center justify-center text-white font-bold shadow-luxury ${
@@ -65,7 +65,7 @@ export function ProcessStep({
         </motion.div>
       </div>
       <h3 className="font-bold mb-2 text-text">{title}</h3>
-      <p className="text-sm text-secondary">{description}</p>
+      <p className="text-sm text-primary">{description}</p>
     </motion.div>
   );
 }

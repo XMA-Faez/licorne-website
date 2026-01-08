@@ -34,14 +34,14 @@ export function FeatureCard({
       className="card-elevated rounded-xl p-6 hover:card-premium transition-all duration-300"
     >
       <motion.div
-        className="w-16 h-16 mb-4 bg-primary-subtle rounded-full flex items-center justify-center"
+        className="w-16 h-16 mb-4 bg-secondary-subtle rounded-full flex items-center justify-center"
         whileHover={{ rotate: 360, scale: 1.1 }}
         transition={{ duration: 0.5, type: "spring", stiffness: 200 }}
       >
-        <Icon className="w-8 h-8 text-primary" />
+        <Icon className="w-8 h-8 text-secondary" />
       </motion.div>
       <h3 className="text-xl font-bold mb-2 text-text">{title}</h3>
-      <p className="text-secondary">{description}</p>
+      <p className="text-primary">{description}</p>
     </motion.div>
   );
 }

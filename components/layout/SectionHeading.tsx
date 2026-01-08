@@ -25,7 +25,7 @@ export function SectionHeading({
         {title}
       </h2>
       {subtitle && (
-        <p className="text-xl text-secondary">
+        <p className="text-xl text-primary">
           {subtitle}
         </p>
       )}

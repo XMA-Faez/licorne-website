@@ -36,12 +36,12 @@ export function AboutSection() {
           <div>
             {/* Header Section */}
             <div className="mb-8">
-              <span className="font-semibold text-sm uppercase tracking-wider border-b border-secondary w-fit p-2 mb-6 block text-secondary">
+              <span className="font-semibold text-sm uppercase tracking-wider border-b border-primary w-fit p-2 mb-6 block text-primary">
                 {ABOUT_CONFIG.tag}
               </span>
-              <h2 className="text-4xl lg:text-5xl mt-3 mb-6 leading-tight text-primary">
+              <h2 className="text-4xl lg:text-5xl mt-3 mb-6 leading-tight text-secondary">
                 {ABOUT_CONFIG.title}
-                <span className="font-serif text-secondary">
+                <span className="font-serif text-primary">
                   {ABOUT_CONFIG.titleSpan}
                 </span>
               </h2>
@@ -55,7 +55,7 @@ export function AboutSection() {
 
               <Link
                 href={ABOUT_CONFIG.button.href}
-                className="inline-flex items-center px-8 py-4 font-medium transition-all duration-300 rounded-sm bg-secondary text-white hover:bg-primary"
+                className="inline-flex items-center px-8 py-4 font-medium transition-all duration-300 rounded-sm bg-primary text-white hover:bg-secondary"
               >
                 {ABOUT_CONFIG.button.text}
                 <ArrowRight className="ml-2 w-5 h-5" />
@@ -81,7 +81,7 @@ export function AboutSection() {
           {STATS.map((stat, index) => (
             <div
               key={index}
-              className="flex flex-col justify-start items-start flex-1 gap-4 border-l border-secondary pl-5"
+              className="flex flex-col justify-start items-start flex-1 gap-4 border-l border-primary pl-5"
             >
               <div className="text-4xl lg:text-8xl font-bold font-serif text-text">
                 {stat.value}

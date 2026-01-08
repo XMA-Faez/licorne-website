@@ -182,11 +182,11 @@ export default function FreeZonesPage() {
             className="absolute inset-0 w-full h-full object-cover object-center"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-tr from-accent-950/70 via-primary/60 to-black/40"></div>
+          <div className="absolute inset-0 bg-gradient-to-tr from-accent-950/70 via-secondary/60 to-black/40"></div>
         </div>
         <div className="max-w-7xl mx-auto px-6 pt-32 pb-20 relative z-10">
           <div className="max-w-3xl">
-            <span className="text-secondary font-semibold text-sm uppercase tracking-wider">
+            <span className="text-primary font-semibold text-sm uppercase tracking-wider">
               Free Zone Guide
             </span>
             <h1 className="text-4xl lg:text-6xl font-bold text-accent-50 mt-4 leading-tight">
@@ -203,10 +203,10 @@ export default function FreeZonesPage() {
       <section className="py-24 lg:py-32">
         <div className="max-w-7xl mx-auto px-6">
           <div className="max-w-3xl mb-16">
-            <span className="text-secondary font-semibold text-sm uppercase tracking-wider">
+            <span className="text-primary font-semibold text-sm uppercase tracking-wider">
               Understanding Free Zones
             </span>
-            <h2 className="text-3xl lg:text-4xl font-bold text-primary mt-3 leading-tight">
+            <h2 className="text-3xl lg:text-4xl font-bold text-secondary mt-3 leading-tight">
               What is a Dubai Free Zone?
             </h2>
             <div className="mt-6 space-y-4 text-gray-600 leading-relaxed">
@@ -231,23 +231,23 @@ export default function FreeZonesPage() {
           </div>
 
           <div className="grid lg:grid-cols-3 gap-6 mb-16">
-            <div className="bg-white border border-secondary/20 rounded-sm p-6">
-              <div className="text-4xl font-bold text-secondary">40+</div>
-              <div className="text-primary mt-1">Free zones in Dubai</div>
+            <div className="bg-white border border-primary/20 rounded-sm p-6">
+              <div className="text-4xl font-bold text-primary">40+</div>
+              <div className="text-secondary mt-1">Free zones in Dubai</div>
               <p className="text-gray-600 text-sm mt-2">
                 Each with unique benefits, costs, and target industries
               </p>
             </div>
-            <div className="bg-white border border-secondary/20 rounded-sm p-6">
-              <div className="text-4xl font-bold text-secondary">0%</div>
-              <div className="text-primary mt-1">Corporate tax (most activities)</div>
+            <div className="bg-white border border-primary/20 rounded-sm p-6">
+              <div className="text-4xl font-bold text-primary">0%</div>
+              <div className="text-secondary mt-1">Corporate tax (most activities)</div>
               <p className="text-gray-600 text-sm mt-2">
                 Qualifying free zone income exempt from 9% UAE corporate tax
               </p>
             </div>
-            <div className="bg-white border border-secondary/20 rounded-sm p-6">
-              <div className="text-4xl font-bold text-secondary">100%</div>
-              <div className="text-primary mt-1">Foreign ownership</div>
+            <div className="bg-white border border-primary/20 rounded-sm p-6">
+              <div className="text-4xl font-bold text-primary">100%</div>
+              <div className="text-secondary mt-1">Foreign ownership</div>
               <p className="text-gray-600 text-sm mt-2">
                 No local partner or sponsor required for free zone companies
               </p>
@@ -259,10 +259,10 @@ export default function FreeZonesPage() {
       <section className="py-24 lg:py-32 bg-accent-50">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <span className="text-secondary font-semibold text-sm uppercase tracking-wider">
+            <span className="text-primary font-semibold text-sm uppercase tracking-wider">
               Popular Options
             </span>
-            <h2 className="text-3xl lg:text-4xl font-bold text-primary mt-3">
+            <h2 className="text-3xl lg:text-4xl font-bold text-secondary mt-3">
               Most Popular Dubai Free Zones
             </h2>
             <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
@@ -275,34 +275,34 @@ export default function FreeZonesPage() {
             {popularFreeZones.map((zone) => (
               <div
                 key={zone.name}
-                className="bg-white border border-secondary/20 rounded-sm p-8"
+                className="bg-white border border-primary/20 rounded-sm p-8"
               >
                 <div className="flex justify-between items-start mb-4">
                   <div>
-                    <h3 className="text-2xl font-bold text-primary">{zone.name}</h3>
+                    <h3 className="text-2xl font-bold text-secondary">{zone.name}</h3>
                     <p className="text-sm text-gray-500">{zone.fullName}</p>
                   </div>
-                  <span className="text-xs bg-secondary/10 text-secondary px-3 py-1 rounded-sm">
+                  <span className="text-xs bg-primary/10 text-primary px-3 py-1 rounded-sm">
                     {zone.location}
                   </span>
                 </div>
-                <p className="text-secondary font-medium mb-4">
+                <p className="text-primary font-medium mb-4">
                   Best for: {zone.bestFor}
                 </p>
                 <div className="grid grid-cols-2 gap-4 mb-4 text-sm">
                   <div>
                     <span className="text-gray-500">Starting cost:</span>
-                    <div className="text-primary font-medium">{zone.startingCost}</div>
+                    <div className="text-secondary font-medium">{zone.startingCost}</div>
                   </div>
                   <div>
                     <span className="text-gray-500">Visa quota:</span>
-                    <div className="text-primary font-medium">{zone.visaQuota}</div>
+                    <div className="text-secondary font-medium">{zone.visaQuota}</div>
                   </div>
                 </div>
                 <ul className="space-y-2">
                   {zone.highlights.map((highlight, index) => (
                     <li key={index} className="flex items-start text-sm text-gray-600">
-                      <span className="text-secondary mr-2">•</span>
+                      <span className="text-primary mr-2">•</span>
                       {highlight}
                     </li>
                   ))}
@@ -316,10 +316,10 @@ export default function FreeZonesPage() {
       <section className="py-24 lg:py-32">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <span className="text-secondary font-semibold text-sm uppercase tracking-wider">
+            <span className="text-primary font-semibold text-sm uppercase tracking-wider">
               How to Choose
             </span>
-            <h2 className="text-3xl lg:text-4xl font-bold text-primary mt-3">
+            <h2 className="text-3xl lg:text-4xl font-bold text-secondary mt-3">
               Key Factors in Free Zone Selection
             </h2>
           </div>
@@ -328,9 +328,9 @@ export default function FreeZonesPage() {
             {comparisonFactors.map((item) => (
               <div
                 key={item.factor}
-                className="border border-secondary/20 rounded-sm p-6"
+                className="border border-primary/20 rounded-sm p-6"
               >
-                <h3 className="text-xl font-bold text-primary mb-3">{item.factor}</h3>
+                <h3 className="text-xl font-bold text-secondary mb-3">{item.factor}</h3>
                 <p className="text-gray-600 text-sm leading-relaxed">
                   {item.description}
                 </p>
@@ -343,76 +343,76 @@ export default function FreeZonesPage() {
       <section className="py-24 lg:py-32 bg-accent-50">
         <div className="max-w-7xl mx-auto px-6">
           <div className="max-w-3xl mb-16">
-            <span className="text-secondary font-semibold text-sm uppercase tracking-wider">
+            <span className="text-primary font-semibold text-sm uppercase tracking-wider">
               Decision Framework
             </span>
-            <h2 className="text-3xl lg:text-4xl font-bold text-primary mt-3 leading-tight">
+            <h2 className="text-3xl lg:text-4xl font-bold text-secondary mt-3 leading-tight">
               Which Free Zone Should You Choose?
             </h2>
           </div>
 
           <div className="space-y-6">
-            <div className="bg-white border border-secondary/20 rounded-sm p-8">
-              <h3 className="text-xl font-bold text-primary mb-4">
+            <div className="bg-white border border-primary/20 rounded-sm p-8">
+              <h3 className="text-xl font-bold text-secondary mb-4">
                 For consultancies and professional services
               </h3>
               <p className="text-gray-600 mb-4">
                 If you're a consultant, freelancer, or service business without physical
                 product needs, prioritize cost-effectiveness and visa flexibility.
               </p>
-              <p className="text-secondary font-medium">
+              <p className="text-primary font-medium">
                 Recommended: IFZA, Meydan, or DMCC (for premium positioning)
               </p>
             </div>
 
-            <div className="bg-white border border-secondary/20 rounded-sm p-8">
-              <h3 className="text-xl font-bold text-primary mb-4">
+            <div className="bg-white border border-primary/20 rounded-sm p-8">
+              <h3 className="text-xl font-bold text-secondary mb-4">
                 For trading and e-commerce
               </h3>
               <p className="text-gray-600 mb-4">
                 Trading companies need appropriate activity licenses and may benefit from
                 customs advantages. Consider warehouse access if holding inventory.
               </p>
-              <p className="text-secondary font-medium">
+              <p className="text-primary font-medium">
                 Recommended: DMCC, JAFZA (if warehousing needed), or IFZA
               </p>
             </div>
 
-            <div className="bg-white border border-secondary/20 rounded-sm p-8">
-              <h3 className="text-xl font-bold text-primary mb-4">
+            <div className="bg-white border border-primary/20 rounded-sm p-8">
+              <h3 className="text-xl font-bold text-secondary mb-4">
                 For tech and startups
               </h3>
               <p className="text-gray-600 mb-4">
                 Tech companies benefit from ecosystems with similar businesses, startup
                 programs, and talent visa provisions.
               </p>
-              <p className="text-secondary font-medium">
+              <p className="text-primary font-medium">
                 Recommended: Dubai Silicon Oasis, Dubai Internet City, or DMCC
               </p>
             </div>
 
-            <div className="bg-white border border-secondary/20 rounded-sm p-8">
-              <h3 className="text-xl font-bold text-primary mb-4">
+            <div className="bg-white border border-primary/20 rounded-sm p-8">
+              <h3 className="text-xl font-bold text-secondary mb-4">
                 For financial services
               </h3>
               <p className="text-gray-600 mb-4">
                 Regulated financial activities require DIFC or ADGM. The common law
                 jurisdiction and independent courts are significant advantages for finance.
               </p>
-              <p className="text-secondary font-medium">
+              <p className="text-primary font-medium">
                 Recommended: DIFC (Dubai) or ADGM (Abu Dhabi)
               </p>
             </div>
 
-            <div className="bg-white border border-secondary/20 rounded-sm p-8">
-              <h3 className="text-xl font-bold text-primary mb-4">
+            <div className="bg-white border border-primary/20 rounded-sm p-8">
+              <h3 className="text-xl font-bold text-secondary mb-4">
                 For media and creative
               </h3>
               <p className="text-gray-600 mb-4">
                 Media, marketing, and creative agencies benefit from the ecosystem and
                 networking opportunities in dedicated creative free zones.
               </p>
-              <p className="text-secondary font-medium">
+              <p className="text-primary font-medium">
                 Recommended: Dubai Media City or Dubai Studio City
               </p>
             </div>
@@ -420,7 +420,7 @@ export default function FreeZonesPage() {
         </div>
       </section>
 
-      <section className="py-24 lg:py-32 bg-primary">
+      <section className="py-24 lg:py-32 bg-secondary">
         <div className="max-w-7xl mx-auto px-6 text-center">
           <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
             Not sure which free zone is right for you?
@@ -433,13 +433,13 @@ export default function FreeZonesPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/contact"
-              className="inline-block px-8 py-4 bg-secondary text-white font-medium rounded-sm hover:bg-white hover:text-primary transition-colors"
+              className="inline-block px-8 py-4 bg-primary text-white font-medium rounded-sm hover:bg-white hover:text-secondary transition-colors"
             >
               Book Free Consultation
             </Link>
             <Link
               href="/services/free-zone-company-setup"
-              className="inline-block px-8 py-4 bg-transparent border border-white text-white font-medium rounded-sm hover:bg-white hover:text-primary transition-colors"
+              className="inline-block px-8 py-4 bg-transparent border border-white text-white font-medium rounded-sm hover:bg-white hover:text-secondary transition-colors"
             >
               Free Zone Setup Service
             </Link>

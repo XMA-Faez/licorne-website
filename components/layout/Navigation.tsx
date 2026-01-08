@@ -52,7 +52,7 @@ export function Navigation() {
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.2 }}
           >
-            <span className="text-2xl font-bold text-primary">LICORNE</span>
+            <span className="text-2xl font-bold text-secondary">LICORNE</span>
           </motion.div>
 
           {/* Desktop Navigation */}
@@ -61,26 +61,26 @@ export function Navigation() {
               <Link
                 href="/services"
                 className={`text-lg font-medium inline-flex items-center gap-2 ${
-                  isScrolled ? "text-accent-950 hover:text-primary" : "text-accent-50 hover:text-primary"
+                  isScrolled ? "text-accent-950 hover:text-secondary" : "text-accent-50 hover:text-secondary"
                 } transition-colors`}
               >
                 Services
                 <ChevronDown className="w-4 h-4" />
               </Link>
               <div className="absolute left-0 top-full pt-3 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-200">
-                <div className="min-w-[260px] bg-white shadow-xl border border-secondary/20 rounded-sm overflow-hidden">
+                <div className="min-w-[260px] bg-white shadow-xl border border-primary/20 rounded-sm overflow-hidden">
                   {servicesDropdown.map((service) => (
                     <Link
                       key={service.label}
                       href={service.href}
-                      className="block px-4 py-3 text-sm text-primary hover:bg-secondary hover:text-white transition-colors"
+                      className="block px-4 py-3 text-sm text-secondary hover:bg-primary hover:text-white transition-colors"
                     >
                       {service.label}
                     </Link>
                   ))}
                   <Link
                     href="/services"
-                    className="block px-4 py-3 text-sm text-secondary border-t border-secondary/20 hover:bg-secondary hover:text-white transition-colors"
+                    className="block px-4 py-3 text-sm text-primary border-t border-primary/20 hover:bg-primary hover:text-white transition-colors"
                   >
                     View all services
                   </Link>
@@ -98,8 +98,8 @@ export function Navigation() {
                   href={link.href}
                   className={`text-lg font-medium ${
                     isScrolled
-                      ? "text-accent-950 hover:text-primary"
-                      : "text-accent-50 hover:text-primary"
+                      ? "text-accent-950 hover:text-secondary"
+                      : "text-accent-50 hover:text-secondary"
                   } transition-colors`}
                 >
                   {link.label}
@@ -111,7 +111,7 @@ export function Navigation() {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: 0.3 }}
             >
-              <Button variant="primary">Book Consultation</Button>
+              <Button variant="secondary">Book Consultation</Button>
             </motion.div>
           </div>
 
@@ -159,14 +159,14 @@ export function Navigation() {
           >
             <div className="px-4 py-4 space-y-2">
               <div className="border-b border-border pb-2">
-                <p className="text-xs font-semibold uppercase tracking-wider text-secondary mb-2">
+                <p className="text-xs font-semibold uppercase tracking-wider text-primary mb-2">
                   Services
                 </p>
                 {servicesDropdown.map((service) => (
                   <Link
                     key={service.label}
                     href={service.href}
-                    className="block py-2 text-secondary hover:text-primary transition-colors"
+                    className="block py-2 text-primary hover:text-secondary transition-colors"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {service.label}
@@ -174,7 +174,7 @@ export function Navigation() {
                 ))}
                 <Link
                   href="/services"
-                  className="block py-2 text-secondary hover:text-primary transition-colors"
+                  className="block py-2 text-primary hover:text-secondary transition-colors"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   View all services
@@ -189,7 +189,7 @@ export function Navigation() {
                 >
                   <Link
                     href={link.href}
-                    className="block py-2 text-secondary hover:text-primary transition-colors"
+                    className="block py-2 text-primary hover:text-secondary transition-colors"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {link.label}
@@ -201,7 +201,7 @@ export function Navigation() {
                 animate={{ x: 0, opacity: 1 }}
                 transition={{ duration: 0.3, delay: 0.3 }}
               >
-                <Button variant="primary" className="w-full mt-4">
+                <Button variant="secondary" className="w-full mt-4">
                   Book Consultation
                 </Button>
               </motion.div>

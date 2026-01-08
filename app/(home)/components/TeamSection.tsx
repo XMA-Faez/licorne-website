@@ -47,7 +47,7 @@ const teamMembers = [
 
 export function TeamSection() {
   return (
-    <section className="py-24 lg:py-32 relative overflow-hidden bg-primary">
+    <section className="py-24 lg:py-32 relative overflow-hidden bg-secondary">
       {/* Grain texture overlay */}
       <div className="absolute inset-0 opacity-20">
         <Image
@@ -71,7 +71,7 @@ export function TeamSection() {
       </div>
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
-          <p className="text-secondary border-b w-fit mx-auto p-2 font-semibold text-sm uppercase tracking-wider mb-4">
+          <p className="text-primary border-b w-fit mx-auto p-2 font-semibold text-sm uppercase tracking-wider mb-4">
             Our Team
           </p>
           <h2 className="text-4xl lg:text-5xl text-white max-w-4xl mx-auto leading-tight">
@@ -108,7 +108,7 @@ export function TeamSection() {
               <h3 className="text-3xl text-center text-white mb-1">
                 {member.name}
               </h3>
-              <p className="text-secondary text-center font-medium">
+              <p className="text-primary text-center font-medium">
                 {member.role}
               </p>
             </div>

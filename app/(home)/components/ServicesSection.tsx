@@ -59,10 +59,10 @@ export function ServicesSection() {
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
-          <span className="text-secondary font-semibold text-sm uppercase tracking-wider">
+          <span className="text-primary font-semibold text-sm uppercase tracking-wider">
             Our Services
           </span>
-          <h2 className="text-4xl lg:text-5xl font-bold text-primary mt-3 max-w-3xl mx-auto leading-tight">
+          <h2 className="text-4xl lg:text-5xl font-bold text-secondary mt-3 max-w-3xl mx-auto leading-tight">
             Everything You Need to Launch in Dubai
           </h2>
         </div>
@@ -71,7 +71,7 @@ export function ServicesSection() {
           {services.map((service, index) => (
             <div
               key={index}
-              className="group pb-8 px-4 hover:shadow-2xl transition-all duration-300 border-b text-secondary hover:border-transparent cursor-pointer relative overflow-hidden"
+              className="group pb-8 px-4 hover:shadow-2xl transition-all duration-300 border-b text-primary hover:border-transparent cursor-pointer relative overflow-hidden"
             >
               <div className="flex">
                 <span className="text-base-950 text-lg pr-8 my-auto tracking-wider">
@@ -80,7 +80,7 @@ export function ServicesSection() {
                 <div>
                   <div className="flex items-start justify-between mb-6 relative z-10">
                     <div className="flex-1">
-                      <h3 className="text-4xl font-bold text-primary mt-2">
+                      <h3 className="text-4xl font-bold text-secondary mt-2">
                         {service.title}
                       </h3>
                     </div>
@@ -91,7 +91,7 @@ export function ServicesSection() {
                 </div>
                 <Link
                   href={service.href}
-                  className="inline-flex items-center text-secondary ml-auto hover:text-primary transition-colors font-medium group"
+                  className="inline-flex items-center text-primary ml-auto hover:text-secondary transition-colors font-medium group"
                 >
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </Link>

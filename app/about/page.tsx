@@ -70,11 +70,11 @@ export default function AboutPage() {
             className="absolute inset-0 w-full h-full object-cover object-center"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-tr from-accent-950/70 via-primary/60 to-black/40"></div>
+          <div className="absolute inset-0 bg-gradient-to-tr from-accent-950/70 via-secondary/60 to-black/40"></div>
         </div>
         <div className="max-w-7xl mx-auto px-6 pt-32 pb-20 relative z-10">
           <div className="max-w-3xl">
-            <span className="text-secondary font-semibold text-sm uppercase tracking-wider">
+            <span className="text-primary font-semibold text-sm uppercase tracking-wider">
               About us
             </span>
             <h1 className="text-4xl lg:text-6xl font-bold text-accent-50 mt-4 leading-tight">
@@ -93,10 +93,10 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-16 items-start">
             <div>
-              <span className="font-semibold text-sm uppercase tracking-wider border-b border-secondary w-fit p-2 mb-6 block text-secondary">
+              <span className="font-semibold text-sm uppercase tracking-wider border-b border-primary w-fit p-2 mb-6 block text-primary">
                 Our story
               </span>
-              <h2 className="text-4xl lg:text-5xl mt-3 mb-6 leading-tight text-primary">
+              <h2 className="text-4xl lg:text-5xl mt-3 mb-6 leading-tight text-secondary">
                 We believe starting a business should be exciting, not exhausting
               </h2>
               <div className="space-y-4 text-lg leading-relaxed text-text-secondary">
@@ -117,7 +117,7 @@ export default function AboutPage() {
                 </p>
               </div>
             </div>
-            <div className="bg-primary/95 text-accent-50 p-10 rounded-sm relative overflow-hidden">
+            <div className="bg-secondary/95 text-accent-50 p-10 rounded-sm relative overflow-hidden">
               <div className="absolute inset-0 opacity-10">
                 <div
                   className="absolute inset-0"
@@ -152,10 +152,10 @@ export default function AboutPage() {
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
             {stats.map((stat) => (
               <div key={stat.label} className="text-center">
-                <div className="text-4xl lg:text-5xl font-bold text-secondary">
+                <div className="text-4xl lg:text-5xl font-bold text-primary">
                   {stat.value}
                 </div>
-                <div className="text-primary mt-2">{stat.label}</div>
+                <div className="text-secondary mt-2">{stat.label}</div>
               </div>
             ))}
           </div>
@@ -165,20 +165,20 @@ export default function AboutPage() {
       <section className="py-24 lg:py-32">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <span className="text-secondary font-semibold text-sm uppercase tracking-wider">
+            <span className="text-primary font-semibold text-sm uppercase tracking-wider">
               Our journey
             </span>
-            <h2 className="text-4xl lg:text-5xl text-primary mt-3 max-w-3xl mx-auto leading-tight">
+            <h2 className="text-4xl lg:text-5xl text-secondary mt-3 max-w-3xl mx-auto leading-tight">
               Building something that matters
             </h2>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             {milestones.map((milestone) => (
               <div key={milestone.year} className="relative">
-                <div className="text-secondary font-bold text-sm uppercase tracking-wider mb-3">
+                <div className="text-primary font-bold text-sm uppercase tracking-wider mb-3">
                   {milestone.year}
                 </div>
-                <h3 className="text-2xl font-bold text-primary mb-3">
+                <h3 className="text-2xl font-bold text-secondary mb-3">
                   {milestone.title}
                 </h3>
                 <p className="text-gray-600 leading-relaxed">
@@ -190,7 +190,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="py-24 lg:py-32 bg-primary">
+      <section className="py-24 lg:py-32 bg-secondary">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <span className="text-white/70 font-semibold text-sm uppercase tracking-wider">
@@ -219,10 +219,10 @@ export default function AboutPage() {
       <section className="py-24 lg:py-32">
         <div className="max-w-7xl mx-auto px-6">
           <div className="max-w-3xl">
-            <span className="text-secondary font-semibold text-sm uppercase tracking-wider">
+            <span className="text-primary font-semibold text-sm uppercase tracking-wider">
               Our commitment
             </span>
-            <h2 className="text-4xl lg:text-5xl text-primary mt-3 mb-6 leading-tight">
+            <h2 className="text-4xl lg:text-5xl text-secondary mt-3 mb-6 leading-tight">
               More than just company formation
             </h2>
             <div className="space-y-4 text-lg text-gray-600 leading-relaxed">
@@ -249,7 +249,7 @@ export default function AboutPage() {
 
       <section className="py-20">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="bg-gradient-to-br from-primary to-primary-700 p-12 lg:p-16 text-center relative overflow-hidden rounded-sm">
+          <div className="bg-gradient-to-br from-secondary to-secondary-700 p-12 lg:p-16 text-center relative overflow-hidden rounded-sm">
             <div className="absolute inset-0 opacity-10">
               <div
                 className="absolute inset-0"
@@ -270,13 +270,13 @@ export default function AboutPage() {
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link
                   href="/contact"
-                  className="group px-8 py-4 bg-white text-primary hover:bg-secondary hover:text-white transition-all duration-300 inline-flex items-center justify-center font-medium rounded-sm"
+                  className="group px-8 py-4 bg-white text-secondary hover:bg-primary hover:text-white transition-all duration-300 inline-flex items-center justify-center font-medium rounded-sm"
                 >
                   Book Free Consultation
                 </Link>
                 <Link
                   href="/services"
-                  className="px-8 py-4 bg-transparent text-white border-2 border-white hover:bg-white hover:text-primary transition-all duration-300 inline-flex items-center justify-center font-medium rounded-sm"
+                  className="px-8 py-4 bg-transparent text-white border-2 border-white hover:bg-white hover:text-secondary transition-all duration-300 inline-flex items-center justify-center font-medium rounded-sm"
                 >
                   View Services
                 </Link>

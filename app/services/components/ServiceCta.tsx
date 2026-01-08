@@ -20,7 +20,7 @@ export function ServiceCta({
   return (
     <section className="py-20">
       <div className="max-w-6xl mx-auto px-6">
-        <div className="bg-gradient-to-br from-primary to-primary-700 p-12 lg:p-16 text-center relative overflow-hidden">
+        <div className="bg-gradient-to-br from-secondary to-secondary-700 p-12 lg:p-16 text-center relative overflow-hidden">
           <div className="absolute inset-0 opacity-10">
             <div
               className="absolute inset-0"
@@ -38,14 +38,14 @@ export function ServiceCta({
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href={primaryHref}
-                className="group px-8 py-4 bg-white text-primary hover:bg-secondary hover:text-white transition-all duration-300 inline-flex items-center justify-center font-medium rounded-sm"
+                className="group px-8 py-4 bg-white text-secondary hover:bg-primary hover:text-white transition-all duration-300 inline-flex items-center justify-center font-medium rounded-sm"
               >
                 {primaryLabel}
               </Link>
               {secondaryLabel && secondaryHref && (
                 <Link
                   href={secondaryHref}
-                  className="px-8 py-4 bg-transparent text-white border-2 border-white hover:bg-white hover:text-primary transition-all duration-300 inline-flex items-center justify-center font-medium rounded-sm"
+                  className="px-8 py-4 bg-transparent text-white border-2 border-white hover:bg-white hover:text-secondary transition-all duration-300 inline-flex items-center justify-center font-medium rounded-sm"
                 >
                   {secondaryLabel}
                 </Link>

@@ -41,7 +41,7 @@ const features = [
 
 export function WhyChooseUsSection() {
   return (
-    <section className="py-24 lg:py-32 relative overflow-hidden bg-primary">
+    <section className="py-24 lg:py-32 relative overflow-hidden bg-secondary">
       {/* Grain texture overlay */}
       <div className="absolute inset-0 opacity-20">
         <Image
@@ -71,7 +71,7 @@ export function WhyChooseUsSection() {
           </p>
           <h2 className="text-4xl lg:text-5xl text-white max-w-4xl mx-auto leading-tight">
             Business Setup Without the{' '}
-            <span className="text-secondary font-serif">Headaches</span>
+            <span className="text-primary font-serif">Headaches</span>
           </h2>
         </div>
 

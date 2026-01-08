@@ -179,11 +179,11 @@ export default function HowItWorksPage() {
             className="absolute inset-0 w-full h-full object-cover object-center"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-tr from-accent-950/70 via-primary/60 to-black/40"></div>
+          <div className="absolute inset-0 bg-gradient-to-tr from-accent-950/70 via-secondary/60 to-black/40"></div>
         </div>
         <div className="max-w-7xl mx-auto px-6 pt-32 pb-20 relative z-10">
           <div className="max-w-3xl">
-            <span className="text-secondary font-semibold text-sm uppercase tracking-wider">
+            <span className="text-primary font-semibold text-sm uppercase tracking-wider">
               Process Guide
             </span>
             <h1 className="text-4xl lg:text-6xl font-bold text-accent-50 mt-4 leading-tight">
@@ -200,10 +200,10 @@ export default function HowItWorksPage() {
       <section className="py-24 lg:py-32">
         <div className="max-w-7xl mx-auto px-6">
           <div className="max-w-3xl mb-16">
-            <span className="text-secondary font-semibold text-sm uppercase tracking-wider">
+            <span className="text-primary font-semibold text-sm uppercase tracking-wider">
               The Process
             </span>
-            <h2 className="text-3xl lg:text-4xl font-bold text-primary mt-3 leading-tight">
+            <h2 className="text-3xl lg:text-4xl font-bold text-secondary mt-3 leading-tight">
               Six steps from idea to operating business
             </h2>
             <p className="mt-6 text-gray-600 leading-relaxed">
@@ -217,11 +217,11 @@ export default function HowItWorksPage() {
             {processSteps.map((step, index) => (
               <div
                 key={step.step}
-                className="border border-secondary/20 rounded-sm overflow-hidden bg-white"
+                className="border border-primary/20 rounded-sm overflow-hidden bg-white"
               >
                 <div className="grid lg:grid-cols-4">
-                  <div className="bg-primary p-8 flex flex-col justify-center">
-                    <div className="text-secondary text-5xl font-bold">{step.step}</div>
+                  <div className="bg-secondary p-8 flex flex-col justify-center">
+                    <div className="text-primary text-5xl font-bold">{step.step}</div>
                     <h3 className="text-2xl font-bold text-white mt-2">{step.title}</h3>
                     <div className="text-white/70 text-sm mt-2">
                       Duration: {step.duration}
@@ -233,7 +233,7 @@ export default function HowItWorksPage() {
                     </p>
                     <div className="grid md:grid-cols-2 gap-6">
                       <div>
-                        <h4 className="font-bold text-primary text-sm uppercase tracking-wider mb-3">
+                        <h4 className="font-bold text-secondary text-sm uppercase tracking-wider mb-3">
                           {step.whatWeDiscuss
                             ? "What we discuss"
                             : step.whatWeHandle
@@ -250,14 +250,14 @@ export default function HowItWorksPage() {
                             step.ongoingServices
                           )?.map((item, i) => (
                             <li key={i} className="flex items-start text-sm text-gray-600">
-                              <span className="text-secondary mr-2">•</span>
+                              <span className="text-primary mr-2">•</span>
                               {item}
                             </li>
                           ))}
                         </ul>
                       </div>
                       <div className="bg-accent-50 p-4 rounded-sm">
-                        <h4 className="font-bold text-primary text-sm uppercase tracking-wider mb-2">
+                        <h4 className="font-bold text-secondary text-sm uppercase tracking-wider mb-2">
                           Outcome
                         </h4>
                         <p className="text-gray-600 text-sm">{step.outcome}</p>
@@ -274,10 +274,10 @@ export default function HowItWorksPage() {
       <section className="py-24 lg:py-32 bg-accent-50">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <span className="text-secondary font-semibold text-sm uppercase tracking-wider">
+            <span className="text-primary font-semibold text-sm uppercase tracking-wider">
               Timeline Options
             </span>
-            <h2 className="text-3xl lg:text-4xl font-bold text-primary mt-3">
+            <h2 className="text-3xl lg:text-4xl font-bold text-secondary mt-3">
               Choose Your Setup Speed
             </h2>
             <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
@@ -290,14 +290,14 @@ export default function HowItWorksPage() {
             {timelineOptions.map((option) => (
               <div
                 key={option.type}
-                className="bg-white border border-secondary/20 rounded-sm p-8"
+                className="bg-white border border-primary/20 rounded-sm p-8"
               >
-                <h3 className="text-2xl font-bold text-primary">{option.type}</h3>
-                <div className="text-4xl font-bold text-secondary mt-2">{option.timeline}</div>
+                <h3 className="text-2xl font-bold text-secondary">{option.type}</h3>
+                <div className="text-4xl font-bold text-primary mt-2">{option.timeline}</div>
                 <p className="text-gray-600 mt-4">{option.description}</p>
-                <div className="mt-6 pt-6 border-t border-secondary/10">
+                <div className="mt-6 pt-6 border-t border-primary/10">
                   <div className="text-sm text-gray-500 mb-2">Best for:</div>
-                  <p className="text-primary text-sm font-medium">{option.bestFor}</p>
+                  <p className="text-secondary text-sm font-medium">{option.bestFor}</p>
                 </div>
                 <div className="mt-4">
                   <div className="text-sm text-gray-500 mb-2">Includes:</div>
@@ -313,52 +313,52 @@ export default function HowItWorksPage() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-16">
             <div>
-              <span className="text-secondary font-semibold text-sm uppercase tracking-wider">
+              <span className="text-primary font-semibold text-sm uppercase tracking-wider">
                 Your Role
               </span>
-              <h2 className="text-3xl lg:text-4xl font-bold text-primary mt-3 leading-tight">
+              <h2 className="text-3xl lg:text-4xl font-bold text-secondary mt-3 leading-tight">
                 What do you need to do?
               </h2>
               <div className="mt-8 space-y-6">
                 <div className="flex gap-4">
-                  <div className="w-8 h-8 rounded-full bg-secondary text-white flex items-center justify-center flex-shrink-0 font-bold">
+                  <div className="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center flex-shrink-0 font-bold">
                     1
                   </div>
                   <div>
-                    <h3 className="font-bold text-primary">Provide basic documents</h3>
+                    <h3 className="font-bold text-secondary">Provide basic documents</h3>
                     <p className="text-gray-600 text-sm mt-1">
                       Passport copy, photo, proof of address. We guide you on exactly what's needed.
                     </p>
                   </div>
                 </div>
                 <div className="flex gap-4">
-                  <div className="w-8 h-8 rounded-full bg-secondary text-white flex items-center justify-center flex-shrink-0 font-bold">
+                  <div className="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center flex-shrink-0 font-bold">
                     2
                   </div>
                   <div>
-                    <h3 className="font-bold text-primary">Sign paperwork</h3>
+                    <h3 className="font-bold text-secondary">Sign paperwork</h3>
                     <p className="text-gray-600 text-sm mt-1">
                       MOA, license applications, visa forms. We prepare everything; you review and sign.
                     </p>
                   </div>
                 </div>
                 <div className="flex gap-4">
-                  <div className="w-8 h-8 rounded-full bg-secondary text-white flex items-center justify-center flex-shrink-0 font-bold">
+                  <div className="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center flex-shrink-0 font-bold">
                     3
                   </div>
                   <div>
-                    <h3 className="font-bold text-primary">Complete biometrics</h3>
+                    <h3 className="font-bold text-secondary">Complete biometrics</h3>
                     <p className="text-gray-600 text-sm mt-1">
                       For visa processing: medical test, Emirates ID capture. We schedule and accompany.
                     </p>
                   </div>
                 </div>
                 <div className="flex gap-4">
-                  <div className="w-8 h-8 rounded-full bg-secondary text-white flex items-center justify-center flex-shrink-0 font-bold">
+                  <div className="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center flex-shrink-0 font-bold">
                     4
                   </div>
                   <div>
-                    <h3 className="font-bold text-primary">Attend bank meeting</h3>
+                    <h3 className="font-bold text-secondary">Attend bank meeting</h3>
                     <p className="text-gray-600 text-sm mt-1">
                       Banks want to meet account holders. We prepare you and can accompany if helpful.
                     </p>
@@ -367,15 +367,15 @@ export default function HowItWorksPage() {
               </div>
             </div>
             <div>
-              <span className="text-secondary font-semibold text-sm uppercase tracking-wider">
+              <span className="text-primary font-semibold text-sm uppercase tracking-wider">
                 Our Role
               </span>
-              <h2 className="text-3xl lg:text-4xl font-bold text-primary mt-3 leading-tight">
+              <h2 className="text-3xl lg:text-4xl font-bold text-secondary mt-3 leading-tight">
                 What do we handle?
               </h2>
               <div className="mt-8 space-y-4 text-gray-600">
                 <p>
-                  <strong className="text-primary">Everything else.</strong> Government
+                  <strong className="text-secondary">Everything else.</strong> Government
                   applications, fee payments, document preparation, authority visits,
                   follow-ups, issue resolution, and coordination across multiple departments.
                 </p>
@@ -388,7 +388,7 @@ export default function HowItWorksPage() {
                   at every stage without having to manage any of it.
                 </p>
                 <div className="bg-accent-50 p-6 rounded-sm mt-6">
-                  <h4 className="font-bold text-primary">Our commitment</h4>
+                  <h4 className="font-bold text-secondary">Our commitment</h4>
                   <p className="text-sm mt-2">
                     If something gets stuck or rejected, we handle it. Our fees include
                     resolution of normal complications — you don't pay extra because a
@@ -404,10 +404,10 @@ export default function HowItWorksPage() {
       <section className="py-24 lg:py-32 bg-accent-50">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <span className="text-secondary font-semibold text-sm uppercase tracking-wider">
+            <span className="text-primary font-semibold text-sm uppercase tracking-wider">
               Common Questions
             </span>
-            <h2 className="text-3xl lg:text-4xl font-bold text-primary mt-3">
+            <h2 className="text-3xl lg:text-4xl font-bold text-secondary mt-3">
               Process FAQs
             </h2>
           </div>
@@ -416,9 +416,9 @@ export default function HowItWorksPage() {
             {faqs.map((faq, index) => (
               <div
                 key={index}
-                className="bg-white border border-secondary/20 rounded-sm p-6"
+                className="bg-white border border-primary/20 rounded-sm p-6"
               >
-                <h3 className="font-bold text-primary text-lg">{faq.question}</h3>
+                <h3 className="font-bold text-secondary text-lg">{faq.question}</h3>
                 <p className="text-gray-600 mt-3">{faq.answer}</p>
               </div>
             ))}
@@ -426,7 +426,7 @@ export default function HowItWorksPage() {
         </div>
       </section>
 
-      <section className="py-24 lg:py-32 bg-primary">
+      <section className="py-24 lg:py-32 bg-secondary">
         <div className="max-w-7xl mx-auto px-6 text-center">
           <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
             Ready to start?
@@ -439,13 +439,13 @@ export default function HowItWorksPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/contact"
-              className="inline-block px-8 py-4 bg-secondary text-white font-medium rounded-sm hover:bg-white hover:text-primary transition-colors"
+              className="inline-block px-8 py-4 bg-primary text-white font-medium rounded-sm hover:bg-white hover:text-secondary transition-colors"
             >
               Book Free Consultation
             </Link>
             <Link
               href="/cost-guide"
-              className="inline-block px-8 py-4 bg-transparent border border-white text-white font-medium rounded-sm hover:bg-white hover:text-primary transition-colors"
+              className="inline-block px-8 py-4 bg-transparent border border-white text-white font-medium rounded-sm hover:bg-white hover:text-secondary transition-colors"
             >
               View Cost Guide
             </Link>

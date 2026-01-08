@@ -27,14 +27,14 @@ export function HeroSection() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/contact"
-              className="group px-8 py-4 bg-secondary text-accent-50 hover:bg-secondary transition-all duration-300 inline-flex items-center justify-center font-medium rounded-sm"
+              className="group px-8 py-4 bg-primary text-accent-50 hover:bg-primary transition-all duration-300 inline-flex items-center justify-center font-medium rounded-sm"
             >
               Start Your Setup
               <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Link>
             <Link
               href="#services"
-              className="px-8 py-4 bg-transparent text-accent-50 backdrop-blur-sm border-2 border-accent-50/20 hover:bg-secondary hover:text-white transition-all duration-300 inline-flex items-center justify-center font-medium rounded-sm"
+              className="px-8 py-4 bg-transparent text-accent-50 backdrop-blur-sm border-2 border-accent-50/20 hover:bg-primary hover:text-white transition-all duration-300 inline-flex items-center justify-center font-medium rounded-sm"
             >
               Explore Services
             </Link>

@@ -47,7 +47,7 @@ export function TestimonialCard({
         </div>
         <CardContent className="p-6">
           <CardTitle className="text-text">{title}</CardTitle>
-          <CardDescription className="mb-4 text-secondary">{description}</CardDescription>
+          <CardDescription className="mb-4 text-primary">{description}</CardDescription>
           <div className="flex items-center gap-3">
             <Image
               src={client.avatar}

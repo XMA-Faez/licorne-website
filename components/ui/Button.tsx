@@ -2,8 +2,8 @@ import { ButtonHTMLAttributes, ReactNode } from "react";
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?:
-    | "primary"
     | "secondary"
+    | "primary"
     | "success"
     | "warning"
     | "danger"
@@ -13,7 +13,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 export function Button({
-  variant = "primary",
+  variant = "secondary",
   size = "md",
   children,
   className = "",

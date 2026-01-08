@@ -56,7 +56,7 @@ const StarIcon = () => (
   >
     <path
       d="M8.5 1L10.3 6.3H16L11.85 9.7L13.65 15L8.5 11.6L3.35 15L5.15 9.7L1 6.3H6.7L8.5 1Z"
-      className="fill-secondary"
+      className="fill-primary"
     />
   </svg>
 );
@@ -88,7 +88,7 @@ const TestimonialCard = ({
         className="w-12 h-12 object-cover mr-4 rounded-full border border-border-strong object-top"
       />
       <div>
-        <div className="font-semibold text-primary">
+        <div className="font-semibold text-secondary">
           {testimonial.author}
         </div>
         <div className="text-sm text-text-muted">{testimonial.location}</div>
@@ -115,12 +115,12 @@ export function TestimonialsSliderSection() {
       {/* Header Section */}
       <div className="max-w-7xl mx-auto px-6 relative z-10 mb-16">
         <div className="text-center">
-          <p className="text-secondary border-b w-fit mx-auto p-2 mb-4 font-semibold text-sm uppercase tracking-wider">
+          <p className="text-primary border-b w-fit mx-auto p-2 mb-4 font-semibold text-sm uppercase tracking-wider">
             Testimonials
           </p>
-          <h2 className="text-4xl lg:text-6xl text-primary mt-3 max-w-3xl mx-auto leading-tight text-balance">
+          <h2 className="text-4xl lg:text-6xl text-secondary mt-3 max-w-3xl mx-auto leading-tight text-balance">
             Trusted by Entrepreneurs{" "}
-            <span className="text-secondary font-serif">Worldwide</span>
+            <span className="text-primary font-serif">Worldwide</span>
           </h2>
         </div>
       </div>
@@ -158,7 +158,7 @@ export function TestimonialsSliderSection() {
       <div className="text-center relative z-10">
         <Link
           href="/contact"
-          className="inline-flex items-center px-8 py-4 bg-secondary text-white hover:bg-primary transition-all duration-300 font-medium rounded-sm"
+          className="inline-flex items-center px-8 py-4 bg-primary text-white hover:bg-secondary transition-all duration-300 font-medium rounded-sm"
         >
           Start Your Journey
         </Link>

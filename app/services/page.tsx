@@ -82,11 +82,11 @@ export default function ServicesPage() {
             className="absolute inset-0 w-full h-full object-cover object-center"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-tr from-accent-950/70 via-primary/60 to-black/40"></div>
+          <div className="absolute inset-0 bg-gradient-to-tr from-accent-950/70 via-secondary/60 to-black/40"></div>
         </div>
         <div className="max-w-7xl mx-auto px-6 pt-32 pb-20 relative z-10">
           <div className="max-w-3xl">
-            <span className="text-secondary font-semibold text-sm uppercase tracking-wider">
+            <span className="text-primary font-semibold text-sm uppercase tracking-wider">
               Services
             </span>
             <h1 className="text-4xl lg:text-6xl font-bold text-accent-50 mt-4 leading-tight">
@@ -102,10 +102,10 @@ export default function ServicesPage() {
       <section className="py-24 lg:py-32">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <span className="text-secondary font-semibold text-sm uppercase tracking-wider">
+            <span className="text-primary font-semibold text-sm uppercase tracking-wider">
               Our Services
             </span>
-            <h2 className="text-4xl lg:text-5xl font-bold text-primary mt-3 max-w-3xl mx-auto leading-tight">
+            <h2 className="text-4xl lg:text-5xl font-bold text-secondary mt-3 max-w-3xl mx-auto leading-tight">
               Choose a service to learn more
             </h2>
           </div>
@@ -114,15 +114,15 @@ export default function ServicesPage() {
               <Link
                 key={service.title}
                 href={service.href}
-                className="group border border-secondary/20 rounded-sm p-8 hover:shadow-2xl transition-all duration-300 bg-white"
+                className="group border border-primary/20 rounded-sm p-8 hover:shadow-2xl transition-all duration-300 bg-white"
               >
-                <h3 className="text-2xl text-primary mb-3 group-hover:text-secondary transition-colors">
+                <h3 className="text-2xl text-secondary mb-3 group-hover:text-primary transition-colors">
                   {service.title}
                 </h3>
                 <p className="text-text-secondary leading-relaxed mb-6">
                   {service.description}
                 </p>
-                <span className="text-secondary font-medium">
+                <span className="text-primary font-medium">
                   View service details
                 </span>
               </Link>

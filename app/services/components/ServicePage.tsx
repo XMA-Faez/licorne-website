@@ -81,7 +81,7 @@ export function ServicePage({
             className="absolute inset-0 w-full h-full object-cover object-center"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-tr from-accent-950/70 via-primary/60 to-black/40"></div>
+          <div className="absolute inset-0 bg-gradient-to-tr from-accent-950/70 via-secondary/60 to-black/40"></div>
         </div>
         <div className="max-w-7xl mx-auto px-6 pt-32 pb-20 relative z-10 text-center">
           <div className="max-w-3xl">
@@ -97,13 +97,13 @@ export function ServicePage({
             <div className="mt-10 flex flex-col sm:flex-row justify-center gap-4">
               <Link
                 href={cta.primaryHref}
-                className="group px-8 py-4 bg-secondary text-accent-50 hover:bg-primary transition-all duration-300 inline-flex items-center justify-center font-medium rounded-sm"
+                className="group px-8 py-4 bg-primary text-accent-50 hover:bg-secondary transition-all duration-300 inline-flex items-center justify-center font-medium rounded-sm"
               >
                 {cta.primaryLabel}
               </Link>
               <Link
                 href="#overview"
-                className="px-8 py-4 bg-transparent text-accent-50 border-2 border-accent-50/30 hover:bg-secondary hover:text-white transition-all duration-300 inline-flex items-center justify-center font-medium rounded-sm"
+                className="px-8 py-4 bg-transparent text-accent-50 border-2 border-accent-50/30 hover:bg-primary hover:text-white transition-all duration-300 inline-flex items-center justify-center font-medium rounded-sm"
               >
                 Explore Details
               </Link>
@@ -116,10 +116,10 @@ export function ServicePage({
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-16 items-start">
             <div>
-              <span className="font-semibold text-sm uppercase tracking-wider border-b border-secondary w-fit p-2 mb-6 block text-secondary">
+              <span className="font-semibold text-sm uppercase tracking-wider border-b border-primary w-fit p-2 mb-6 block text-primary">
                 {overview.eyebrow}
               </span>
-              <h2 className="text-4xl lg:text-5xl mt-3 mb-6 leading-tight text-primary">
+              <h2 className="text-4xl lg:text-5xl mt-3 mb-6 leading-tight text-secondary">
                 {overview.title}
               </h2>
               <p className="text-lg leading-relaxed text-text-secondary mb-8">
@@ -128,13 +128,13 @@ export function ServicePage({
               <ul className="space-y-4 text-text-secondary">
                 {overview.highlights.map((item) => (
                   <li key={item} className="flex items-start gap-3">
-                    <span className="mt-2 h-2 w-2 rounded-full bg-secondary"></span>
+                    <span className="mt-2 h-2 w-2 rounded-full bg-primary"></span>
                     <span>{item}</span>
                   </li>
                 ))}
               </ul>
             </div>
-            <div className="bg-primary/95 text-accent-50 p-10 rounded-sm relative overflow-hidden">
+            <div className="bg-secondary/95 text-accent-50 p-10 rounded-sm relative overflow-hidden">
               <div className="absolute inset-0 opacity-10">
                 <div
                   className="absolute inset-0"
@@ -155,7 +155,7 @@ export function ServicePage({
                 <div className="space-y-6">
                   {stats.map((stat) => (
                     <div key={stat.label}>
-                      <p className="text-4xl font-serif text-secondary">
+                      <p className="text-4xl font-serif text-primary">
                         {stat.value}
                       </p>
                       <p className="text-accent-50/70">{stat.label}</p>
@@ -168,7 +168,7 @@ export function ServicePage({
         </div>
       </section>
 
-      <section className="py-24 lg:py-32 bg-primary">
+      <section className="py-24 lg:py-32 bg-secondary">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <p className="text-white border-b w-fit mx-auto p-2 font-semibold text-sm uppercase tracking-wider mb-4">
@@ -197,10 +197,10 @@ export function ServicePage({
       <section className="py-24 lg:py-32">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <span className="text-secondary font-semibold text-sm uppercase tracking-wider">
+            <span className="text-primary font-semibold text-sm uppercase tracking-wider">
               {process.eyebrow}
             </span>
-            <h2 className="text-4xl lg:text-5xl font-bold text-primary mt-3 max-w-3xl mx-auto leading-tight">
+            <h2 className="text-4xl lg:text-5xl font-bold text-secondary mt-3 max-w-3xl mx-auto leading-tight">
               {process.title}
             </h2>
           </div>
@@ -208,12 +208,12 @@ export function ServicePage({
             {process.items.map((item) => (
               <div
                 key={item.step}
-                className="border border-secondary/30 rounded-sm p-6 hover:shadow-xl transition-all duration-300"
+                className="border border-primary/30 rounded-sm p-6 hover:shadow-xl transition-all duration-300"
               >
-                <div className="text-secondary text-lg font-semibold">
+                <div className="text-primary text-lg font-semibold">
                   {item.step}
                 </div>
-                <h3 className="text-2xl text-primary mt-3 mb-4">
+                <h3 className="text-2xl text-secondary mt-3 mb-4">
                   {item.title}
                 </h3>
                 <p className="text-text-secondary leading-relaxed">
@@ -228,10 +228,10 @@ export function ServicePage({
       <section className="py-24 lg:py-32 bg-background-subtle">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <span className="text-secondary font-semibold text-sm uppercase tracking-wider">
+            <span className="text-primary font-semibold text-sm uppercase tracking-wider">
               {faqs.eyebrow}
             </span>
-            <h2 className="text-4xl lg:text-5xl font-bold text-primary mt-3 max-w-3xl mx-auto leading-tight">
+            <h2 className="text-4xl lg:text-5xl font-bold text-secondary mt-3 max-w-3xl mx-auto leading-tight">
               {faqs.title}
             </h2>
           </div>
@@ -239,9 +239,9 @@ export function ServicePage({
             {faqs.items.map((item) => (
               <div
                 key={item.question}
-                className="border border-secondary/20 rounded-sm p-6 bg-white"
+                className="border border-primary/20 rounded-sm p-6 bg-white"
               >
-                <h3 className="text-xl text-primary mb-3">{item.question}</h3>
+                <h3 className="text-xl text-secondary mb-3">{item.question}</h3>
                 <p className="text-text-secondary leading-relaxed">
                   {item.answer}
                 </p>

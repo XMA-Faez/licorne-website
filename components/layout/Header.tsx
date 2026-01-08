@@ -126,7 +126,7 @@ function ListItem({
             className
           )}
         >
-          <div className="text-sm font-medium text-primary leading-none mb-1">
+          <div className="text-sm font-medium text-secondary leading-none mb-1">
             {title}
           </div>
           <p className="text-xs text-base-500 leading-snug line-clamp-2">
@@ -152,7 +152,7 @@ function MobileNavItem({
       <Link
         href={href}
         className={cn(
-          "block py-2 text-primary hover:text-secondary transition-colors",
+          "block py-2 text-secondary hover:text-primary transition-colors",
           className
         )}
       >
@@ -175,7 +175,7 @@ function MobileAccordion({
     <div className="border-b border-base-200 last:border-b-0">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center justify-between w-full py-3 text-primary font-medium"
+        className="flex items-center justify-between w-full py-3 text-secondary font-medium"
       >
         {title}
         <ChevronDown
@@ -214,7 +214,7 @@ export function Header() {
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
         isScrolled
-          ? "bg-white/95 backdrop-blur-sm border-b border-base-200 shadow-sm"
+          ? "bg-white/95 backdrop-blur-sm shadow-sm"
           : "bg-transparent"
       )}
     >
@@ -243,8 +243,8 @@ export function Header() {
                     className={cn(
                       "group inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors",
                       isScrolled
-                        ? "text-primary hover:text-secondary"
-                        : "text-white hover:text-secondary"
+                        ? "text-secondary hover:text-primary"
+                        : "text-white hover:text-primary"
                     )}
                   >
                     Home
@@ -257,8 +257,8 @@ export function Header() {
                   className={cn(
                     "bg-transparent hover:bg-transparent focus:bg-transparent data-[state=open]:bg-transparent",
                     isScrolled
-                      ? "text-primary hover:text-secondary data-[state=open]:text-secondary"
-                      : "text-white hover:text-secondary data-[state=open]:text-secondary"
+                      ? "text-secondary hover:text-primary data-[state=open]:text-primary"
+                      : "text-white hover:text-primary data-[state=open]:text-primary"
                   )}
                 >
                   Services
@@ -268,7 +268,7 @@ export function Header() {
                     <div className="grid grid-cols-3 gap-4">
                       {Object.entries(SERVICES).map(([category, items]) => (
                         <div key={category}>
-                          <h3 className="text-xs font-semibold text-secondary uppercase tracking-wider mb-3 px-3">
+                          <h3 className="text-xs font-semibold text-primary uppercase tracking-wider mb-3 px-3">
                             {category}
                           </h3>
                           <ul className="space-y-1">
@@ -288,7 +288,7 @@ export function Header() {
                     <div className="mt-4 pt-4 border-t border-base-200">
                       <Link
                         href="/services"
-                        className="text-sm text-secondary hover:text-primary font-medium transition-colors"
+                        className="text-sm text-primary hover:text-secondary font-medium transition-colors"
                       >
                         View All Services →
                       </Link>
@@ -302,8 +302,8 @@ export function Header() {
                   className={cn(
                     "bg-transparent hover:bg-transparent focus:bg-transparent data-[state=open]:bg-transparent",
                     isScrolled
-                      ? "text-primary hover:text-secondary data-[state=open]:text-secondary"
-                      : "text-white hover:text-secondary data-[state=open]:text-secondary"
+                      ? "text-secondary hover:text-primary data-[state=open]:text-primary"
+                      : "text-white hover:text-primary data-[state=open]:text-primary"
                   )}
                 >
                   Resources
@@ -330,8 +330,8 @@ export function Header() {
                     className={cn(
                       "group inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors",
                       isScrolled
-                        ? "text-primary hover:text-secondary"
-                        : "text-white hover:text-secondary"
+                        ? "text-secondary hover:text-primary"
+                        : "text-white hover:text-primary"
                     )}
                   >
                     About
@@ -346,8 +346,8 @@ export function Header() {
                     className={cn(
                       "group inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors",
                       isScrolled
-                        ? "text-primary hover:text-secondary"
-                        : "text-white hover:text-secondary"
+                        ? "text-secondary hover:text-primary"
+                        : "text-white hover:text-primary"
                     )}
                   >
                     FAQ
@@ -362,8 +362,8 @@ export function Header() {
                     className={cn(
                       "group inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors",
                       isScrolled
-                        ? "text-primary hover:text-secondary"
-                        : "text-white hover:text-secondary"
+                        ? "text-secondary hover:text-primary"
+                        : "text-white hover:text-primary"
                     )}
                   >
                     Contact
@@ -377,10 +377,7 @@ export function Header() {
             <Link
               href="/contact"
               className={cn(
-                "px-5 py-2.5 transition-colors text-sm font-medium rounded-sm",
-                isScrolled
-                  ? "bg-primary text-white hover:bg-secondary"
-                  : "bg-secondary text-white hover:bg-primary"
+                "px-5 py-2.5 transition-colors text-sm font-medium rounded-sm bg-primary text-white hover:bg-primary-hover",
               )}
             >
               Free Consultation
@@ -393,8 +390,8 @@ export function Header() {
                 className={cn(
                   "lg:hidden p-2 transition-colors",
                   isScrolled
-                    ? "text-primary hover:text-secondary"
-                    : "text-white hover:text-secondary"
+                    ? "text-secondary hover:text-primary"
+                    : "text-white hover:text-primary"
                 )}
                 aria-label="Open menu"
               >
@@ -404,7 +401,7 @@ export function Header() {
             <SheetContent side="right" className="w-full sm:max-w-md">
               <SheetHeader className="border-b border-base-200 pb-4">
                 <SheetTitle className="text-left">
-                  <span className="text-xl font-serif text-primary">
+                  <span className="text-xl font-serif text-secondary">
                     Licorne
                   </span>
                 </SheetTitle>
@@ -419,7 +416,7 @@ export function Header() {
                   <div className="space-y-4 pl-4">
                     {Object.entries(SERVICES).map(([category, items]) => (
                       <div key={category}>
-                        <h4 className="text-xs font-semibold text-secondary uppercase tracking-wider mb-2">
+                        <h4 className="text-xs font-semibold text-primary uppercase tracking-wider mb-2">
                           {category}
                         </h4>
                         <div className="space-y-1">
@@ -437,7 +434,7 @@ export function Header() {
                     ))}
                     <MobileNavItem
                       href="/services"
-                      className="text-sm text-secondary font-medium"
+                      className="text-sm text-primary font-medium"
                     >
                       View All Services →
                     </MobileNavItem>
@@ -475,7 +472,7 @@ export function Header() {
                 <SheetClose asChild>
                   <Link
                     href="/contact"
-                    className="block w-full px-5 py-3 bg-primary text-white hover:bg-secondary transition-colors text-sm font-medium rounded-sm text-center"
+                    className="block w-full px-5 py-3 bg-secondary text-white hover:bg-primary transition-colors text-sm font-medium rounded-sm text-center"
                   >
                     Free Consultation
                   </Link>

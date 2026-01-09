@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { PageHero } from "@/components/layout/PageHero";
-import HeroImage from "@/public/hero-background.png";
+import HeroImage from "@/public/images/heroes/faq.jpg";
 import { Metadata } from "next";
 
 const faqCategories = [

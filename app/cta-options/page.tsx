@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "motion/react";
 import { ArrowRight, Phone, Mail, MapPin } from "lucide-react";
-import HeroImage from "@/public/hero-background.png";
+import HeroImage from "@/public/images/heroes/services.jpg";
 
 const ctaContent = {
   eyebrow: "Ready to start?",

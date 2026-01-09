@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { PageHero } from "@/components/layout/PageHero";
 import { Eyebrow } from "@/components/ui/Eyebrow";
-import HeroImage from "@/public/hero-background.png";
+import HeroImage from "@/public/images/heroes/free-zones.jpg";
 import { Metadata } from "next";
 
 const popularFreeZones = [

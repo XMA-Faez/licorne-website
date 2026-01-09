@@ -1,7 +1,7 @@
-import Link from "next/link";
 import { PageHero } from "@/components/layout/PageHero";
 import { Eyebrow } from "@/components/ui/Eyebrow";
-import HeroImage from "@/public/hero-background.png";
+import { ServiceCta } from "@/app/services/components/ServiceCta";
+import HeroImage from "@/public/images/heroes/about.jpg";
 import { type ReactNode } from "react";
 
 type Value = {
@@ -257,44 +257,14 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="py-20">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="bg-gradient-to-br from-secondary to-secondary-700 p-12 lg:p-16 text-center relative overflow-hidden rounded-sm">
-            <div className="absolute inset-0 opacity-10">
-              <div
-                className="absolute inset-0"
-                style={{
-                  backgroundImage:
-                    "radial-gradient(circle at 20% 50%, rgba(172, 125, 85, 0.35) 0%, transparent 50%), radial-gradient(circle at 80% 80%, rgba(172, 125, 85, 0.25) 0%, transparent 50%)",
-                }}
-              ></div>
-            </div>
-            <div className="relative z-10">
-              <h2 className="text-3xl lg:text-5xl text-white mb-6">
-                Ready to start your Dubai journey?
-              </h2>
-              <p className="text-white/80 text-lg mb-10 max-w-2xl mx-auto">
-                Book a free consultation. We'll learn about your business, answer
-                your questions, and show you exactly how we can help.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link
-                  href="/contact"
-                  className="group px-8 py-4 bg-white text-secondary hover:bg-primary hover:text-white transition-all duration-300 inline-flex items-center justify-center font-medium rounded-sm"
-                >
-                  Book Free Consultation
-                </Link>
-                <Link
-                  href="/services"
-                  className="px-8 py-4 bg-transparent text-white border-2 border-white hover:bg-white hover:text-secondary transition-all duration-300 inline-flex items-center justify-center font-medium rounded-sm"
-                >
-                  View Services
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <ServiceCta
+        title="Ready to start your Dubai journey?"
+        description="Book a free consultation. We'll learn about your business, answer your questions, and show you exactly how we can help."
+        primaryLabel="Book Free Consultation"
+        primaryHref="/contact"
+        secondaryLabel="View Services"
+        secondaryHref="/services"
+      />
     </>
   );
 }

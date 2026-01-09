@@ -4,7 +4,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion, Variants } from "motion/react";
 import { ArrowRight } from "lucide-react";
-import HeroImage from "@/public/hero-background.png";
+import HeroImage from "@/public/images/heroes/services.jpg";
+import MainlandImage from "@/public/images/heroes/mainland-company-setup.jpg";
+import FreeZoneImage from "@/public/images/heroes/free-zone-company-setup.jpg";
 import {
   FeaturedServicesSection,
   ServiceCategorySection,
@@ -19,7 +21,7 @@ const featuredServices = [
     description:
       "Establish your LLC in Dubai mainland with full UAE market access. We handle sponsor arrangements, licensing, and government approvals for seamless market entry.",
     href: "/services/mainland-company-setup",
-    image: HeroImage,
+    image: MainlandImage,
     badge: "Most Popular",
   },
   {
@@ -27,7 +29,7 @@ const featuredServices = [
     description:
       "100% foreign ownership, tax advantages, and simplified regulations. We help you choose from 40+ free zones and manage the entire registration process.",
     href: "/services/free-zone-company-setup",
-    image: HeroImage,
+    image: FreeZoneImage,
     badge: "100% Ownership",
   },
 ];

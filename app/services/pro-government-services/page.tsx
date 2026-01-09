@@ -1,4 +1,4 @@
-import HeroImage from "@/public/hero-background.png";
+import HeroImage from "@/public/images/heroes/pro-government-services.jpg";
 import { ServicePage } from "@/app/services/components/ServicePage";
 import { Metadata } from "next";
 

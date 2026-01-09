@@ -1,30 +1,30 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowRight } from 'lucide-react';
+import { Eyebrow } from "@/components/ui/Eyebrow";
 
-// Configuration constants
 const ABOUT_CONFIG = {
-  tag: "About us",
-  title: "Your Trusted Partner for Reliable ",
-  titleSpan: "Legal Solutions",
-  description: "As a law firm with a solid reputation, we are committed to providing reliable and solution-oriented legal services. Focused on our clients' needs, we ensure that every solution is crafted to safeguard both business and personal interests.",
+  tag: "About Licorne",
+  title: "We Make Dubai ",
+  titleSpan: "Accessible",
+  description: "Setting up a business in Dubai shouldn't feel like navigating a maze. Licorne streamlines every step — from choosing the right structure to securing your visas and opening your bank account. We've guided hundreds of entrepreneurs through the process, turning what seems complex into something remarkably simple.",
   button: {
-    text: "Learn More",
+    text: "Get Started",
     href: "/contact"
   },
   image: {
     src: "https://cdn.prod.website-files.com/67aec585824eadef2eebc54f/67aeed40002c626c25144224_image-1.png",
-    alt: "Legal office",
+    alt: "Dubai business district",
     width: 940,
     height: 626
   }
 };
 
 const STATS = [
-  { value: "15+", label: "Year Experience" },
-  { value: "86k", label: "Client Worldwide" },
-  { value: "28", label: "Awards & Honor" },
-  { value: "98%", label: "Happy Client" }
+  { value: "500+", label: "Companies Formed" },
+  { value: "40+", label: "Free Zones Covered" },
+  { value: "98%", label: "First-Time Approvals" },
+  { value: "72h", label: "Average Setup Time" }
 ];
 
 export function AboutSection() {
@@ -37,12 +37,10 @@ export function AboutSection() {
           <div>
             {/* Header Section */}
             <div className="mb-8">
-              <span className="font-semibold text-sm uppercase tracking-wider border-b border-secondary w-fit p-2 mb-6 block text-secondary">
-                {ABOUT_CONFIG.tag}
-              </span>
-              <h2 className="text-4xl lg:text-5xl mt-3 mb-6 leading-tight text-primary">
+              <Eyebrow className="mb-6">{ABOUT_CONFIG.tag}</Eyebrow>
+              <h2 className="text-4xl lg:text-5xl mt-3 mb-6 leading-tight text-secondary">
                 {ABOUT_CONFIG.title}
-                <span className="font-serif text-secondary">
+                <span className="text-primary">
                   {ABOUT_CONFIG.titleSpan}
                 </span>
               </h2>
@@ -56,7 +54,7 @@ export function AboutSection() {
 
               <Link
                 href={ABOUT_CONFIG.button.href}
-                className="inline-flex items-center px-8 py-4 font-medium transition-all duration-300 rounded-sm bg-secondary text-white hover:bg-primary"
+                className="inline-flex items-center px-8 py-4 font-medium transition-all duration-300 rounded-sm bg-primary text-white hover:bg-secondary"
               >
                 {ABOUT_CONFIG.button.text}
                 <ArrowRight className="ml-2 w-5 h-5" />
@@ -82,9 +80,9 @@ export function AboutSection() {
           {STATS.map((stat, index) => (
             <div
               key={index}
-              className="flex flex-col justify-start items-start flex-1 gap-4 border-l border-secondary pl-5"
+              className="flex flex-col justify-start items-start flex-1 gap-4 border-l border-primary pl-5"
             >
-              <div className="text-4xl lg:text-8xl font-bold font-serif text-text">
+              <div className="text-4xl lg:text-8xl text-text font-primary font-extralight">
                 {stat.value}
               </div>
               <div className="text-sm font-medium text-text-secondary">

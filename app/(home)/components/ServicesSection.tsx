@@ -1,34 +1,47 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { Eyebrow } from "@/components/ui/Eyebrow";
 
 const services = [
   {
     number: "One",
-    title: "Business Legal Consultation",
+    title: "Mainland Company Setup",
     description:
-      "Offering expert legal guidance in corporate regulations and investment matters, helping businesses achieve compliance, mitigate risks, protect assets, and foster sustainable growth for lasting success.",
+      "Establish your LLC in Dubai mainland with full access to the local market. We handle sponsor arrangements, trade license selection, and all government approvals — you just sign.",
     image: "/Licorne Logo.jpeg",
+    href: "/services/mainland-company-setup",
   },
   {
     number: "Two",
-    title: "Dispute Resolution",
+    title: "Free Zone Company Setup",
     description:
-      "Offering expert legal guidance in corporate regulations and investment matters, helping businesses achieve compliance, mitigate risks, protect assets, and foster sustainable growth for lasting success.",
+      "100% foreign ownership, tax advantages, and simplified regulations. We help you choose the right free zone for your industry and manage the entire registration process.",
     image: "/Licorne Logo.jpeg",
+    href: "/services/free-zone-company-setup",
   },
   {
     number: "Three",
-    title: "Licensing and Contracts",
+    title: "Visa & Immigration",
     description:
-      "Offering expert legal guidance in corporate regulations and investment matters, helping businesses achieve compliance, mitigate risks, protect assets, and foster sustainable growth for lasting success.",
+      "Residence visas, investor visas, and work permits for you and your team. We navigate the immigration process so your people can start working without delays.",
     image: "/Licorne Logo.jpeg",
+    href: "/services/visa-immigration",
   },
   {
     number: "Four",
-    title: "Intellectual Property Protection",
+    title: "PRO & Government Services",
     description:
-      "Offering expert legal guidance in corporate regulations and investment matters, helping businesses achieve compliance, mitigate risks, protect assets, and foster sustainable growth for lasting success.",
+      "Document attestation, Emirates ID, medical tests, license renewals — the ongoing paperwork that keeps your business compliant. We handle it all.",
     image: "/Licorne Logo.jpeg",
+    href: "/services/pro-government-services",
+  },
+  {
+    number: "Five",
+    title: "Bank Account Opening",
+    description:
+      "The trickiest part of Dubai setup — made manageable. We prepare documentation, connect you with the right banks, and guide you through compliance for successful account opening.",
+    image: "/Licorne Logo.jpeg",
+    href: "/services/bank-account-opening",
   },
 ];
 
@@ -47,11 +60,9 @@ export function ServicesSection() {
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
-          <span className="text-secondary font-semibold text-sm uppercase tracking-wider">
-            Our Service
-          </span>
-          <h2 className="text-4xl lg:text-5xl font-bold text-primary mt-3 max-w-3xl mx-auto leading-tight">
-            Expertly Tailored Legal Solutions for Your Every Need
+          <Eyebrow>Our Services</Eyebrow>
+          <h2 className="text-4xl lg:text-5xl text-secondary mt-3 max-w-3xl mx-auto leading-tight">
+            Everything You Need to Launch in Dubai
           </h2>
         </div>
 
@@ -59,7 +70,7 @@ export function ServicesSection() {
           {services.map((service, index) => (
             <div
               key={index}
-              className="group pb-8 px-4 hover:shadow-2xl transition-all duration-300 border-b text-secondary hover:border-transparent cursor-pointer relative overflow-hidden"
+              className="group pb-8 px-4 hover:shadow-2xl transition-all duration-300 border-b text-primary hover:border-transparent cursor-pointer relative overflow-hidden"
             >
               <div className="flex">
                 <span className="text-base-950 text-lg pr-8 my-auto tracking-wider">
@@ -68,7 +79,7 @@ export function ServicesSection() {
                 <div>
                   <div className="flex items-start justify-between mb-6 relative z-10">
                     <div className="flex-1">
-                      <h3 className="text-4xl font-bold text-primary mt-2">
+                      <h3 className="text-4xl text-secondary mt-2">
                         {service.title}
                       </h3>
                     </div>
@@ -78,8 +89,8 @@ export function ServicesSection() {
                   </p>
                 </div>
                 <Link
-                  href="#"
-                  className="inline-flex items-center text-secondary ml-auto hover:text-primary transition-colors font-medium group"
+                  href={service.href}
+                  className="inline-flex items-center text-primary ml-auto hover:text-secondary transition-colors font-medium group"
                 >
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </Link>

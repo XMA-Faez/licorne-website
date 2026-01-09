@@ -6,37 +6,37 @@ import { ScrollVelocityContainer, ScrollVelocityRow } from "@/components/ui/Scro
 
 const testimonials = [
   {
-    text: "The legal team at Licorne provided exceptional service. Their deep understanding of our needs and timely advice helped us navigate complex legal challenges with confidence and success.",
-    author: "Christine Hohmann-Dennhardt",
-    location: "Kyoto Japan",
+    text: "Licorne made what I thought would be a months-long ordeal into a two-week process. Clear communication, no surprises, and my company was up and running faster than I expected.",
+    author: "Marcus Chen",
+    location: "Tech Founder, Singapore",
     image:
       "https://cdn.prod.website-files.com/67b4265e6628451a28bef3a9/67b43f2ce38e4ea89bc13c0e_image%207.png",
   },
   {
-    text: "From the very beginning, Licorne demonstrated a clear commitment to understanding our needs. Their legal advice and solutions were instrumental in driving our success and protecting our interests.",
-    author: "Susanne Baer",
-    location: "Kyoto Japan",
+    text: "I'd tried to set up on my own and hit wall after wall. Licorne untangled everything in days. Worth every dirham.",
+    author: "Sarah Mitchell",
+    location: "E-commerce, United Kingdom",
     image:
       "https://cdn.prod.website-files.com/67b4265e6628451a28bef3a9/67b4391fd5f25f6f99522318_image%2019.png",
   },
   {
-    text: "From the very beginning, Licorne demonstrated a clear commitment to understanding our needs. Their legal advice and solutions were instrumental in driving our success and protecting our interests.",
-    author: "Alecia Höpker",
-    location: "Kyoto Japan",
-    image:
-      "https://cdn.prod.website-files.com/67b4265e6628451a28bef3a9/67b4391fd5f25f6f99522318_image%2019.png",
-  },
-  {
-    text: "From the very beginning, Licorne demonstrated a clear commitment to understanding our needs. Their legal advice and solutions were instrumental in driving our success and protecting our interests.",
-    author: "Artur Kopp",
-    location: "Kyoto Japan",
+    text: "The free zone advice alone saved me from making an expensive mistake. They actually listened to my business model before recommending anything.",
+    author: "Ahmed Al-Rashid",
+    location: "Consulting, Saudi Arabia",
     image:
       "https://cdn.prod.website-files.com/67b4265e6628451a28bef3a9/67b4457f9b7c6c2bcb00db18_image%208.png",
   },
   {
-    text: '"We are incredibly grateful for the professionalism and thoroughness of Licorne. Their strategic approach to legal matters ensured our business remained compliant and well-protected."',
-    author: "Astrid Wallrabenstein",
-    location: "Kyoto Japan",
+    text: "Professional, responsive, and they actually answer their phone. After dealing with other setup companies, that alone was refreshing.",
+    author: "Julia Fernandez",
+    location: "Import/Export, Spain",
+    image:
+      "https://cdn.prod.website-files.com/67b4265e6628451a28bef3a9/67b4391fd5f25f6f99522318_image%2019.png",
+  },
+  {
+    text: "Bank account opening is where most people struggle. Licorne got me approved on the first attempt — they knew exactly what documentation the bank wanted.",
+    author: "David Okonkwo",
+    location: "Fintech, Nigeria",
     image:
       "https://cdn.prod.website-files.com/67b4265e6628451a28bef3a9/67b43f00b5c6759c33719a28_image%205.png",
   },
@@ -56,7 +56,7 @@ const StarIcon = () => (
   >
     <path
       d="M8.5 1L10.3 6.3H16L11.85 9.7L13.65 15L8.5 11.6L3.35 15L5.15 9.7L1 6.3H6.7L8.5 1Z"
-      className="fill-secondary"
+      className="fill-primary"
     />
   </svg>
 );
@@ -88,7 +88,7 @@ const TestimonialCard = ({
         className="w-12 h-12 object-cover mr-4 rounded-full border border-border-strong object-top"
       />
       <div>
-        <div className="font-semibold text-primary">
+        <div className="font-semibold text-secondary">
           {testimonial.author}
         </div>
         <div className="text-sm text-text-muted">{testimonial.location}</div>
@@ -115,12 +115,12 @@ export function TestimonialsSliderSection() {
       {/* Header Section */}
       <div className="max-w-7xl mx-auto px-6 relative z-10 mb-16">
         <div className="text-center">
-          <p className="text-secondary border-b w-fit mx-auto p-2 mb-4 font-semibold text-sm uppercase tracking-wider">
-            Testimonial
+          <p className="text-primary border-b w-fit mx-auto p-2 mb-4 font-semibold text-sm uppercase tracking-wider">
+            Testimonials
           </p>
-          <h2 className="text-4xl lg:text-6xl text-primary mt-3 max-w-3xl mx-auto leading-tight text-balance">
-            Hear Directly from Our Valued{" "}
-            <span className="text-secondary font-serif">Clients and Partners</span>
+          <h2 className="text-4xl lg:text-6xl text-secondary mt-3 max-w-3xl mx-auto leading-tight text-balance">
+            Trusted by Entrepreneurs{" "}
+            <span className="text-primary font-serif">Worldwide</span>
           </h2>
         </div>
       </div>
@@ -158,9 +158,9 @@ export function TestimonialsSliderSection() {
       <div className="text-center relative z-10">
         <Link
           href="/contact"
-          className="inline-flex items-center px-8 py-4 bg-secondary text-white hover:bg-primary transition-all duration-300 font-medium rounded-sm"
+          className="inline-flex items-center px-8 py-4 bg-primary text-white hover:bg-secondary transition-all duration-300 font-medium rounded-sm"
         >
-          Learn More
+          Start Your Journey
         </Link>
       </div>
     </section>

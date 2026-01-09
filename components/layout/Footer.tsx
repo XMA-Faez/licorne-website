@@ -1,119 +1,132 @@
-"use client";
-
-import { motion } from "motion/react";
 import Link from "next/link";
-import { Phone, Mail, MapPin } from "lucide-react";
+import Image from "next/image";
+import LicorneLogo from "@/public/Licorne Logo-bg-removed.jpeg";
 
-const footerLinks = {
-  services: [
-    { label: "Business Setup", href: "#" },
-    { label: "Visa Services", href: "#" },
-    { label: "Notary Services", href: "#" }
+const FOOTER_SERVICES = {
+  "Company Formation": [
+    { label: "Mainland Company Setup", href: "/services/mainland-company-setup" },
+    { label: "Free Zone Company Setup", href: "/services/free-zone-company-setup" },
+    { label: "Trade License Services", href: "/services/trade-license" },
   ],
-  company: [
-    { label: "About Us", href: "#" },
-    { label: "Contact", href: "#" },
-    { label: "Terms", href: "#" }
+  "Visas & Immigration": [
+    { label: "Visa & Immigration", href: "/services/visa-immigration" },
+    { label: "Golden Visa UAE", href: "/services/golden-visa" },
   ],
-  contact: [
-    { icon: Phone, text: "+971 XX XXX XXXX" },
-    { icon: Mail, text: "info@licorne.ae" },
-    { icon: MapPin, text: "Dubai, UAE" }
-  ]
+  "Business Services": [
+    { label: "PRO & Government Services", href: "/services/pro-government-services" },
+    { label: "Bank Account Opening", href: "/services/bank-account-opening" },
+    { label: "Office Solutions", href: "/services/office-solutions" },
+    { label: "Accounting & VAT", href: "/services/accounting-vat" },
+    { label: "Company Liquidation", href: "/services/company-liquidation" },
+  ],
 };
+
+const FOOTER_RESOURCES = [
+  { label: "Free Zone Comparison", href: "/free-zones" },
+  { label: "Cost Guide", href: "/cost-guide" },
+  { label: "Business Activities", href: "/business-activities" },
+  { label: "How It Works", href: "/how-it-works" },
+];
+
+const FOOTER_COMPANY = [
+  { label: "About Us", href: "/about" },
+  { label: "Contact Us", href: "/contact" },
+  { label: "FAQ", href: "/faq" },
+  { label: "All Services", href: "/services" },
+];
+
+function FooterLinkGroup({
+  title,
+  links,
+}: {
+  title: string;
+  links: { label: string; href: string }[];
+}) {
+  return (
+    <div>
+      <h3 className="text-white font-semibold mb-4">{title}</h3>
+      <ul className="space-y-2">
+        {links.map((link) => (
+          <li key={link.href}>
+            <Link
+              href={link.href}
+              className="text-white/70 hover:text-primary transition-colors text-sm"
+            >
+              {link.label}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
 
 export function Footer() {
   return (
-    <footer className="py-12 bg-background">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          {/* Brand */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
-            <h3 className="text-2xl font-bold mb-4 text-primary">LICORNE</h3>
-            <p className="text-secondary">
-              Your trusted partner for business setup in UAE
+    <footer className="bg-secondary">
+      <div className="max-w-7xl mx-auto px-6 py-16">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 lg:gap-6">
+          <div className="col-span-2 md:col-span-3 lg:col-span-2">
+            <Link href="/" className="inline-block mb-6">
+              <div className="h-12 relative">
+                <Image
+                  src={LicorneLogo}
+                  alt="Licorne Logo"
+                  height={48}
+                  className="h-full w-auto object-contain"
+                  style={{
+                    filter: "brightness(0) invert(1)",
+                  }}
+                />
+              </div>
+            </Link>
+            <p className="text-white/70 text-sm leading-relaxed max-w-sm mb-6">
+              Dubai&apos;s trusted business setup partner. We help entrepreneurs
+              and companies establish and operate in the UAE with clarity,
+              efficiency, and confidence.
             </p>
-          </motion.div>
+            <Link
+              href="/contact"
+              className="inline-block px-5 py-2.5 bg-primary text-white hover:bg-white hover:text-secondary transition-colors text-sm font-medium rounded-sm"
+            >
+              Free Consultation
+            </Link>
+          </div>
 
-          {/* Services */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-          >
-            <h4 className="font-bold mb-4 text-text">Services</h4>
-            <ul className="space-y-2">
-              {footerLinks.services.map((link) => (
-                <li key={link.label}>
-                  <Link
-                    href={link.href}
-                    className="text-secondary hover:text-primary transition-colors duration-200"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </motion.div>
+          <FooterLinkGroup title="Company Formation" links={FOOTER_SERVICES["Company Formation"]} />
 
-          {/* Company */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-          >
-            <h4 className="font-bold mb-4 text-text">Company</h4>
-            <ul className="space-y-2">
-              {footerLinks.company.map((link) => (
-                <li key={link.label}>
-                  <Link
-                    href={link.href}
-                    className="text-secondary hover:text-primary transition-colors duration-200"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </motion.div>
+          <div>
+            <FooterLinkGroup
+              title="Visas"
+              links={FOOTER_SERVICES["Visas & Immigration"]}
+            />
+            <div className="mt-8">
+              <FooterLinkGroup title="Resources" links={FOOTER_RESOURCES} />
+            </div>
+          </div>
 
-          {/* Contact */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-          >
-            <h4 className="font-bold mb-4 text-text">Contact</h4>
-            <ul className="space-y-2">
-              {footerLinks.contact.map((item, index) => (
-                <li key={index} className="flex items-center gap-2 text-secondary">
-                  <item.icon className="w-4 h-4" />
-                  {item.text}
-                </li>
-              ))}
-            </ul>
-          </motion.div>
+          <FooterLinkGroup title="Business Services" links={FOOTER_SERVICES["Business Services"]} />
+
+          <FooterLinkGroup title="Company" links={FOOTER_COMPANY} />
         </div>
+      </div>
 
-        <motion.div
-          className="border-t border-border mt-8 pt-8 text-center"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.4 }}
-        >
-          <p className="text-secondary">
-            &copy; 2024 Licorne. All rights reserved.
-          </p>
-        </motion.div>
+      <div className="border-t border-white/10">
+        <div className="max-w-7xl mx-auto px-6 py-6">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <p className="text-white/50 text-sm">
+              &copy; {new Date().getFullYear()} Licorne. All rights reserved.
+            </p>
+            <div className="flex gap-6 text-white/50 text-sm">
+              <Link href="/contact" className="hover:text-primary transition-colors">
+                Privacy Policy
+              </Link>
+              <Link href="/contact" className="hover:text-primary transition-colors">
+                Terms of Service
+              </Link>
+            </div>
+          </div>
+        </div>
       </div>
     </footer>
   );

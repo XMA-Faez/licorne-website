@@ -1,47 +1,56 @@
 import Image from 'next/image';
+import {
+  CheckBadgeIcon,
+  UserIcon,
+  BoltIcon,
+  BuildingOffice2Icon,
+  ArrowsPointingOutIcon,
+  CurrencyDollarIcon,
+} from '@heroicons/react/24/outline';
+import { Eyebrow } from '@/components/ui/Eyebrow';
 
 const features = [
   {
-    icon: 'https://cdn.prod.website-files.com/67aec585824eadef2eebc54f/67b2a1adf84997b44f076803_08dbb3cd-14d4-4ae5-8212-44c0247b164f.png',
-    title: 'Proven Expertise',
+    icon: CheckBadgeIcon,
+    title: 'No Guesswork',
     description:
-      'Our team of seasoned legal experts brings extensive knowledge and experience to navigate complex regulatory challenges effectively.',
+      'We tell you exactly what you need, what it costs, and how long it takes. No surprises, no hidden fees.',
   },
   {
-    icon: 'https://cdn.prod.website-files.com/67aec585824eadef2eebc54f/67b2a1ada682f9bde562529f_08dbb3cd-14d4-4ae5-8212-44c0247b164f-1.png',
-    title: 'Proven Track Record',
+    icon: UserIcon,
+    title: 'One Point of Contact',
     description:
-      'With years of success in handling complex legal matters, we have earned a reputation for delivering effective and timely results.',
+      'Your dedicated consultant manages everything. You won\'t be passed between departments or left waiting.',
   },
   {
-    icon: 'https://cdn.prod.website-files.com/67aec585824eadef2eebc54f/67b2a1ada8e69583e96e0887_08dbb3cd-14d4-4ae5-8212-44c0247b164f-2.png',
-    title: 'Tailored Approach',
+    icon: BoltIcon,
+    title: 'Speed That Matters',
     description:
-      'Expertly Tailored Legal Solutions Designed to Meet Your Unique, Specific Needs and Drive Meaningful Outcomes',
+      'Most setups completed in days, not weeks. We know the shortcuts because we\'ve done this hundreds of times.',
   },
   {
-    icon: 'https://cdn.prod.website-files.com/67aec585824eadef2eebc54f/67b2a1ad0d3994b9838a79dd_08dbb3cd-14d4-4ae5-8212-44c0247b164f-3.png',
-    title: 'Integrity',
+    icon: BuildingOffice2Icon,
+    title: 'Every Free Zone',
     description:
-      'We prioritize transparency and honesty, ensuring clear communication and trust in every aspect of our services.',
+      'We work with 40+ free zones. We\'ll match you to the one that fits your business, not push you toward our favorite.',
   },
   {
-    icon: 'https://cdn.prod.website-files.com/67aec585824eadef2eebc54f/67b2a1ad0d3994b9838a79d9_08dbb3cd-14d4-4ae5-8212-44c0247b164f-4.png',
-    title: 'Dedication to Excellence',
+    icon: ArrowsPointingOutIcon,
+    title: 'Beyond Setup',
     description:
-      'Our primary focus is on delivering impactful and sustainable outcomes that drive success for our clients.',
+      'Bank accounts, office space, accounting referrals — we connect you to trusted partners for everything that comes next.',
   },
   {
-    icon: 'https://cdn.prod.website-files.com/67aec585824eadef2eebc54f/67b2a1adca60daab55e6cbb7_08dbb3cd-14d4-4ae5-8212-44c0247b164f-5.png',
-    title: 'Real Results',
+    icon: CurrencyDollarIcon,
+    title: 'Transparent Pricing',
     description:
-      'Our primary focus is on delivering impactful and sustainable outcomes that drive success for our clients.',
+      'Full cost breakdown upfront. You\'ll know exactly what you\'re paying for before you commit.',
   },
 ];
 
 export function WhyChooseUsSection() {
   return (
-    <section className="py-24 lg:py-32 relative overflow-hidden bg-primary">
+    <section className="py-24 lg:py-32 relative overflow-hidden bg-secondary">
       {/* Grain texture overlay */}
       <div className="absolute inset-0 opacity-20">
         <Image
@@ -66,32 +75,27 @@ export function WhyChooseUsSection() {
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
-          <p className="text-white border-b w-fit mx-auto p-2 font-semibold text-sm uppercase tracking-wider mb-4">
-            Why Choose Us
-          </p>
-          <h2 className="text-4xl lg:text-5xl text-white max-w-4xl mx-auto leading-tight">
-            Trusted Legal Expertise for Your{' '}
-            <span className="text-secondary font-serif">Peace of Mind</span>
+          <Eyebrow variant="light">Why Licorne</Eyebrow>
+          <h2 className="text-4xl lg:text-5xl text-white mt-3 max-w-4xl mx-auto leading-tight">
+            Business Setup Without the{' '}
+            <span className="text-primary font-serif">Headaches</span>
           </h2>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {features.map((item, index) => (
-            <div
-              key={index}
-              className="group bg-white/10 backdrop-blur-sm border border-white/20 rounded-xs p-8 hover:bg-white/20 transition-all duration-300 cursor-pointer"
-            >
-              <Image
-                src={item.icon}
-                alt={item.title}
-                className="w-12 h-12 object-contain mb-4"
-                width={48}
-                height={48}
-              />
-              <h3 className="text-3xl text-white mb-2">{item.title}</h3>
-              <p className="text-white/80 leading-relaxed">{item.description}</p>
-            </div>
-          ))}
+          {features.map((item, index) => {
+            const Icon = item.icon;
+            return (
+              <div
+                key={index}
+                className="group bg-white/10 backdrop-blur-sm border border-white/20 rounded-xs p-8 hover:bg-white/20 transition-all duration-300 cursor-pointer"
+              >
+                <Icon className="size-10 text-primary mb-4" />
+                <h3 className="text-3xl text-white mb-2">{item.title}</h3>
+                <p className="text-white/80 leading-relaxed">{item.description}</p>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>

@@ -2,32 +2,33 @@
 
 import { useState } from "react";
 import { Plus, Minus } from "lucide-react";
+import { Eyebrow } from "@/components/ui/Eyebrow";
 
 const faqs = [
   {
-    question: "What services does Licorne offer?",
+    question: "What's the difference between mainland and free zone?",
     answer:
-      "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
+      "Mainland companies can trade directly with the UAE market and require a local sponsor (we arrange this). Free zone companies offer 100% foreign ownership but are limited to operating within the zone or internationally. We'll help you choose based on your business model.",
   },
   {
-    question: "How can I schedule a consultation with Licorne?",
+    question: "How long does company setup take?",
     answer:
-      "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
+      "Most free zone setups take 3-5 business days. Mainland setups typically take 1-2 weeks depending on the activity type and approvals required. We'll give you a realistic timeline during your consultation.",
   },
   {
-    question: "What industries does Licorne specialize in?",
+    question: "Do I need to be in Dubai to start the process?",
     answer:
-      "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
+      "No. We can begin remotely — most documentation can be handled digitally. You'll need to visit Dubai for your Emirates ID and to finalize certain steps, but we'll coordinate the timing to minimize your trips.",
   },
   {
-    question: "Why should I choose Licorne?",
+    question: "What are the costs involved?",
     answer:
-      "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
+      "Costs vary based on company type, free zone selection, visa requirements, and office space needs. We provide a detailed quote after understanding your requirements — no hidden fees, everything itemized.",
   },
   {
-    question: "How much do your legal services cost?",
+    question: "Can you help with bank account opening?",
     answer:
-      "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
+      "Yes. Bank account opening is one of the trickiest parts of Dubai setup. We prepare your documentation, recommend banks suited to your business type, and accompany you to appointments when needed.",
   },
 ];
 
@@ -48,10 +49,8 @@ export function FAQSection() {
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
-          <span className="text-secondary font-semibold text-sm uppercase tracking-wider">
-            FAQ
-          </span>
-          <h2 className="text-4xl lg:text-5xl font-bold text-primary mt-3 max-w-3xl mx-auto leading-tight">
+          <Eyebrow>FAQ</Eyebrow>
+          <h2 className="text-4xl lg:text-5xl text-secondary mt-3 max-w-3xl mx-auto leading-tight">
             Frequently Asked Questions
           </h2>
         </div>
@@ -63,18 +62,18 @@ export function FAQSection() {
                 onClick={() =>
                   setActiveAccordion(activeAccordion === index ? null : index)
                 }
-                className={`w-full p-4 text-left transition-all duration-300 border-b border-secondary ${
+                className={`w-full p-4 text-left transition-all duration-300 border-b border-primary ${
                   activeAccordion === index
                     ? "shadow-xl"
                     : "hover:shadow-lg"
                 }`}
               >
                 <div className="flex justify-between items-center">
-                  <h3 className="text-2xl font-semibold text-primary pr-4">
+                  <h3 className="text-2xl font-semibold text-secondary pr-4">
                     {faq.question}
                   </h3>
                   <div
-                    className={`flex-shrink-0 text-secondary w-10 h-10 flex items-center justify-center transition-colors duration-300`}
+                    className={`flex-shrink-0 text-primary w-10 h-10 flex items-center justify-center transition-colors duration-300`}
                   >
                     {activeAccordion === index ? (
                       <Minus className="w-5 h-5" />

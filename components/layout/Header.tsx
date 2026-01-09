@@ -1,9 +1,9 @@
-"use client";
+"use client"
 
-import { useState, useEffect } from "react";
-import Link from "next/link";
-import Image from "next/image";
-import { Menu, ChevronDown } from "lucide-react";
+import { useState, useEffect } from "react"
+import Link from "next/link"
+import Image from "next/image"
+import { Menu, ChevronDown } from "lucide-react"
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -11,7 +11,7 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
-} from "@/components/ui/navigation-menu";
+} from "@/components/ui/navigation-menu"
 import {
   Sheet,
   SheetContent,
@@ -19,133 +19,20 @@ import {
   SheetTitle,
   SheetTrigger,
   SheetClose,
-} from "@/components/ui/sheet";
-import { cn } from "@/lib/utils";
-import LicorneLogo from "@/public/Licorne Logo-bg-removed.jpeg";
-
-const SERVICES = {
-  "Company Formation": [
-    {
-      label: "Mainland Company Setup",
-      href: "/services/mainland-company-setup",
-      description: "LLC formation with local sponsor",
-    },
-    {
-      label: "Free Zone Company Setup",
-      href: "/services/free-zone-company-setup",
-      description: "100% foreign ownership in 40+ zones",
-    },
-    {
-      label: "Trade License Services",
-      href: "/services/trade-license",
-      description: "New licenses, renewals & amendments",
-    },
-  ],
-  "Visas & Immigration": [
-    {
-      label: "Visa & Immigration",
-      href: "/services/visa-immigration",
-      description: "Residence visas for you and your team",
-    },
-    {
-      label: "Golden Visa UAE",
-      href: "/services/golden-visa",
-      description: "10-year residency for investors",
-    },
-  ],
-  "Business Services": [
-    {
-      label: "PRO & Government Services",
-      href: "/services/pro-government-services",
-      description: "Document clearing & liaison",
-    },
-    {
-      label: "Bank Account Opening",
-      href: "/services/bank-account-opening",
-      description: "Corporate banking setup",
-    },
-    {
-      label: "Office Solutions",
-      href: "/services/office-solutions",
-      description: "Virtual, flexi desk & physical offices",
-    },
-    {
-      label: "Accounting & VAT",
-      href: "/services/accounting-vat",
-      description: "Bookkeeping & tax compliance",
-    },
-    {
-      label: "Company Liquidation",
-      href: "/services/company-liquidation",
-      description: "Business closure & exit",
-    },
-  ],
-};
-
-const RESOURCES = [
-  {
-    label: "Free Zone Comparison",
-    href: "/free-zones",
-    description: "Compare 40+ UAE free zones",
-  },
-  {
-    label: "Cost Guide",
-    href: "/cost-guide",
-    description: "Transparent pricing breakdown",
-  },
-  {
-    label: "Business Activities",
-    href: "/business-activities",
-    description: "Activity codes & licensing",
-  },
-  {
-    label: "How It Works",
-    href: "/how-it-works",
-    description: "Our setup process explained",
-  },
-];
-
-function ListItem({
-  className,
-  title,
-  href,
-  children,
-}: {
-  className?: string;
-  title: string;
-  href: string;
-  children: React.ReactNode;
-}) {
-  return (
-    <li>
-      <NavigationMenuLink asChild>
-        <Link
-          href={href}
-          className={cn(
-            "block select-none rounded-sm p-3 leading-none no-underline outline-none transition-colors hover:bg-accent-50 focus:bg-accent-50",
-            className
-          )}
-        >
-          <div className="text-sm font-medium text-secondary leading-none mb-1">
-            {title}
-          </div>
-          <p className="text-xs text-base-500 leading-snug line-clamp-2">
-            {children}
-          </p>
-        </Link>
-      </NavigationMenuLink>
-    </li>
-  );
-}
+} from "@/components/ui/sheet"
+import { CascadingMenu } from "@/components/layout/CascadingMenu"
+import { SERVICES, RESOURCES } from "@/lib/navigation"
+import { cn } from "@/lib/utils"
+import LicorneLogo from "@/public/Licorne Logo-bg-removed.jpeg"
 
 function MobileNavItem({
   href,
   children,
   className,
 }: {
-  href: string;
-  children: React.ReactNode;
-  className?: string;
+  href: string
+  children: React.ReactNode
+  className?: string
 }) {
   return (
     <SheetClose asChild>
@@ -159,17 +46,17 @@ function MobileNavItem({
         {children}
       </Link>
     </SheetClose>
-  );
+  )
 }
 
 function MobileAccordion({
   title,
   children,
 }: {
-  title: string;
-  children: React.ReactNode;
+  title: string
+  children: React.ReactNode
 }) {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false)
 
   return (
     <div className="border-b border-base-200 last:border-b-0">
@@ -194,20 +81,34 @@ function MobileAccordion({
         {children}
       </div>
     </div>
-  );
+  )
 }
 
 export function Header() {
-  const [isScrolled, setIsScrolled] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
+      setIsScrolled(window.scrollY > 50)
+    }
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
+
+  const navLinkStyles = cn(
+    "group inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors",
+    isScrolled
+      ? "text-secondary hover:text-primary"
+      : "text-white hover:text-primary"
+  )
+
+  const triggerStyles = cn(
+    "bg-transparent hover:bg-transparent focus:bg-transparent data-[state=open]:bg-transparent",
+    isScrolled
+      ? "text-secondary hover:text-primary data-[state=open]:text-primary"
+      : "text-white hover:text-primary data-[state=open]:text-primary"
+  )
 
   return (
     <header
@@ -238,86 +139,40 @@ export function Header() {
             <NavigationMenuList>
               <NavigationMenuItem>
                 <NavigationMenuLink asChild>
-                  <Link
-                    href="/"
-                    className={cn(
-                      "group inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors",
-                      isScrolled
-                        ? "text-secondary hover:text-primary"
-                        : "text-white hover:text-primary"
-                    )}
-                  >
+                  <Link href="/" className={navLinkStyles}>
                     Home
                   </Link>
                 </NavigationMenuLink>
               </NavigationMenuItem>
 
               <NavigationMenuItem>
-                <NavigationMenuTrigger
-                  className={cn(
-                    "bg-transparent hover:bg-transparent focus:bg-transparent data-[state=open]:bg-transparent",
-                    isScrolled
-                      ? "text-secondary hover:text-primary data-[state=open]:text-primary"
-                      : "text-white hover:text-primary data-[state=open]:text-primary"
-                  )}
-                >
-                  Services
+                <NavigationMenuTrigger className={triggerStyles}>
+                  <Link href="/services" className="hover:text-primary">
+                    Services
+                  </Link>
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <div className="w-[600px] p-4 bg-white">
-                    <div className="grid grid-cols-3 gap-4">
-                      {Object.entries(SERVICES).map(([category, items]) => (
-                        <div key={category}>
-                          <h3 className="text-xs font-semibold text-primary uppercase tracking-wider mb-3 px-3">
-                            {category}
-                          </h3>
-                          <ul className="space-y-1">
-                            {items.map((item) => (
-                              <ListItem
-                                key={item.href}
-                                title={item.label}
-                                href={item.href}
-                              >
-                                {item.description}
-                              </ListItem>
-                            ))}
-                          </ul>
-                        </div>
-                      ))}
-                    </div>
-                    <div className="mt-4 pt-4 border-t border-base-200">
-                      <Link
-                        href="/services"
-                        className="text-sm text-primary hover:text-secondary font-medium transition-colors"
-                      >
-                        View All Services →
-                      </Link>
-                    </div>
-                  </div>
+                  <CascadingMenu />
                 </NavigationMenuContent>
               </NavigationMenuItem>
 
               <NavigationMenuItem>
-                <NavigationMenuTrigger
-                  className={cn(
-                    "bg-transparent hover:bg-transparent focus:bg-transparent data-[state=open]:bg-transparent",
-                    isScrolled
-                      ? "text-secondary hover:text-primary data-[state=open]:text-primary"
-                      : "text-white hover:text-primary data-[state=open]:text-primary"
-                  )}
-                >
+                <NavigationMenuTrigger className={triggerStyles}>
                   Resources
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <ul className="w-[400px] p-4 bg-white grid grid-cols-2 gap-2">
+                  <ul className="w-[300px] p-3 bg-white space-y-1">
                     {RESOURCES.map((item) => (
-                      <ListItem
-                        key={item.href}
-                        title={item.label}
-                        href={item.href}
-                      >
-                        {item.description}
-                      </ListItem>
+                      <li key={item.href}>
+                        <NavigationMenuLink asChild>
+                          <Link
+                            href={item.href}
+                            className="block rounded-sm px-3 py-2.5 text-sm font-medium text-secondary transition-colors hover:text-primary"
+                          >
+                            {item.label}
+                          </Link>
+                        </NavigationMenuLink>
+                      </li>
                     ))}
                   </ul>
                 </NavigationMenuContent>
@@ -325,15 +180,7 @@ export function Header() {
 
               <NavigationMenuItem>
                 <NavigationMenuLink asChild>
-                  <Link
-                    href="/about"
-                    className={cn(
-                      "group inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors",
-                      isScrolled
-                        ? "text-secondary hover:text-primary"
-                        : "text-white hover:text-primary"
-                    )}
-                  >
+                  <Link href="/about" className={navLinkStyles}>
                     About
                   </Link>
                 </NavigationMenuLink>
@@ -341,15 +188,7 @@ export function Header() {
 
               <NavigationMenuItem>
                 <NavigationMenuLink asChild>
-                  <Link
-                    href="/faq"
-                    className={cn(
-                      "group inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors",
-                      isScrolled
-                        ? "text-secondary hover:text-primary"
-                        : "text-white hover:text-primary"
-                    )}
-                  >
+                  <Link href="/faq" className={navLinkStyles}>
                     FAQ
                   </Link>
                 </NavigationMenuLink>
@@ -357,15 +196,7 @@ export function Header() {
 
               <NavigationMenuItem>
                 <NavigationMenuLink asChild>
-                  <Link
-                    href="/contact"
-                    className={cn(
-                      "group inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors",
-                      isScrolled
-                        ? "text-secondary hover:text-primary"
-                        : "text-white hover:text-primary"
-                    )}
-                  >
+                  <Link href="/contact" className={navLinkStyles}>
                     Contact
                   </Link>
                 </NavigationMenuLink>
@@ -376,9 +207,7 @@ export function Header() {
           <div className="hidden lg:block">
             <Link
               href="/contact"
-              className={cn(
-                "px-5 py-2.5 transition-colors text-sm font-medium rounded-sm bg-primary text-white hover:bg-primary-hover",
-              )}
+              className="px-5 py-2.5 transition-colors text-sm font-medium rounded-sm bg-primary text-white hover:bg-primary-hover"
             >
               Free Consultation
             </Link>
@@ -401,9 +230,7 @@ export function Header() {
             <SheetContent side="right" className="w-full sm:max-w-md">
               <SheetHeader className="border-b border-base-200 pb-4">
                 <SheetTitle className="text-left">
-                  <span className="text-xl font-serif text-secondary">
-                    Licorne
-                  </span>
+                  <span className="text-xl text-secondary">Licorne</span>
                 </SheetTitle>
               </SheetHeader>
 
@@ -414,7 +241,7 @@ export function Header() {
 
                 <MobileAccordion title="Services">
                   <div className="space-y-4 pl-4">
-                    {Object.entries(SERVICES).map(([category, items]) => (
+                    {Object.entries(SERVICES).map(([category, { items }]) => (
                       <div key={category}>
                         <h4 className="text-xs font-semibold text-primary uppercase tracking-wider mb-2">
                           {category}
@@ -432,12 +259,6 @@ export function Header() {
                         </div>
                       </div>
                     ))}
-                    <MobileNavItem
-                      href="/services"
-                      className="text-sm text-primary font-medium"
-                    >
-                      View All Services →
-                    </MobileNavItem>
                   </div>
                 </MobileAccordion>
 
@@ -483,5 +304,5 @@ export function Header() {
         </div>
       </div>
     </header>
-  );
+  )
 }

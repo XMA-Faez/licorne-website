@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Plus, Minus } from "lucide-react";
+import { Eyebrow } from "@/components/ui/Eyebrow";
 
 const faqs = [
   {
@@ -48,10 +49,8 @@ export function FAQSection() {
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
-          <span className="text-primary font-semibold text-sm uppercase tracking-wider">
-            FAQ
-          </span>
-          <h2 className="text-4xl lg:text-5xl font-bold text-secondary mt-3 max-w-3xl mx-auto leading-tight">
+          <Eyebrow>FAQ</Eyebrow>
+          <h2 className="text-4xl lg:text-5xl text-secondary mt-3 max-w-3xl mx-auto leading-tight">
             Frequently Asked Questions
           </h2>
         </div>

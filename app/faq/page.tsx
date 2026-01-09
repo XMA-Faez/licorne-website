@@ -1,5 +1,5 @@
-import Image from "next/image";
 import Link from "next/link";
+import { PageHero } from "@/components/layout/PageHero";
 import HeroImage from "@/public/hero-background.png";
 import { Metadata } from "next";
 
@@ -214,31 +214,14 @@ export const metadata: Metadata = {
 export default function FAQPage() {
   return (
     <>
-      <section className="relative min-h-[50vh] flex items-center overflow-hidden">
-        <div className="absolute inset-0">
-          <Image
-            src={HeroImage}
-            alt="Dubai business setup FAQ"
-            className="absolute inset-0 w-full h-full object-cover object-center"
-            priority
-          />
-          <div className="absolute inset-0 bg-gradient-to-tr from-accent-950/70 via-secondary/60 to-black/40"></div>
-        </div>
-        <div className="max-w-7xl mx-auto px-6 pt-32 pb-20 relative z-10">
-          <div className="max-w-3xl">
-            <span className="text-primary font-semibold text-sm uppercase tracking-wider">
-              FAQ
-            </span>
-            <h1 className="text-4xl lg:text-6xl font-bold text-accent-50 mt-4 leading-tight">
-              Frequently Asked Questions
-            </h1>
-            <p className="text-lg lg:text-xl text-accent-50/80 mt-6 leading-relaxed">
-              Everything you need to know about starting and running a business in Dubai.
-              Can't find your answer? Book a free consultation.
-            </p>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="FAQ"
+        title="Frequently Asked Questions"
+        description="Everything you need to know about starting and running a business in Dubai. Can't find your answer? Book a free consultation."
+        image={HeroImage}
+        imageAlt="Dubai business setup FAQ"
+        height="small"
+      />
 
       <section className="py-16 bg-accent-50">
         <div className="max-w-7xl mx-auto px-6">
@@ -263,14 +246,14 @@ export default function FAQPage() {
           className="py-16 lg:py-24 border-b border-primary/10 last:border-0"
         >
           <div className="max-w-4xl mx-auto px-6">
-            <h2 className="text-3xl font-bold text-secondary mb-8">{cat.category}</h2>
+            <h2 className="text-3xl text-secondary mb-8">{cat.category}</h2>
             <div className="space-y-6">
               {cat.questions.map((faq, index) => (
                 <div
                   key={index}
                   className="bg-white border border-primary/20 rounded-sm p-6"
                 >
-                  <h3 className="text-lg font-bold text-secondary mb-3">
+                  <h3 className="text-2xl text-secondary mb-3">
                     {faq.question}
                   </h3>
                   <p className="text-gray-600 leading-relaxed">{faq.answer}</p>
@@ -283,7 +266,7 @@ export default function FAQPage() {
 
       <section className="py-24 lg:py-32 bg-secondary">
         <div className="max-w-7xl mx-auto px-6 text-center">
-          <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
+          <h2 className="text-3xl lg:text-4xl text-white mb-6">
             Still have questions?
           </h2>
           <p className="text-white/80 max-w-2xl mx-auto mb-8">

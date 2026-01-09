@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { Eyebrow } from "@/components/ui/Eyebrow";
 
 const services = [
   {
@@ -59,10 +60,8 @@ export function ServicesSection() {
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
-          <span className="text-primary font-semibold text-sm uppercase tracking-wider">
-            Our Services
-          </span>
-          <h2 className="text-4xl lg:text-5xl font-bold text-secondary mt-3 max-w-3xl mx-auto leading-tight">
+          <Eyebrow>Our Services</Eyebrow>
+          <h2 className="text-4xl lg:text-5xl text-secondary mt-3 max-w-3xl mx-auto leading-tight">
             Everything You Need to Launch in Dubai
           </h2>
         </div>
@@ -80,7 +79,7 @@ export function ServicesSection() {
                 <div>
                   <div className="flex items-start justify-between mb-6 relative z-10">
                     <div className="flex-1">
-                      <h3 className="text-4xl font-bold text-secondary mt-2">
+                      <h3 className="text-4xl text-secondary mt-2">
                         {service.title}
                       </h3>
                     </div>

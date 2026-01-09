@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowRight } from 'lucide-react';
+import { Eyebrow } from "@/components/ui/Eyebrow";
 
 const ABOUT_CONFIG = {
   tag: "About Licorne",
@@ -36,12 +37,10 @@ export function AboutSection() {
           <div>
             {/* Header Section */}
             <div className="mb-8">
-              <span className="font-semibold text-sm uppercase tracking-wider border-b border-primary w-fit p-2 mb-6 block text-primary">
-                {ABOUT_CONFIG.tag}
-              </span>
+              <Eyebrow className="mb-6">{ABOUT_CONFIG.tag}</Eyebrow>
               <h2 className="text-4xl lg:text-5xl mt-3 mb-6 leading-tight text-secondary">
                 {ABOUT_CONFIG.title}
-                <span className="font-serif text-primary">
+                <span className="text-primary">
                   {ABOUT_CONFIG.titleSpan}
                 </span>
               </h2>
@@ -83,7 +82,7 @@ export function AboutSection() {
               key={index}
               className="flex flex-col justify-start items-start flex-1 gap-4 border-l border-primary pl-5"
             >
-              <div className="text-4xl lg:text-8xl font-bold font-serif text-text">
+              <div className="text-4xl lg:text-8xl text-text font-primary font-extralight">
                 {stat.value}
               </div>
               <div className="text-sm font-medium text-text-secondary">

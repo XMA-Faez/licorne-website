@@ -1,5 +1,6 @@
-import Image from "next/image";
 import Link from "next/link";
+import { PageHero } from "@/components/layout/PageHero";
+import { Eyebrow } from "@/components/ui/Eyebrow";
 import HeroImage from "@/public/hero-background.png";
 import { Metadata } from "next";
 
@@ -174,39 +175,20 @@ export const metadata: Metadata = {
 export default function FreeZonesPage() {
   return (
     <>
-      <section className="relative min-h-[60vh] flex items-center overflow-hidden">
-        <div className="absolute inset-0">
-          <Image
-            src={HeroImage}
-            alt="Dubai free zones guide"
-            className="absolute inset-0 w-full h-full object-cover object-center"
-            priority
-          />
-          <div className="absolute inset-0 bg-gradient-to-tr from-accent-950/70 via-secondary/60 to-black/40"></div>
-        </div>
-        <div className="max-w-7xl mx-auto px-6 pt-32 pb-20 relative z-10">
-          <div className="max-w-3xl">
-            <span className="text-primary font-semibold text-sm uppercase tracking-wider">
-              Free Zone Guide
-            </span>
-            <h1 className="text-4xl lg:text-6xl font-bold text-accent-50 mt-4 leading-tight">
-              Dubai Free Zone Comparison Guide
-            </h1>
-            <p className="text-lg lg:text-xl text-accent-50/80 mt-6 leading-relaxed">
-              40+ free zones, each with different costs, activities, and benefits.
-              This guide helps you understand the options and find the right fit for your business.
-            </p>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="Free Zone Guide"
+        title="Dubai Free Zone Comparison Guide"
+        description="40+ free zones, each with different costs, activities, and benefits. This guide helps you understand the options and find the right fit for your business."
+        image={HeroImage}
+        imageAlt="Dubai free zones guide"
+        height="medium"
+      />
 
       <section className="py-24 lg:py-32">
         <div className="max-w-7xl mx-auto px-6">
           <div className="max-w-3xl mb-16">
-            <span className="text-primary font-semibold text-sm uppercase tracking-wider">
-              Understanding Free Zones
-            </span>
-            <h2 className="text-3xl lg:text-4xl font-bold text-secondary mt-3 leading-tight">
+            <Eyebrow>Understanding Free Zones</Eyebrow>
+            <h2 className="text-3xl lg:text-4xl text-secondary mt-3 leading-tight">
               What is a Dubai Free Zone?
             </h2>
             <div className="mt-6 space-y-4 text-gray-600 leading-relaxed">
@@ -232,21 +214,21 @@ export default function FreeZonesPage() {
 
           <div className="grid lg:grid-cols-3 gap-6 mb-16">
             <div className="bg-white border border-primary/20 rounded-sm p-6">
-              <div className="text-4xl font-bold text-primary">40+</div>
+              <div className="text-4xl text-primary font-primary">40+</div>
               <div className="text-secondary mt-1">Free zones in Dubai</div>
               <p className="text-gray-600 text-sm mt-2">
                 Each with unique benefits, costs, and target industries
               </p>
             </div>
             <div className="bg-white border border-primary/20 rounded-sm p-6">
-              <div className="text-4xl font-bold text-primary">0%</div>
+              <div className="text-4xl text-primary font-primary">0%</div>
               <div className="text-secondary mt-1">Corporate tax (most activities)</div>
               <p className="text-gray-600 text-sm mt-2">
                 Qualifying free zone income exempt from 9% UAE corporate tax
               </p>
             </div>
             <div className="bg-white border border-primary/20 rounded-sm p-6">
-              <div className="text-4xl font-bold text-primary">100%</div>
+              <div className="text-4xl text-primary font-primary">100%</div>
               <div className="text-secondary mt-1">Foreign ownership</div>
               <p className="text-gray-600 text-sm mt-2">
                 No local partner or sponsor required for free zone companies
@@ -259,10 +241,8 @@ export default function FreeZonesPage() {
       <section className="py-24 lg:py-32 bg-accent-50">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <span className="text-primary font-semibold text-sm uppercase tracking-wider">
-              Popular Options
-            </span>
-            <h2 className="text-3xl lg:text-4xl font-bold text-secondary mt-3">
+            <Eyebrow>Popular Options</Eyebrow>
+            <h2 className="text-3xl lg:text-4xl text-secondary mt-3">
               Most Popular Dubai Free Zones
             </h2>
             <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
@@ -279,7 +259,7 @@ export default function FreeZonesPage() {
               >
                 <div className="flex justify-between items-start mb-4">
                   <div>
-                    <h3 className="text-2xl font-bold text-secondary">{zone.name}</h3>
+                    <h3 className="text-2xl text-secondary">{zone.name}</h3>
                     <p className="text-sm text-gray-500">{zone.fullName}</p>
                   </div>
                   <span className="text-xs bg-primary/10 text-primary px-3 py-1 rounded-sm">
@@ -316,10 +296,8 @@ export default function FreeZonesPage() {
       <section className="py-24 lg:py-32">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <span className="text-primary font-semibold text-sm uppercase tracking-wider">
-              How to Choose
-            </span>
-            <h2 className="text-3xl lg:text-4xl font-bold text-secondary mt-3">
+            <Eyebrow>How to Choose</Eyebrow>
+            <h2 className="text-3xl lg:text-4xl text-secondary mt-3">
               Key Factors in Free Zone Selection
             </h2>
           </div>
@@ -330,7 +308,7 @@ export default function FreeZonesPage() {
                 key={item.factor}
                 className="border border-primary/20 rounded-sm p-6"
               >
-                <h3 className="text-xl font-bold text-secondary mb-3">{item.factor}</h3>
+                <h3 className="text-xl text-secondary mb-3">{item.factor}</h3>
                 <p className="text-gray-600 text-sm leading-relaxed">
                   {item.description}
                 </p>
@@ -343,17 +321,15 @@ export default function FreeZonesPage() {
       <section className="py-24 lg:py-32 bg-accent-50">
         <div className="max-w-7xl mx-auto px-6">
           <div className="max-w-3xl mb-16">
-            <span className="text-primary font-semibold text-sm uppercase tracking-wider">
-              Decision Framework
-            </span>
-            <h2 className="text-3xl lg:text-4xl font-bold text-secondary mt-3 leading-tight">
+            <Eyebrow>Decision Framework</Eyebrow>
+            <h2 className="text-3xl lg:text-4xl text-secondary mt-3 leading-tight">
               Which Free Zone Should You Choose?
             </h2>
           </div>
 
           <div className="space-y-6">
             <div className="bg-white border border-primary/20 rounded-sm p-8">
-              <h3 className="text-xl font-bold text-secondary mb-4">
+              <h3 className="text-xl text-secondary mb-4">
                 For consultancies and professional services
               </h3>
               <p className="text-gray-600 mb-4">
@@ -366,7 +342,7 @@ export default function FreeZonesPage() {
             </div>
 
             <div className="bg-white border border-primary/20 rounded-sm p-8">
-              <h3 className="text-xl font-bold text-secondary mb-4">
+              <h3 className="text-xl text-secondary mb-4">
                 For trading and e-commerce
               </h3>
               <p className="text-gray-600 mb-4">
@@ -379,7 +355,7 @@ export default function FreeZonesPage() {
             </div>
 
             <div className="bg-white border border-primary/20 rounded-sm p-8">
-              <h3 className="text-xl font-bold text-secondary mb-4">
+              <h3 className="text-xl text-secondary mb-4">
                 For tech and startups
               </h3>
               <p className="text-gray-600 mb-4">
@@ -392,7 +368,7 @@ export default function FreeZonesPage() {
             </div>
 
             <div className="bg-white border border-primary/20 rounded-sm p-8">
-              <h3 className="text-xl font-bold text-secondary mb-4">
+              <h3 className="text-xl text-secondary mb-4">
                 For financial services
               </h3>
               <p className="text-gray-600 mb-4">
@@ -405,7 +381,7 @@ export default function FreeZonesPage() {
             </div>
 
             <div className="bg-white border border-primary/20 rounded-sm p-8">
-              <h3 className="text-xl font-bold text-secondary mb-4">
+              <h3 className="text-xl text-secondary mb-4">
                 For media and creative
               </h3>
               <p className="text-gray-600 mb-4">
@@ -422,7 +398,7 @@ export default function FreeZonesPage() {
 
       <section className="py-24 lg:py-32 bg-secondary">
         <div className="max-w-7xl mx-auto px-6 text-center">
-          <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
+          <h2 className="text-3xl lg:text-4xl text-white mb-6">
             Not sure which free zone is right for you?
           </h2>
           <p className="text-white/80 max-w-2xl mx-auto mb-8">

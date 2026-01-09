@@ -1,5 +1,6 @@
-import Image from "next/image";
 import Link from "next/link";
+import { PageHero } from "@/components/layout/PageHero";
+import { Eyebrow } from "@/components/ui/Eyebrow";
 import HeroImage from "@/public/hero-background.png";
 import { Metadata } from "next";
 
@@ -222,39 +223,20 @@ export const metadata: Metadata = {
 export default function BusinessActivitiesPage() {
   return (
     <>
-      <section className="relative min-h-[60vh] flex items-center overflow-hidden">
-        <div className="absolute inset-0">
-          <Image
-            src={HeroImage}
-            alt="Dubai business activities guide"
-            className="absolute inset-0 w-full h-full object-cover object-center"
-            priority
-          />
-          <div className="absolute inset-0 bg-gradient-to-tr from-accent-950/70 via-secondary/60 to-black/40"></div>
-        </div>
-        <div className="max-w-7xl mx-auto px-6 pt-32 pb-20 relative z-10">
-          <div className="max-w-3xl">
-            <span className="text-primary font-semibold text-sm uppercase tracking-wider">
-              Activity Guide
-            </span>
-            <h1 className="text-4xl lg:text-6xl font-bold text-accent-50 mt-4 leading-tight">
-              Dubai Business Activities Guide
-            </h1>
-            <p className="text-lg lg:text-xl text-accent-50/80 mt-6 leading-relaxed">
-              Your trade license defines what business activities you can legally perform.
-              This guide covers common activities, categories, and how to choose the right ones for your business.
-            </p>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="Activity Guide"
+        title="Dubai Business Activities Guide"
+        description="Your trade license defines what business activities you can legally perform. This guide covers common activities, categories, and how to choose the right ones for your business."
+        image={HeroImage}
+        imageAlt="Dubai business activities guide"
+        height="medium"
+      />
 
       <section className="py-24 lg:py-32">
         <div className="max-w-7xl mx-auto px-6">
           <div className="max-w-3xl mb-16">
-            <span className="text-primary font-semibold text-sm uppercase tracking-wider">
-              Understanding Activities
-            </span>
-            <h2 className="text-3xl lg:text-4xl font-bold text-secondary mt-3 leading-tight">
+            <Eyebrow>Understanding Activities</Eyebrow>
+            <h2 className="text-3xl lg:text-4xl text-secondary mt-3 leading-tight">
               What are business activities?
             </h2>
             <div className="mt-6 space-y-4 text-gray-600 leading-relaxed">
@@ -278,21 +260,21 @@ export default function BusinessActivitiesPage() {
 
           <div className="grid lg:grid-cols-3 gap-6 mb-16">
             <div className="bg-white border border-primary/20 rounded-sm p-6">
-              <div className="text-4xl font-bold text-primary">2,000+</div>
+              <div className="text-4xl text-primary">2,000+</div>
               <div className="text-secondary mt-1">Activity codes available</div>
               <p className="text-gray-600 text-sm mt-2">
                 DED maintains extensive activity lists for mainland licenses
               </p>
             </div>
             <div className="bg-white border border-primary/20 rounded-sm p-6">
-              <div className="text-4xl font-bold text-primary">3-6</div>
+              <div className="text-4xl text-primary">3-6</div>
               <div className="text-secondary mt-1">Activities per license (typical)</div>
               <p className="text-gray-600 text-sm mt-2">
                 Most businesses need multiple activities to cover their services
               </p>
             </div>
             <div className="bg-white border border-primary/20 rounded-sm p-6">
-              <div className="text-4xl font-bold text-primary">AED 1-2K</div>
+              <div className="text-4xl text-primary">AED 1-2K</div>
               <div className="text-secondary mt-1">Per additional activity</div>
               <p className="text-gray-600 text-sm mt-2">
                 Adding activities to existing licenses is straightforward
@@ -305,10 +287,8 @@ export default function BusinessActivitiesPage() {
       <section className="py-24 lg:py-32 bg-accent-50">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <span className="text-primary font-semibold text-sm uppercase tracking-wider">
-              Activity Categories
-            </span>
-            <h2 className="text-3xl lg:text-4xl font-bold text-secondary mt-3">
+            <Eyebrow>Activity Categories</Eyebrow>
+            <h2 className="text-3xl lg:text-4xl text-secondary mt-3">
               Common Business Activities by Category
             </h2>
             <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
@@ -324,7 +304,7 @@ export default function BusinessActivitiesPage() {
                 className="bg-white border border-primary/20 rounded-sm overflow-hidden"
               >
                 <div className="bg-secondary px-6 py-4">
-                  <h3 className="text-xl font-bold text-white">{cat.category}</h3>
+                  <h3 className="text-xl text-white">{cat.category}</h3>
                   <p className="text-white/70 text-sm mt-1">{cat.description}</p>
                 </div>
                 <div className="p-6">
@@ -351,10 +331,8 @@ export default function BusinessActivitiesPage() {
       <section className="py-24 lg:py-32">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <span className="text-primary font-semibold text-sm uppercase tracking-wider">
-              Smart Combinations
-            </span>
-            <h2 className="text-3xl lg:text-4xl font-bold text-secondary mt-3">
+            <Eyebrow>Smart Combinations</Eyebrow>
+            <h2 className="text-3xl lg:text-4xl text-secondary mt-3">
               Popular Activity Combinations
             </h2>
             <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
@@ -369,7 +347,7 @@ export default function BusinessActivitiesPage() {
                 key={combo.title}
                 className="border border-primary/20 rounded-sm p-8 bg-white"
               >
-                <h3 className="text-2xl font-bold text-secondary mb-4">{combo.title}</h3>
+                <h3 className="text-2xl text-secondary mb-4">{combo.title}</h3>
                 <div className="space-y-2 mb-4">
                   {combo.activities.map((activity) => (
                     <div key={activity} className="flex items-center text-gray-600">
@@ -390,43 +368,41 @@ export default function BusinessActivitiesPage() {
       <section className="py-24 lg:py-32 bg-accent-50">
         <div className="max-w-7xl mx-auto px-6">
           <div className="max-w-3xl">
-            <span className="text-primary font-semibold text-sm uppercase tracking-wider">
-              Choosing Activities
-            </span>
-            <h2 className="text-3xl lg:text-4xl font-bold text-secondary mt-3 leading-tight">
+            <Eyebrow>Choosing Activities</Eyebrow>
+            <h2 className="text-3xl lg:text-4xl text-secondary mt-3 leading-tight">
               How to Select Your Activities
             </h2>
             <div className="mt-8 space-y-6">
               <div>
-                <h3 className="text-xl font-bold text-secondary">1. List your actual services</h3>
+                <h3 className="text-xl text-secondary">1. List your actual services</h3>
                 <p className="text-gray-600 mt-2">
                   Start with what you actually do (or plan to do). What do you sell?
                   What services do you provide? Who are your customers?
                 </p>
               </div>
               <div>
-                <h3 className="text-xl font-bold text-secondary">2. Consider future plans</h3>
+                <h3 className="text-xl text-secondary">2. Consider future plans</h3>
                 <p className="text-gray-600 mt-2">
                   Think 2-3 years ahead. Adding activities later is possible but involves
                   fees and processing time. Better to include likely future activities now.
                 </p>
               </div>
               <div>
-                <h3 className="text-xl font-bold text-secondary">3. Match to official codes</h3>
+                <h3 className="text-xl text-secondary">3. Match to official codes</h3>
                 <p className="text-gray-600 mt-2">
                   Your description needs to map to official DED or free zone activity codes.
                   "Digital marketing" might map to multiple activities; we help find the right fit.
                 </p>
               </div>
               <div>
-                <h3 className="text-xl font-bold text-secondary">4. Check approval requirements</h3>
+                <h3 className="text-xl text-secondary">4. Check approval requirements</h3>
                 <p className="text-gray-600 mt-2">
                   Some activities require ministry approvals that add time and documentation.
                   Know this before finalizing your application.
                 </p>
               </div>
               <div>
-                <h3 className="text-xl font-bold text-secondary">5. Consider your jurisdiction</h3>
+                <h3 className="text-xl text-secondary">5. Consider your jurisdiction</h3>
                 <p className="text-gray-600 mt-2">
                   Not all activities are available in all free zones. Some are mainland-only.
                   Activity selection and jurisdiction choice are connected decisions.
@@ -439,7 +415,7 @@ export default function BusinessActivitiesPage() {
 
       <section className="py-24 lg:py-32 bg-secondary">
         <div className="max-w-7xl mx-auto px-6 text-center">
-          <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
+          <h2 className="text-3xl lg:text-4xl text-white mb-6">
             Not sure which activities you need?
           </h2>
           <p className="text-white/80 max-w-2xl mx-auto mb-8">

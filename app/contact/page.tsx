@@ -1,6 +1,6 @@
-import Image from "next/image";
 import Link from "next/link";
-import "@/app/(home)/noble-law.css";
+import { PageHero } from "@/components/layout/PageHero";
+import { Eyebrow } from "@/components/ui/Eyebrow";
 import HeroImage from "@/public/hero-background.png";
 
 export const metadata = {
@@ -11,39 +11,20 @@ export const metadata = {
 export default function ContactPage() {
   return (
     <>
-      <section className="relative min-h-[50vh] flex items-center overflow-hidden">
-        <div className="absolute inset-0">
-          <Image
-            src={HeroImage}
-            alt="Contact Licorne"
-            className="absolute inset-0 w-full h-full object-cover object-center"
-            priority
-          />
-          <div className="absolute inset-0 bg-gradient-to-tr from-accent-950/70 via-secondary/60 to-black/40"></div>
-        </div>
-        <div className="max-w-7xl mx-auto px-6 pt-32 pb-20 relative z-10">
-          <div className="max-w-3xl">
-            <span className="text-primary font-semibold text-sm uppercase tracking-wider">
-              Contact
-            </span>
-            <h1 className="text-4xl lg:text-6xl font-bold text-accent-50 mt-4 leading-tight">
-              Lets start a conversation
-            </h1>
-            <p className="text-lg lg:text-xl text-accent-50/80 mt-6 leading-relaxed">
-              Tell us about your needs and our team will respond with the right
-              guidance.
-            </p>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="Contact"
+        title="Lets start a conversation"
+        description="Tell us about your needs and our team will respond with the right guidance."
+        image={HeroImage}
+        imageAlt="Contact Licorne"
+        height="small"
+      />
 
       <section className="py-24 lg:py-32">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-16 items-start">
             <div>
-              <span className="font-semibold text-sm uppercase tracking-wider border-b border-primary w-fit p-2 mb-6 block text-primary">
-                Get in touch
-              </span>
+              <Eyebrow className="mb-6">Get in touch</Eyebrow>
               <h2 className="text-4xl lg:text-5xl mt-3 mb-6 leading-tight text-secondary">
                 Ready to discuss your legal needs
               </h2>

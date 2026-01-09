@@ -1,5 +1,6 @@
-import Image from "next/image";
 import Link from "next/link";
+import { PageHero } from "@/components/layout/PageHero";
+import { Eyebrow } from "@/components/ui/Eyebrow";
 import HeroImage from "@/public/hero-background.png";
 import { Metadata } from "next";
 
@@ -86,39 +87,20 @@ export const metadata: Metadata = {
 export default function CostGuidePage() {
   return (
     <>
-      <section className="relative min-h-[60vh] flex items-center overflow-hidden">
-        <div className="absolute inset-0">
-          <Image
-            src={HeroImage}
-            alt="Dubai business setup costs"
-            className="absolute inset-0 w-full h-full object-cover object-center"
-            priority
-          />
-          <div className="absolute inset-0 bg-gradient-to-tr from-accent-950/70 via-secondary/60 to-black/40"></div>
-        </div>
-        <div className="max-w-7xl mx-auto px-6 pt-32 pb-20 relative z-10">
-          <div className="max-w-3xl">
-            <span className="text-primary font-semibold text-sm uppercase tracking-wider">
-              Cost Guide
-            </span>
-            <h1 className="text-4xl lg:text-6xl font-bold text-accent-50 mt-4 leading-tight">
-              How Much Does It Cost to Start a Business in Dubai?
-            </h1>
-            <p className="text-lg lg:text-xl text-accent-50/80 mt-6 leading-relaxed">
-              Transparent pricing breakdown. No surprises, no hidden fees.
-              Understand exactly what you'll pay for company formation, visas, and ongoing operations.
-            </p>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="Cost Guide"
+        title="How Much Does It Cost to Start a Business in Dubai?"
+        description="Transparent pricing breakdown. No surprises, no hidden fees. Understand exactly what you'll pay for company formation, visas, and ongoing operations."
+        image={HeroImage}
+        imageAlt="Dubai business setup costs"
+        height="medium"
+      />
 
       <section className="py-24 lg:py-32">
         <div className="max-w-7xl mx-auto px-6">
           <div className="max-w-3xl mb-16">
-            <span className="text-primary font-semibold text-sm uppercase tracking-wider">
-              The Real Numbers
-            </span>
-            <h2 className="text-3xl lg:text-4xl font-bold text-secondary mt-3 leading-tight">
+            <Eyebrow>The Real Numbers</Eyebrow>
+            <h2 className="text-3xl lg:text-4xl text-secondary mt-3 leading-tight">
               What affects your setup cost?
             </h2>
             <div className="mt-6 space-y-4 text-gray-600 leading-relaxed">
@@ -142,21 +124,21 @@ export default function CostGuidePage() {
 
           <div className="grid lg:grid-cols-3 gap-6 mb-16">
             <div className="bg-white border border-primary/20 rounded-sm p-6">
-              <div className="text-4xl font-bold text-primary">AED 15K</div>
+              <div className="text-4xl text-primary">AED 15K</div>
               <div className="text-secondary mt-1">Budget setup starting cost</div>
               <p className="text-gray-600 text-sm mt-2">
                 Basic free zone license with virtual office and 1 visa
               </p>
             </div>
             <div className="bg-white border border-primary/20 rounded-sm p-6">
-              <div className="text-4xl font-bold text-primary">AED 35K</div>
+              <div className="text-4xl text-primary">AED 35K</div>
               <div className="text-secondary mt-1">Average first-year cost</div>
               <p className="text-gray-600 text-sm mt-2">
                 Standard setup with license, office, and 2-3 visas
               </p>
             </div>
             <div className="bg-white border border-primary/20 rounded-sm p-6">
-              <div className="text-4xl font-bold text-primary">AED 150K+</div>
+              <div className="text-4xl text-primary">AED 150K+</div>
               <div className="text-secondary mt-1">Premium DIFC/mainland setup</div>
               <p className="text-gray-600 text-sm mt-2">
                 Prestigious jurisdictions with physical offices
@@ -169,10 +151,8 @@ export default function CostGuidePage() {
       <section className="py-24 lg:py-32 bg-accent-50">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <span className="text-primary font-semibold text-sm uppercase tracking-wider">
-              Cost Breakdown
-            </span>
-            <h2 className="text-3xl lg:text-4xl font-bold text-secondary mt-3">
+            <Eyebrow>Cost Breakdown</Eyebrow>
+            <h2 className="text-3xl lg:text-4xl text-secondary mt-3">
               Mainland Company Costs
             </h2>
             <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
@@ -217,10 +197,8 @@ export default function CostGuidePage() {
       <section className="py-24 lg:py-32">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <span className="text-primary font-semibold text-sm uppercase tracking-wider">
-              Cost Breakdown
-            </span>
-            <h2 className="text-3xl lg:text-4xl font-bold text-secondary mt-3">
+            <Eyebrow>Cost Breakdown</Eyebrow>
+            <h2 className="text-3xl lg:text-4xl text-secondary mt-3">
               Free Zone Company Costs
             </h2>
             <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
@@ -265,10 +243,8 @@ export default function CostGuidePage() {
       <section className="py-24 lg:py-32 bg-accent-50">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <span className="text-primary font-semibold text-sm uppercase tracking-wider">
-              Annual Costs
-            </span>
-            <h2 className="text-3xl lg:text-4xl font-bold text-secondary mt-3">
+            <Eyebrow>Annual Costs</Eyebrow>
+            <h2 className="text-3xl lg:text-4xl text-secondary mt-3">
               Ongoing Operating Expenses
             </h2>
             <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
@@ -308,10 +284,8 @@ export default function CostGuidePage() {
       <section className="py-24 lg:py-32">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <span className="text-primary font-semibold text-sm uppercase tracking-wider">
-              Package Examples
-            </span>
-            <h2 className="text-3xl lg:text-4xl font-bold text-secondary mt-3">
+            <Eyebrow>Package Examples</Eyebrow>
+            <h2 className="text-3xl lg:text-4xl text-secondary mt-3">
               Realistic Setup Scenarios
             </h2>
             <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
@@ -325,16 +299,16 @@ export default function CostGuidePage() {
                 key={pkg.type}
                 className="border border-primary/20 rounded-sm p-8 bg-white"
               >
-                <h3 className="text-2xl font-bold text-secondary">{pkg.type}</h3>
+                <h3 className="text-2xl text-secondary">{pkg.type}</h3>
                 <p className="text-gray-600 mt-1">{pkg.description}</p>
                 <div className="grid grid-cols-2 gap-4 mt-6 mb-6">
                   <div>
                     <div className="text-sm text-gray-500">First year total</div>
-                    <div className="text-xl font-bold text-primary">{pkg.firstYear}</div>
+                    <div className="text-xl text-primary">{pkg.firstYear}</div>
                   </div>
                   <div>
                     <div className="text-sm text-gray-500">Annual renewal</div>
-                    <div className="text-xl font-bold text-primary">{pkg.annual}</div>
+                    <div className="text-xl text-primary">{pkg.annual}</div>
                   </div>
                 </div>
                 <div className="border-t border-primary/20 pt-4">
@@ -357,15 +331,13 @@ export default function CostGuidePage() {
       <section className="py-24 lg:py-32 bg-accent-50">
         <div className="max-w-7xl mx-auto px-6">
           <div className="max-w-3xl">
-            <span className="text-primary font-semibold text-sm uppercase tracking-wider">
-              Saving Money
-            </span>
-            <h2 className="text-3xl lg:text-4xl font-bold text-secondary mt-3 leading-tight">
+            <Eyebrow>Saving Money</Eyebrow>
+            <h2 className="text-3xl lg:text-4xl text-secondary mt-3 leading-tight">
               How to Reduce Your Setup Costs
             </h2>
             <div className="mt-8 space-y-6">
               <div>
-                <h3 className="text-xl font-bold text-secondary">Choose the right free zone</h3>
+                <h3 className="text-xl text-secondary">Choose the right free zone</h3>
                 <p className="text-gray-600 mt-2">
                   IFZA and Meydan cost significantly less than DMCC for the same activities.
                   Unless you specifically need DMCC's trading infrastructure or prestige, a
@@ -373,21 +345,21 @@ export default function CostGuidePage() {
                 </p>
               </div>
               <div>
-                <h3 className="text-xl font-bold text-secondary">Start with fewer visas</h3>
+                <h3 className="text-xl text-secondary">Start with fewer visas</h3>
                 <p className="text-gray-600 mt-2">
                   Don't pay for visa packages you won't use immediately. Most setups allow
                   adding visas later. Start with what you need and expand when your team grows.
                 </p>
               </div>
               <div>
-                <h3 className="text-xl font-bold text-secondary">Use virtual/flexi office</h3>
+                <h3 className="text-xl text-secondary">Use virtual/flexi office</h3>
                 <p className="text-gray-600 mt-2">
                   Physical offices are expensive. If you don't need daily presence or client
                   visits, a flexi desk or virtual address saves AED 20,000-50,000 annually.
                 </p>
               </div>
               <div>
-                <h3 className="text-xl font-bold text-secondary">Bundle services</h3>
+                <h3 className="text-xl text-secondary">Bundle services</h3>
                 <p className="text-gray-600 mt-2">
                   Setup packages that include license, visa, and PRO support are typically
                   cheaper than arranging each component separately. Ask about all-inclusive pricing.
@@ -400,7 +372,7 @@ export default function CostGuidePage() {
 
       <section className="py-24 lg:py-32 bg-secondary">
         <div className="max-w-7xl mx-auto px-6 text-center">
-          <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
+          <h2 className="text-3xl lg:text-4xl text-white mb-6">
             Get an exact quote for your business
           </h2>
           <p className="text-white/80 max-w-2xl mx-auto mb-8">

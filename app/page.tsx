@@ -1,4 +1,3 @@
-import "./(home)/noble-law.css";
 import { HeroSection } from "./(home)/components/HeroSection";
 import { AboutSection } from "./(home)/components/AboutSection";
 import { ServicesSection } from "./(home)/components/ServicesSection";

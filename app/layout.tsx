@@ -6,13 +6,13 @@ import { Footer } from "@/components/layout/Footer";
 
 const inter = Inter({
   subsets: ["latin"],
-  variable: "--font-inter",
+  variable: "--font-secondary",
 });
 
 const instrumentSerif = Instrument_Serif({
   weight: "400",
   subsets: ["latin"],
-  variable: "--font-instrument-serif",
+  variable: "--font-primary",
 });
 
 export const metadata: Metadata = {
@@ -29,7 +29,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.variable} ${instrumentSerif.variable} font-sans antialiased`}
+        className={`${inter.variable} ${instrumentSerif.variable} font-secondary antialiased`}
       >
         <Header />
         <main>{children}</main>

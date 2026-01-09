@@ -4,8 +4,10 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme {
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
-  --font-serif: var(--font-instrument-serif), ui-serif, Georgia, serif;
+  --font-serif: var(--font-primary), ui-serif, Georgia, serif;
+  --font-sans: var(--font-secondary), ui-sans-serif, system-ui, sans-serif;
+  --font-primary: var(--font-primary), var(--font-serif);
+  --font-secondary: var(--font-secondary), var(--font-sans);
   --font-mono: ui-monospace, SFMono-Regular, monospace;
 
   --color-navy-50: oklch(0.958 0.02 267.31);
@@ -286,6 +288,10 @@ body {
     @apply border-base-200 outline-gold-500/50;
   }
   body {
-    @apply bg-base-50 text-base-900;
+    @apply bg-base-50 text-base-900 font-secondary;
   }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-primary), ui-serif, Georgia, serif;
 }

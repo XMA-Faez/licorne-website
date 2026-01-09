@@ -17,7 +17,7 @@ export function HeroSection() {
       </div>
       <div className="max-w-7xl mx-auto px-6 pt-32 pb-20 relative z-10">
         <div className="max-w-5xl mx-auto text-center">
-          <h1 className="text-5xl lg:text-8xl font-bold text-accent-50 mb-6 leading-[1.1] tracking-tight text-balance">
+          <h1 className="text-5xl lg:text-8xl text-accent-50 mb-6 leading-[1.1] tracking-tight text-balance">
             Your Business in Dubai, <span className="font-serif">Simplified</span>
           </h1>
           <p className="text-lg lg:text-xl text-accent-50/80 mb-10 max-w-3xl mx-auto leading-relaxed">
